@@ -15,6 +15,7 @@ var app = new Vue({
     methods: {
         onTouchDownloadHandler: function (event) {
             alert('click download');
+            // http://tu.quhua.com/js/zzzs.apk
         }
     },
     components: {
