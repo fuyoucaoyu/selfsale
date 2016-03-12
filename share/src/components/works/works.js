@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-    template: __inline('./appHeader.html'),
+    template: __inline('./works.html'),
     methods: {
         onTouchDownloadHandler: function (event) {
             alert('click download');

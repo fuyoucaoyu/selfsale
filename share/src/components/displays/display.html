@@ -1,5 +1,8 @@
-<link rel="stylesheet" type="text/css" href="./appHeader.css?__inline">
-<div class="app-header-wrap">
-	<img class="header-bg" src="../../../static/images/app/app_header.png">
-	<img class="header-download-btn" src="../../../static/images/app/download1.png" v-tap="onTouchDownloadHandler">
+<link rel="stylesheet" type="text/css" href="./display.css?__inline">
+<div id="displaysWrap" class="displays-wrap">
+	<ul id="displays" class="displays">
+		<li class="display-item-wrap" v-for="item in items">
+			<a href=""><img class="display-item" v-bind:src="item"></a>
+		</li>
+	</ul>
 </div>

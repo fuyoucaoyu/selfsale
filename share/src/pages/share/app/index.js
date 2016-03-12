@@ -11,6 +11,11 @@ var Display = require('../../../components/displays/display.js');
 var app = new Vue({
     el: '#app',
     data: {
+        displayUrls: ['../../../static/images/app/displays/1-2.png',
+                    '../../../static/images/app/displays/2-2.png',
+                    '../../../static/images/app/displays/3-2.png',
+                    '../../../static/images/app/displays/4-2.png',
+                    '../../../static/images/app/displays/5-2.png']
     },
     methods: {
         onTouchDownloadHandler: function (event) {
