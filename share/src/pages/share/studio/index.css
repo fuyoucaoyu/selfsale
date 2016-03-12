@@ -28,6 +28,21 @@
 	z-index: 30;
 }
 
+.sex-wrap {
+	position: absolute;
+	width: 34px;
+	height: 34px;
+	top: 190px;
+	left: 325px;
+	z-index: 40;
+}
+
+.male,
+.female {
+	width: 34px;
+	height: 34px;
+}
+
 .title-wrap {
 	position: absolute;
 	width: 100%;

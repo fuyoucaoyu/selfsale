@@ -19,6 +19,10 @@
             <div class="display-wrap">
                 <img class="profile-bg" src="../../../static/images/studio/profile_bg.png">
                 <img class="user-avatar" v-bind:src="avatarUrl">
+                <div class="sex-wrap">
+                    <img class="male" v-if="male" src="../../../static/images/studio/male.png">
+                    <img class="female" v-else src="../../../static/images/studio/female.png">
+                </div>
                 <div class="title-wrap">{{title}}</div>
                 <div class="sign-wrap">{{signature}}</div>
                 <span class="follow">{{follow}}</span>
