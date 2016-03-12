@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="./display.css?__inline">
 <div id="displaysWrap" class="displays-wrap">
-	<ul id="displays" class="displays">
+	<ul id="displays" class="displays" v-swipe-left="swipeLeftHandler" v-swipe-right="swipeRightHandler">
 		<li class="display-item-wrap" v-for="item in items">
-			<a href=""><img class="display-item" v-bind:src="item"></a>
+			<img class="display-item" v-bind:src="item">
 		</li>
 	</ul>
 </div>

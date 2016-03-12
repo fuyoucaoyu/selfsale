@@ -4,7 +4,10 @@
 
 var Vue = window.Vue;
 Vue.config.debug = true;
-Vue.use(window.tap);
+// Vue.use(window.tap);
+
+var customDirectives = require('../../../static/lib/directives.js');
+Vue.use(customDirectives);
 
 var Display = require('../../../components/displays/display.js');
 
