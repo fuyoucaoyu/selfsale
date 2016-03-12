@@ -40,6 +40,12 @@ module.exports = {
     		$('#displays').animate({
     			left: newLeft + 'px'
     		}, 1000, 'ease-out');
+    	},
+    	swipeLeftHandler: function (e) {
+    		this.startswipeAnimation(-1);
+    	},
+    	swipeRightHandler: function (e) {
+    		this.startswipeAnimation(1);
     	}
     },
     ready: function (argument) {
@@ -47,12 +53,12 @@ module.exports = {
     	$('#displays').on('resize', function (e) {
     		self.countDisplayStatus();
     	});
-    	$('#displays').swipeLeft(function() {
-    		self.startswipeAnimation(-1);
-    	});
-    	$('#displays').swipeRight(function() {
-    		self.startswipeAnimation(1);
-    	});
+    	// $('#displays').swipeLeft(function() {
+    	// 	self.startswipeAnimation(-1);
+    	// });
+    	// $('#displays').swipeRight(function() {
+    	// 	self.startswipeAnimation(1);
+    	// });
     	this.countDisplayStatus();
     }
 };

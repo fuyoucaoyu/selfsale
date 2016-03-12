@@ -1,6 +1,5 @@
 /**
  * @file
- * Created by wangzhicheng on 16/1/21.
  */
 var tap = {
     install: function (Vue, options) {
