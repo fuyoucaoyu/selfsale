@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+#app {
+	width: 640px;
+	margin: auto;
+	color: #fff;
+}
+
+.display-wrap {
+	position: relative;
+	width: 100%;
+	height: 845px;
+	text-align: center;
+}
+
+.profile-bg {
+	width: 640px;
+	height: 845px;
+}
+
+.user-avatar {
+	position: absolute;
+	width: 140px;
+	height: 140px;
+	top: 82px;
+	left: 225px;
+	border-radius: 70px;
+	z-index: 30;
+}
+
+.title-wrap {
+	position: absolute;
+	width: 100%;
+	height: 37px;/*px*/
+	line-height: 37px;/*px*/
+	top: 240px;
+	font-size: 37px;/*px*/
+	z-index: 10;
+}
+
+.sign-wrap {
+	position: absolute;
+	width: 100%;
+	height: 29px;/*px*/
+	line-height: 29px;/*px*/
+	top: 311px;
+	font-size: 29px;/*px*/
+	z-index: 10;
+}
+
+.follow {
+	position: absolute;
+	width: 200px;
+	height: 40px;/*px*/
+	line-height: 40px;/*px*/
+	top: 375px;
+	left: 225px;
+	display: inline-block;
+	font-size: 40px;/*px*/
+	text-align: left;
+}
+
+.fans {
+	position: absolute;
+	width: 200px;
+	height: 40px;/*px*/
+	line-height: 40px;/*px*/
+	top: 380px;
+	left: 448px;
+	display: inline-block;
+	font-size: 40px;/*px*/
+	text-align: left;
+}
+
+.app-intro {
+	width: 640px;
+	height: 1256px;
+}
+
+.footer-wrap {
+	text-align: center;
+	position: relative;
+	top: -5px;
+}
+
+.app-download-bottom {
+    position: absolute;
+	width: 183px;
+	height: 68px;
+    top: 883px;
+    left: 227px;
+    z-index: 10;
+}
+
+.app-info {
+	width: 640px;
+	height: 1161px;
+}

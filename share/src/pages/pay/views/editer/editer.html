@@ -1,0 +1,23 @@
+<div class="edter">
+	<h1>Snapshot Kiosk</h1>
+	<section class="splash">
+		<p id="errorMessage">{{info.msg}}</p>
+	</section>
+	<section class="mediaWrap">
+		<p>
+			<video id="monitor" autoplay></video> 
+			<canvas id="photo"></canvas>
+		<p><input type=button value="拍照" v-tap="useMedia" /></p>
+		<p><input type="file" accept="image/*" /></p>
+		<p>
+		    <input type="file" accept="image/*;capture=camera" />
+		    <input type="file" accept="video/*;capture=camcorder" /> 
+		    <input type="file" accept="audio/*;capture=microphone" />
+		</p>
+	</section>
+	<section>
+		<canvas id="myCanvas" width="400" height="400" style="border:0px solid #d3d3d3;background-color: #f00;">
+		</canvas>
+		<img id="myImage">
+	</section>
+</div>

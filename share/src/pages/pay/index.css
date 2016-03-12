@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+html,
+body {
+	font-family: 'Anton';
+}
+
+.mediaWrap {
+	background-color: #ccc;
+}
+
+canvas {
+	font-family: 'Anton', 'Dancing Script', cursive;
+}

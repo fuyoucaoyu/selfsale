@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="keywords" content="自做自售，分享设计">
+        <meta name="description" content="自做自售，分享设计,会被显示在检索的结果页面上">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="app-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+
+        <script src="../../../static/lib/flexible.debug.js"></script>
+        <script src="../../../static/lib/flexible_css.debug.js"></script>
+        <title>设计作品分享</title>
+        <link rel="stylesheet" type="text/css" href="./index.css?__inline">
+    </head>
+    <body>
+        <div id="app">
+            <div class="display-wrap">
+                <img class="work-bg" src="../../../static/images/classic/work_bg.png">
+                <img class="user-avatar" v-bind:src="avatarUrl">
+                <div class="title-wrap">{{title}}</div>
+                <div class="detail-wrap">{{detail}}</div>
+                <div class="work-wrap">
+                    <img class="work" v-bind:src="frontUrl" v-if="front" v-tap="onTouchWorkHandler">
+                    <img class="work" v-bind:src="backUrl" v-else v-tap="onTouchWorkHandler">
+                </div>
+                <div class="front-back-wrap">
+                    <img class="front" src="../../../static/images/front.png" v-if="front" v-tap="onTouchWorkHandler">
+                    <img class="back" src="../../../static/images/back.png" v-else v-tap="onTouchWorkHandler">
+                </div>
+            </div>
+            <img class="app-intro" src="../../../static/images/classic/app_intro.png">
+            <div class="footer-wrap">
+                <img class="app-info" src="../../../static/images/classic/footer.png">
+                <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
+            </div>
+
+            <img class="buy-btn" src="../../../static/images/classic/buy.png" v-tap="onTouchBuyHandler">
+        </div>
+        <script type="text/javascript" src="../../../static/lib/vue.js"></script>
+        <script type="text/javascript" src="../../../static/lib/tap.js"></script>
+        <script type="text/javascript" src="../../../static/utils/util.js"></script>
+        <script type="text/javascript" src="../../../static/lib/mod.js"></script>
+        <script type="text/javascript" src="../../../static/lib/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            require('./index.js');
+        </script>
+    </body>
+</html>

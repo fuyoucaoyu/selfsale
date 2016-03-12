@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="keywords" content="自做自售">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="app-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+
+        <!--script src="../../static/lib/flexible.debug.js"></script>
+        <script src="../../static/lib/flexible_css.debug.js"></script-->
+        <title>制作页面</title>
+        <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="./index.css?__inline">
+    </head>
+    <body>
+        <div id="app">
+            <component :is="view" :info="info"></component>
+        </div>
+        <script type="text/javascript" src="../../static/lib/vue.js"></script>
+        <script type="text/javascript" src="../../static/lib/tap.js"></script>
+        <script type="text/javascript" src="../../static/utils/util.js"></script>
+        <script type="text/javascript" src="../../static/lib/mod.js"></script>
+        <script type="text/javascript" src="../../static/lib/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            require('./index.js');
+        </script>
+    </body>
+</html>
