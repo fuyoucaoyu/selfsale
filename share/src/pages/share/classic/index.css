@@ -28,6 +28,10 @@
 	width: 613px;
 	height: 657px;
 }
+.work_content {
+	width: 140px;
+	height: 266px;
+}
 
 .user-avatar {
 	position: absolute;
@@ -44,9 +48,22 @@
 	width: 100%;
 	height: 37px;/*px*/
 	line-height: 37px;/*px*/
-	top: 240px;
+	top: 65px;
 	font-size: 37px;/*px*/
 	z-index: 10;
+	text-align:center;
+}
+
+.name-wrap{
+	position: absolute;
+	width: 100%;
+	height: 37px;/*px*/
+	line-height: 37px;/*px*/
+	top: 985px;
+	font-size: 46px;/*px*/
+	z-index: 10;
+	color: #ffffff;
+	text-align:center;
 }
 
 .detail-wrap {
@@ -54,9 +71,11 @@
 	width: 100%;
 	height: 29px;/*px*/
 	line-height: 29px;/*px*/
-	top: 311px;
+	top: 1050px;
 	font-size: 29px;/*px*/
 	z-index: 10;
+	text-align:center;
+	color: #ffffff;
 }
 
 .front-back-wrap {

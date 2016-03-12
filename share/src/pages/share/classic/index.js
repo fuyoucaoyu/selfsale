@@ -11,10 +11,13 @@ var app = new Vue({
     data: {
         front: true,
         title: '石头家的小饭桶',
-        detail: '每个人都带着一个标签。<br/>80或者90后，颓废的遗嘱。<br/>testing',
+        nick: '名字',
+        detail: '每个人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>tes人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>testi人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>testi人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>testiting',
         avatarUrl: '../../../static/images/test_avatar.png',
-        frontUrl: '../../../static/images/test_front.png',
-        backUrl: '../../../static/images/test_back.png'
+        frontUrl: '../../../static/images/myfront.png',
+        backUrl: '../../../static/images/myback.png',
+        frontbgUrl: '../../../static/images/myfront.png',
+        backbgUrl: '../../../static/images/myback.png'
     },
     methods: {
         onTouchDownloadHandler: function (event) {

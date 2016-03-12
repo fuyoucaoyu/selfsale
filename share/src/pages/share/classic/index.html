@@ -20,10 +20,11 @@
                 <img class="work-bg" src="../../../static/images/classic/work_bg.png">
                 <img class="user-avatar" v-bind:src="avatarUrl">
                 <div class="title-wrap">{{title}}</div>
+                <div class="name-wrap">{{nick}}</div>
                 <div class="detail-wrap">{{detail}}</div>
                 <div class="work-wrap">
-                    <img class="work" v-bind:src="frontUrl" v-if="front" v-tap="onTouchWorkHandler">
-                    <img class="work" v-bind:src="backUrl" v-else v-tap="onTouchWorkHandler">
+                    <img class="work_content" v-bind:src="frontUrl" v-if="front" v-tap="onTouchWorkHandler">
+                    <img class="work_content" v-bind:src="backUrl" v-else v-tap="onTouchWorkHandler">
                 </div>
                 <div class="front-back-wrap">
                     <img class="front" src="../../../static/images/front.png" v-if="front" v-tap="onTouchWorkHandler">
