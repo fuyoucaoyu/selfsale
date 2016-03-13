@@ -23,7 +23,7 @@
                 <div class="name-wrap">{{nick}}</div>
                 <div class="detail-wrap">{{detail}}</div>
                 <div class="work-wrap">
-                    <img class="work_content" v-bind:src="frontUrl" v-if="front" v-tap="onTouchWorkHandler">
+                    <img class="work_content" v-bind:src="frontbgUrl" v-if="front" v-tap="onTouchWorkHandler">
                     <img class="work_content" v-bind:src="backUrl" v-else v-tap="onTouchWorkHandler">
                 </div>
                 <div class="front-back-wrap">

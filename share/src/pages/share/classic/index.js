@@ -16,7 +16,7 @@ var app = new Vue({
         avatarUrl: '../../../static/images/test_avatar.png',
         frontUrl: '../../../static/images/myfront.png',
         backUrl: '../../../static/images/myback.png',
-        frontbgUrl: '../../../static/images/myfront.png',
+        frontbgUrl: '../../../static/images/clothes/cardigan/female/whiteback.png',
         backbgUrl: '../../../static/images/myback.png'
     },
     methods: {
@@ -33,3 +33,58 @@ var app = new Vue({
     components: {
     }
 });
+// var clothesdic = {
+//     cstyle:{
+//         "7":"cardigan",
+//         "6":"hatshirts",
+//         "4":"sweater",
+//         "3":"tshirt"
+//     },
+//     sex:{
+//         "1":"male",
+//         "0":"female"
+//     },
+//     ccolor: {
+//         "白":"white",
+//         "灰":"gray",
+//         "黑":"black",
+//         "黄":"yellow",
+//         "深蓝":"darkblue",
+//         "玫红":"rose",
+//         "天兰":"skyblue",
+//         "荧光绿":"fluorescencegreen",
+//         "绿":"green",
+//         "粉":"pink",
+//         "红":"red"
+//     },
+//     direction:{
+//         "正":"front.png",
+//         "背":"back.png"
+//     }
+// }
+// var getClothes = function{
+//     var parameters = {
+//         "moldId": 7, //衣服款式3 t恤 4 卫衣 5背心 6帽衫 7开衫 8儿童款
+//         "color": "白", //衣服颜色
+//         "gender": "1", //男女款式 1男0女
+//         "direction":"正"
+//     }
+//     var url = '../../../static/images/clothes',
+//     url = url + "/" + clothesdic.cstyle[parameters.moldId];
+//     url = url + "/" + clothesdic.sex[parameters.gender];
+//     url = url + "/" + clothesdic.ccolor[parameters.color];
+//     url = url + clothesdic.direction[parameters.direction];
+//     return url;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
