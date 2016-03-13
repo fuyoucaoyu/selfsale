@@ -1,8 +1,11 @@
 <link rel="stylesheet" type="text/css" href="./display.css?__inline">
-<div id="displaysWrap" class="displays-wrap">
-	<ul id="displays" class="displays" v-swipe-left="swipeLeftHandler" v-swipe-right="swipeRightHandler">
-		<li class="display-item-wrap" v-for="item in items">
-			<img class="display-item" v-bind:src="item">
-		</li>
-	</ul>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div v-for="item in items" class="swiper-slide" v-bind:class="{'custome-item-last': $index === (items.length - 1)}">
+			<div class="item-wrap">
+				<img class="item-img" v-bind:src="item">
+			</div>
+		</div>
+	</div>
+    <div class="pagination"></div>
 </div>

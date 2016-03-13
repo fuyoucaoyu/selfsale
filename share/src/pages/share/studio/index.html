@@ -11,7 +11,10 @@
 
         <script src="../../../static/lib/flexible.debug.js"></script>
         <script src="../../../static/lib/flexible_css.debug.js"></script>
-        <title>设计作品分享</title>
+        <title>分享工作室</title>
+        <link rel="stylesheet" type="text/css" href="../../../static/lib/swipe/idangerous.swiper.css?__inline">
+        <link rel="stylesheet" type="text/css" href="../../../static/lib/swipe/idangerous.swiper.scrollbar.css?__inline">
+        <link rel="stylesheet" type="text/css" href="../../../static/lib/swipe/idangerous.swiper.3dflow.css?__inline">
         <link rel="stylesheet" type="text/css" href="./index.css?__inline">
     </head>
     <body>
@@ -27,20 +30,21 @@
                 <div class="sign-wrap">{{signature}}</div>
                 <span class="follow">{{follow}}</span>
                 <span class="fans">{{fans}}</span>
+                
+                <works :items="workItems"></works>
             </div>
             <img class="app-intro" src="../../../static/images/studio/app_intro.png">
             <div class="footer-wrap">
                 <img class="app-info" src="../../../static/images/studio/footer.png">
                 <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
             </div>
-
-            <img class="buy-btn" src="../../../static/images/studio/buy.png" v-tap="onTouchBuyHandler">
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>
         <script type="text/javascript" src="../../../static/utils/util.js"></script>
         <script type="text/javascript" src="../../../static/lib/mod.js"></script>
-        <script type="text/javascript" src="../../../static/lib/zepto.js"></script>
+        <script type="text/javascript" src="../../../static/lib/swipe/idangerous.swiper-2.0.js"></script>
+        <script type="text/javascript" src="../../../static/lib/swipe/idangerous.swiper.3dflow-2.0.js"></script>
         <script type="text/javascript">
             require('./index.js');
         </script>

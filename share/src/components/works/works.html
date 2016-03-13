@@ -1,5 +1,14 @@
 <link rel="stylesheet" type="text/css" href="./works.css?__inline">
-<div class="app-header-wrap">
-	<img class="header-bg" src="../../../static/images/app/app_header.png">
-	<img class="header-download-btn" src="../../../static/images/app/download1.png" v-tap="onTouchDownloadHandler">
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<!-- <div v-for="item in items" class="swiper-slide" v-bind:class="{'custome-item-last': $index === (items.length - 1)}"> -->
+		<div v-for="item in items" class="swiper-slide">
+			<a v-bind:href="item.href" target="_self"></a>
+			<div class="item-wrap">
+				<img class="item-img" v-bind:src="item.imgUrl">
+				<div class="item-title">{{item.title}}</div>
+			</div>
+		</div>
+	</div>
+    <div class="pagination"></div>
 </div>

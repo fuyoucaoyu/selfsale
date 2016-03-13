@@ -1,28 +1,39 @@
 @charset 'utf-8';
 
-.displays-wrap {
-	width: 100%;
+.swiper-container {
+	width: 580px;
 	height: 712px;
-	padding-top: 30px;
-	padding-bottom: 22px;
+	padding: 30px 30px 22px;
+	margin: auto;
 	overflow: hidden;
 }
 
-.displays {
-	width: 2284px;
+.swiper-wrapper {
 	height: 712px;
+}
+
+.swiper-slide {
+	width: 456px;
+	height: 712px;
+}
+
+.item-wrap {
+	width: 400px;
+	height: 712px;
+	margin-right: 56px;
 	position: relative;
 }
 
-.display-item-wrap {
+.custome-item-last {
 	width: 400px;
 	height: 712px;
-	padding-left: 32px;
-	padding-right: 24px;
-	float: left;
 }
 
-.display-item {
+.custome-item-last .item-wrap {
+	margin-right: 0;
+}
+
+.item-img {
 	width: 400px;
 	height: 712px;
 }
