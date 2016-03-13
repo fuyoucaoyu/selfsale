@@ -58,11 +58,11 @@
 .name-wrap{
 	position: absolute;
 	width: 100%;
-	height: 37px;/*px*/
-	line-height: 37px;/*px*/
-	top: 1030px;
+	height: 37px;
+	line-height: 37px;
+	top: 1020px;
 	right: 5px;
-	font-size: 42px;/*px*/
+	font-size: 42px;
 	z-index: 10;
 	color: #4c433b;
 	text-align:center;
@@ -71,13 +71,14 @@
 .detail-wrap {
 	position: absolute;
 	width: 100%;
-	height: 29px;/*px*/
-	line-height: 29px;/*px*/
-	top: 1096px;
-	font-size: 29px;/*px*/
+	height: 405px;
+	line-height: 140%;
+	top: 1080px;
+	font-size: 29px;
 	z-index: 10;
 	text-align:center;
 	color: #4b423a;
+	overflow: hidden;
 }
 
 .user-avatar {

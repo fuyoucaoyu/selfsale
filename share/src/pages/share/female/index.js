@@ -34,12 +34,6 @@ var clothesdic = {
     }
 }
 var getClothes = function (moldId, color, gender, direction) {
-    // var parameters = {
-    //     'moldId': 7, //衣服款式3 t恤 4 卫衣 5背心 6帽衫 7开衫 8儿童款
-    //     'color': 'white', //衣服颜色
-    //     'gender': '1', //男女款式 1男0女
-    //     'direction':'正'
-    // }
     var url = '../../../static/images/clothes',
     url = url + '/' + clothesdic.cstyle[moldId];
     url = url + '/' + clothesdic.sex[gender];
@@ -53,7 +47,7 @@ var app = new Vue({
         front: true,
         title: '石头家的小饭桶',
         nick: '名字',
-        detail: '每个人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>tes人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>testi人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>testi人都带着一个标签。<br>80或者签。<br>80签。<br>8090后，颓废的遗嘱。<br>testiting',
+        detail: '每个人都带着一个标签。<br/> 80或者签。<br/> 8090后，颓废的遗嘱。<br/> tes人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testiting',
         avatarUrl: '../../../static/images/test_avatar.png',
         frontUrl: '../../../static/images/myfront.png',
         backUrl: '../../../static/images/myback.png',

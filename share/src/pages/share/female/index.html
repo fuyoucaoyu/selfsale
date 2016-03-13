@@ -21,18 +21,18 @@
                 <img class="user-avatar" v-bind:src="avatarUrl">
                 <div class="title-wrap">{{title}}</div>
                 <div class="name-wrap">{{nick}}</div>
-                <div class="detail-wrap">{{detail}}</div>
-                <div class="work-wrap">
-                    <img class="work" v-bind:src="frontbgUrl" v-if="front" v-tap="onTouchWorkHandler">
-                    <img class="work" v-bind:src="backbgUrl" v-else v-tap="onTouchWorkHandler">
+                <div class="detail-wrap" v-html="detail"></div>
+                <div class="work-wrap" v-tap="onTouchWorkHandler">
+                    <img class="work" v-bind:src="frontbgUrl" v-if="front">
+                    <img class="work" v-bind:src="backbgUrl" v-else>
                 </div>
-                <div class="work_content-wrap">
-                    <img class="work_content" v-bind:src="frontUrl" v-if="front" v-tap="onTouchWorkHandler">
-                    <img class="work_content" v-bind:src="backUrl" v-else v-tap="onTouchWorkHandler">
+                <div class="work_content-wrap" v-tap="onTouchWorkHandler">
+                    <img class="work_content" v-bind:src="frontUrl" v-if="front">
+                    <img class="work_content" v-bind:src="backUrl" v-else>
                 </div>
-                <div class="front-back-wrap">
-                    <img class="front" src="../../../static/images/front.png" v-if="front" v-tap="onTouchWorkHandler">
-                    <img class="back" src="../../../static/images/back.png" v-else v-tap="onTouchWorkHandler">
+                <div class="front-back-wrap" v-tap="onTouchWorkHandler">
+                    <img class="front" src="../../../static/images/front.png" v-if="front">
+                    <img class="back" src="../../../static/images/back.png" v-else>
                 </div>
             </div>
             <!--img class="app-intro" src="../../../static/images/female/app_intro.png"-->

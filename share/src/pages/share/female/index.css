@@ -58,11 +58,12 @@
 .name-wrap{
 	position: absolute;
 	width: 100%;
-	height: 37px;/*px*/
-	line-height: 37px;/*px*/
+	height: 37px;
+	line-height: 37px;
 	top: 800px;
 	right: -80px;
-	font-size: 42px;/*px*/
+	font-size: 42px;
+	font-weight: bold;
 	z-index: 10;
 	color: #7a0fa7;
 	text-align:center;
@@ -70,23 +71,24 @@
 
 .detail-wrap {
 	position: absolute;
-	width: 100%;
-	height: 29px;/*px*/
-	line-height: 29px;/*px*/
-	top: 1050px;
-	font-size: 29px;/*px*/
-	z-index: 10;
+	height: 405px;
+	left: 0;
+	right: 120px;
+	top: 935px;
+	line-height: 140%;
+	font-size: 29px;
 	text-align:center;
 	color: #f76464;
+	z-index: 10;
+	overflow: hidden;
 }
 
 .user-avatar {
 	position: absolute;
 	width: 140px;
 	height: 140px;
-	top: 734px;
+	top: 745px;
 	left: 175px;
-	/**border-radius: 70px;**/
 	z-index: 30;
 }
 
