@@ -19,14 +19,65 @@
 .work-wrap {
 	position: absolute;
 	width: 100%;
-	top: 200px;
+	height: 657px;
+	top: 90px;
 	text-align: center;
-	z-index: 10;
+	z-index: 1;
 }
 
 .work {
 	width: 613px;
 	height: 657px;
+}
+
+.work_content-wrap {
+	position: absolute;
+	width: 100%;
+	height: 266px;
+	top: 300px;
+	text-align: center;
+	z-index: 10;
+}
+.work_content {
+	width: 140px;
+	height: 266px;
+}
+
+.title-wrap {
+	position: absolute;
+	width: 100%;
+	height: 37px;/*px*/
+	line-height: 37px;/*px*/
+	top: 68px;
+	font-size: 42px;/*px*/
+	z-index: 10;
+	color: #4b423a;
+	text-align:center;
+}
+
+.name-wrap{
+	position: absolute;
+	width: 100%;
+	height: 37px;/*px*/
+	line-height: 37px;/*px*/
+	top: 1030px;
+	right: 5px;
+	font-size: 42px;/*px*/
+	z-index: 10;
+	color: #4c433b;
+	text-align:center;
+}
+
+.detail-wrap {
+	position: absolute;
+	width: 100%;
+	height: 29px;/*px*/
+	line-height: 29px;/*px*/
+	top: 1096px;
+	font-size: 29px;/*px*/
+	z-index: 10;
+	text-align:center;
+	color: #4b423a;
 }
 
 .user-avatar {
