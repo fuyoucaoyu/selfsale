@@ -76,13 +76,13 @@ var app = new Vue({
         buying: false,
         goodsOptions: testGoodsOptions,
         front: true,
-        title: '石头家的小饭桶',
-        nick: '名字',
-        detail: '每个人都带着一个标签。<br/> 80或者签。<br/> 8090后，颓废的遗嘱。<br/> tes人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testiting',
+        title: '',
+        nick: '',
+        detail: '',
         avatarUrl: '../../../static/images/test_avatar.png',
         workDisplayImgs: {
-            frontUrl: '../../../static/images/myfront.png',
-            backUrl: '../../../static/images/myback.png',
+            frontUrl: '',
+            backUrl: '',
             frontbgUrl: getClothes(4, 'yellow', 0, 'front'),
             backbgUrl: getClothes(4, 'yellow', 0, 'back')
         }
@@ -103,3 +103,48 @@ var app = new Vue({
         'work-display': WorkDisplay
     }
 });
+
+// 参数解析
+function getUrlParams(data) {
+    if (!data) {
+        return;
+    }
+    var paramsArray = data.split('&');
+    var params = {};
+    paramsArray.forEach(function (p) {
+        var pa = p.split('=');
+        params[pa[0]] = (pa[1] === undefined ? '' : pa[1]);
+    });
+    return params;
+}
+
+// 路由控制
+function router(e) {
+    if (e) {
+        e.preventDefault();
+    }
+
+    var params = getUrlParams(window.location.href.split('?')[1]);
+    params.function = config.getProduceFn;
+    util.jsonp(config.getProduceUrl, params, function (error, data) {
+        if ('error' === error || !data || !data.data || 0 != data.success) {
+            alert('show error page');
+        }
+
+        var result = data.data;
+        app.$data.nick = result.nick;
+        app.$data.title = result.title;
+        app.$data.detail = result.content;
+        if (result.headurl && '' !== result.headurl) {
+          app.$data.avatarUrl = config.getImgUrl + result.headurl;
+        }
+
+        app.$data.workDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+        app.$data.workDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+        app.$data.workDisplayImgs.frontbgUrl = getClothes(result.moldId, result.color, result.gender, 'front'),
+        app.$data.workDisplayImgs.backbgUrl = getClothes(result.moldId, result.color, result.gender, 'back')
+    });
+}
+
+router();
+window.addEventListener('hashchange', router);
