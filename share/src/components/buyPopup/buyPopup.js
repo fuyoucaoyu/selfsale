@@ -10,6 +10,9 @@ module.exports = {
     data: function () {
     },
     methods: {
+        onTouchBuyHandler: function (event) {
+            alert('buy click');
+        },
     },
     components: {
     	'work-display': WorkdDisplay

@@ -3,8 +3,9 @@
 	<work-display :display-imgs="displayImgs" :front="true" spec-class="scaled-work-display"></work-display>
 	<div class="select-wrap">
 		<div class="title-bar">
-			<img src="../../static/images/close.png">
-			<div>
+			<img class="close-btn" src="../../static/images/close.png">
+			<div class="price-label">$99.00</div>
+			<div class="explanation-label">
 				<a href="#" target="_self">请查看尺寸及材质说明</a>
 				<img src="../../static/images/tip.png">
 			</div>
@@ -33,13 +34,16 @@
 				<span v-for="sizeItem in options.size">{{sizeItem.name}}</span>
 			</div>
 		</div>
-		<div>
-			<div>购买数量</div>
+		<div class="num-wrap">
+			<div class="buynum-label">购买数量</div>
 			<div class="number-wrap">
-				<img src="../../static/images/select/subtraction.png">
+				<img class="number-btn" src="../../static/images/select/subtraction.png">
 				<span>1</span>
-				<img src="../../static/images/select/plus.png">
+				<img class="number-btn" src="../../static/images/select/plus.png">
 			</div>
 		</div>
+		<div class="footer-wrap">
+                <img src="../../../static/images/confirm.png" v-tap="onTouchBuyHandler">
+        </div>
 	</div>
 </div>
