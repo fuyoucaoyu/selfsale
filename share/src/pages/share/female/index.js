@@ -14,6 +14,7 @@ var clothesdic = {
         '7':'cardigan',
         '6':'hatshirts',
         '4':'sweater',
+        '8':'tshirt',
         '3':'tshirt'
     },
     sex:{

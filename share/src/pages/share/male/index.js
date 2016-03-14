@@ -14,6 +14,7 @@ var clothesdic = {
         '7':'cardigan',
         '6':'hatshirts',
         '4':'sweater',
+        '8':'tshirt',
         '3':'tshirt'
     },
     sex:{
@@ -82,8 +83,8 @@ var app = new Vue({
         workDisplayImgs: {
             frontUrl: '../../../static/images/myfront.png',
             backUrl: '../../../static/images/myback.png',
-            frontbgUrl: getClothes(3, 'yellow', 1, 'front'),
-            backbgUrl: getClothes(3, 'yellow', 1, 'back')
+            frontbgUrl: getClothes(4, 'yellow', 0, 'front'),
+            backbgUrl: getClothes(4, 'yellow', 0, 'back')
         }
     },
     methods: {
