@@ -307,8 +307,8 @@ function router(e) {
         app.$data.nick = result.nick;
         app.$data.title = result.title;
         app.$data.detail = result.content;
-        if (result.headurl && '' !== result.headurl) {
-          app.$data.avatarUrl = config.getImgUrl + result.headurl;
+        if (result.headurl && '' !== result.headurl.replace(/ /g, '')) {
+            app.$data.avatarUrl = config.getImgUrl + result.headurl;
         }
 
         app.$data.workDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
