@@ -32,8 +32,8 @@ var clothesdic = {
         'red':'red'
     },
     direction:{
-        '正':'front.png',
-        '背':'back.png'
+        'front':'front.png',
+        'back':'back.png'
     }
 };
 
@@ -82,8 +82,8 @@ var app = new Vue({
         workDisplayImgs: {
             frontUrl: '../../../static/images/myfront.png',
             backUrl: '../../../static/images/myback.png',
-            frontbgUrl: getClothes(3, 'yellow', 1, '正'),
-            backbgUrl: getClothes(3, 'yellow', 1, '背')
+            frontbgUrl: getClothes(3, 'yellow', 1, 'front'),
+            backbgUrl: getClothes(3, 'yellow', 1, 'back')
         }
     },
     methods: {

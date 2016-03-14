@@ -29,8 +29,8 @@ var clothesdic = {
         'red':'red'
     },
     direction:{
-        '正':'front.png',
-        '背':'back.png'
+        'front':'front.png',
+        'back':'back.png'
     }
 }
 var getClothes = function (moldId, color, gender, direction) {
@@ -51,8 +51,8 @@ var app = new Vue({
         avatarUrl: '../../../static/images/test_avatar.png',
         frontUrl: '../../../static/images/myfront.png',
         backUrl: '../../../static/images/myback.png',
-        frontbgUrl: getClothes(3, 'yellow', 1, '正'),//'../../../static/images/clothes/cardigan/female/grayfront.png',
-        backbgUrl: getClothes(3, 'yellow', 1, '背'),//'../../../static/images/clothes/cardigan/female/grayback.png'
+        frontbgUrl: getClothes(3, 'yellow', 1, 'front'),//'../../../static/images/clothes/cardigan/female/grayfront.png',
+        backbgUrl: getClothes(3, 'yellow', 1, 'back'),//'../../../static/images/clothes/cardigan/female/grayback.png'
     },
     methods: {
         onTouchDownloadHandler: function (event) {
