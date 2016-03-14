@@ -4,10 +4,7 @@
 
 var Vue = window.Vue;
 Vue.config.debug = true;
-// Vue.use(window.tap);
-
-var customDirectives = require('../../../static/lib/directives.js');
-Vue.use(customDirectives);
+Vue.use(window.tap);
 
 var Display = require('../../../components/displays/display.js');
 
@@ -22,8 +19,7 @@ var app = new Vue({
     },
     methods: {
         onTouchDownloadHandler: function (event) {
-            alert('click download');
-            // http://tu.quhua.com/js/zzzs.apk
+            window.location.href = 'http://tu.quhua.com/js/zzzs.apk';
         }
     },
     components: {
