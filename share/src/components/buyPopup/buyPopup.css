@@ -9,8 +9,17 @@
 	background-color: #fff;
 }
 
-.goods-wrap {
+.scaled-work-display {
 	position: absolute;
+	top: -47%;
+	left: -169px;/**-613 * (1 - 0.35) * 0.5 + 30**/
+	border-radius: 100%;
+	transform: scale(0.35, 0.35);
+}
+
+.scaled-work-display .work {
+	border-radius: 100%;
+	border: 2px solid #000;/*no*/
 }
 
 .select-wrap {
