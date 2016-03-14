@@ -255,19 +255,22 @@ var app = new Vue({
         workDisplayImgs: {
             frontUrl: '',
             backUrl: '',
-            frontbgUrl: getClothes(6, 'gray', 1, 'front'),
-            backbgUrl: getClothes(6, 'gray', 1, 'back')
+            frontbgUrl: '', // getClothes(6, 'gray', 1, 'front'),
+            backbgUrl: ''//getClothes(6, 'gray', 1, 'back')
         }
     },
     methods: {
         onTouchDownloadHandler: function (event) {
             alert('click download');
         },
-    	onTouchBuyHandler: function (event) {
-    		this.$data.buying = true;
-    	},
+    	  onTouchBuyHandler: function (event) {
+    		    this.$data.buying = true;
+    	  },
         onTouchWorkHandler: function (event) {
             this.$data.front = !this.$data.front;
+        },
+        closeBuyPopup: function (event) {
+            this.$data.buying = false;
         }
     },
     components: {
