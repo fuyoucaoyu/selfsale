@@ -82,8 +82,8 @@ var app = new Vue({
         workDisplayImgs: {
             frontUrl: '../../../static/images/myfront.png',
             backUrl: '../../../static/images/myback.png',
-            frontbgUrl: getClothes(3, 'yellow', 1, 'front'),
-            backbgUrl: getClothes(3, 'yellow', 1, 'back')
+            frontbgUrl: getClothes(6, 'gray', 1, 'front'),
+            backbgUrl: getClothes(6, 'gray', 1, 'back')
         }
     },
     methods: {
