@@ -1,0 +1,13 @@
+<!-- <link rel="stylesheet" type="text/css" href="./workDisplay.css?__inline"> -->
+<div class="work-display-wrap" v-tap="onTouchWorkHandler">
+    <div class="work-wrap">
+        <img class="work" v-bind:src="displayImgs.frontbgUrl" v-if="front">
+        <img class="work" v-bind:src="displayImgs.backbgUrl" v-else>
+    </div>
+    <img class="work-content" v-bind:src="displayImgs.frontUrl" v-if="front">
+    <img class="work-content" v-bind:src="displayImgs.backUrl" v-else>
+    <!-- <div class="work-content-wrap">
+        <img class="work-content" v-bind:src="displayImgs.frontUrl" v-if="front">
+        <img class="work-content" v-bind:src="displayImgs.backUrl" v-else>
+    </div> -->
+</div>

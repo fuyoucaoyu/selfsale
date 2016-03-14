@@ -111,6 +111,11 @@ fis.match("static/images/(**.png)", {
     release: APP_NAME + '/static/images/$1'
 });
 
+fis.match("static/images/(**.jpg)", {
+    isMod: true,
+    release: APP_NAME + '/static/images/$1'
+});
+
 fis.match("static/swf/(*.swf)", {
     isMod: false,
     release: APP_NAME + '/static/swf/$1'

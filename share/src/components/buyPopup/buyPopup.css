@@ -1,0 +1,102 @@
+@charset 'utf-8';
+
+.buy-popup {
+	width: 100%;
+	height: 714px;
+	position: fixed;
+	bottom: 0;
+	z-index: 30;
+	background-color: #fff;
+}
+
+.goods-wrap {
+	position: absolute;
+}
+
+.select-wrap {
+
+}
+
+.title-bar {
+	width: 100%;
+	height: 136px;
+	border-bottom: solid 1px #acacac;
+}
+
+.sex-wrap,
+.type-wrap {
+	width: 100%;
+	height: 84px;
+	border-bottom: solid 1px #acacac;
+}
+
+.sex-label,
+.type-label {
+	width: 100px;
+	line-height: 84px;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.content-wrap {
+	text-align: center;
+	display: inline-block;
+}
+
+.content-wrap span {
+	height: 44px;
+	line-height: 44px;
+	border: solid 2px #acacac;
+	display: inline-block;
+	padding: 0 20px;
+	margin-right: 20px;
+	border-radius: 4px;
+}
+
+.color-wrap,
+.size-wrap {
+	position: relative;
+	width: 100%;
+	height: 122px;
+	border-bottom: solid 1px #d6d6d6;
+}
+
+.color-label,
+.size-label {
+	width: 100px;
+	height: 60px;
+	line-height: 60px;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: bold;
+}
+
+.content-big-wrap {
+	position: absolute;
+	left: 56px;
+	top: 60px;
+	right: 0;
+	text-align: left;
+}
+
+.content-big-wrap span {
+	display: inline-block;
+	margin-right: 20px;
+	border-radius: 4px;
+}
+
+.color-wrap span {
+	width: 40px; 
+	height: 40px;
+}
+
+.size-wrap span {
+	width: 40px; 
+	height: 40px;
+	padding: 0 15px;
+	line-height: 40px;
+	text-align: center;
+	border: solid 2px #acacac;
+}

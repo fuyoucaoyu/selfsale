@@ -1,0 +1,46 @@
+<link rel="stylesheet" type="text/css" href="./buyPopup.css?__inline">
+<div class="buy-popup">
+	<div class="goods-wrap">
+	</div>
+	<div class="select-wrap">
+		<div class="title-bar">
+			<img src="../../static/images/close.png">
+			<div>
+				<a href="#" target="_self">请查看尺寸及材质说明</a>
+				<img src="../../static/images/tip.png">
+			</div>
+		</div>
+		<div class="sex-wrap">
+			<div class="sex-label">性别</div>
+			<div class="content-wrap">
+				<span v-for="sexItem in options.sex">{{sexItem.name}}</span>
+			</div>
+		</div>
+		<div class="type-wrap">
+			<div class="type-label">类型</div>
+			<div class="content-wrap">
+				<span v-for="typeItem in options.type">{{typeItem.name}}</span>
+			</div>
+		</div>
+		<div class="color-wrap">
+			<div class="color-label">颜色</div>
+			<div class="content-big-wrap">
+				<span v-for="typeItem in options.ccolor" v-bind:style="{backgroundColor: typeItem.name }"></span>
+			</div>
+		</div>
+		<div class="size-wrap">
+			<div class="size-label">尺码</div>
+			<div class="content-big-wrap">
+				<span v-for="sizeItem in options.size">{{sizeItem.name}}</span>
+			</div>
+		</div>
+		<div>
+			<div>购买数量</div>
+			<div>
+				<img src="../../static/images/close.png">
+				<span></span>
+				<img src="../../static/images/close.png">
+			</div>
+		</div>
+	</div>
+</div>

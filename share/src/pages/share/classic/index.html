@@ -23,14 +23,17 @@
                 <div class="name-wrap">{{nick}}</div>
                 <div class="detail-wrap" v-html="detail"></div>
 
-                <div class="work-wrap" v-tap="onTouchWorkHandler">
+                <!-- <div class="work-wrap" v-tap="onTouchWorkHandler">
                     <img class="work" v-bind:src="frontbgUrl" v-if="front">
                     <img class="work" v-bind:src="backbgUrl" v-else>
                 </div>
                 <div class="work_content-wrap" v-tap="onTouchWorkHandler">
                     <img class="work_content" v-bind:src="frontUrl" v-if="front">
                     <img class="work_content" v-bind:src="backUrl" v-else>
-                </div>
+                </div> -->
+
+                <work-display :display-imgs="workDisplayImgs" :front="front" :touch-work-callback="onTouchWorkHandler"></work-display>
+
                 <div class="front-back-wrap" v-tap="onTouchWorkHandler">
                     <img class="front" src="../../../static/images/front.png" v-if="front">
                     <img class="back" src="../../../static/images/back.png" v-else>
@@ -42,7 +45,8 @@
                 <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
             </div>
 
-            <img class="buy-btn" src="../../../static/images/classic/buy.png" v-tap="onTouchBuyHandler">
+            <buy-popup :options="goodsOptions" v-if="buying"></buy-popup>
+            <img class="buy-btn" src="../../../static/images/classic/buy.png" v-else v-tap="onTouchBuyHandler">
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>
