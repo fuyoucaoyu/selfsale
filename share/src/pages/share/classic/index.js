@@ -310,9 +310,12 @@ function router(e) {
         if (result.headurl && '' !== result.headurl.replace(/ /g, '')) {
             app.$data.avatarUrl = config.getImgUrl + result.headurl;
         }
-
-        app.$data.workDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
-        app.$data.workDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+        if (result.pictureUrl && '' !== result.pictureUrl.replace(/ /g, '')) {
+            app.$data.workDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+        }
+        if (result.pictureUrlBack && '' !== result.pictureUrlBack.replace(/ /g, '')) {
+            app.$data.workDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+        }
         app.$data.workDisplayImgs.frontbgUrl = getClothes(result.moldId, result.color, result.gender, 'front'),
         app.$data.workDisplayImgs.backbgUrl = getClothes(result.moldId, result.color, result.gender, 'back')
     });
