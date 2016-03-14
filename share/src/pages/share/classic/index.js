@@ -14,6 +14,7 @@ var clothesdic = {
         '7':'cardigan',
         '6':'hatshirts',
         '4':'sweater',
+        '8':'tshirt',
         '3':'tshirt'
     },
     sex:{
@@ -46,28 +47,200 @@ var getClothes = function (moldId, color, gender, direction) {
     return url;
 };
 
-var testGoodsOptions = {
-    sex: [  {key: 0, name: '男款'}, 
-            {key: 1, name: '女款'}, 
-            {key: 2, name: '无'}
-         ],
-    type: [  {key: 0, name: '经典款'}, 
-             {key: 1, name: '基本款'}
+var clothesData = {
+  '3_1':{ //T恤男
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}, 
+               {key: 0, name: '体验款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'black', name: '#000000'}, 
+                {key: 'yellow', name: '#f8f12a'}, 
+                {key: 'green', name: '#149150'}, 
+                {key: 'blue', name: '#37b0ca'}, 
+                {key: 'cyan', name: 'skyblue'},
+                {key: 'red', name: '#ee2e1f'}
           ],
-    ccolor: [ {key: 'white', name: '#ffffff'}, 
-              {key: 'gray', name: '#99989e'}, 
-              {key: 'black', name: '#000000'}, 
-              {key: 'yellow', name: '#f8f12a'}, 
-              {key: 'pink', name: '#ffb8d0'}, 
-              {key: 'green', name: '#149150'}, 
-              {key: 'blue', name: '#37b0ca'}, 
-              {key: 'cyan', name: 'skyblue'},
-              {key: 'red', name: '#ee2e1f'}
-        ],
-    size: [  {key: 0, name: 'M'}, 
-             {key: 1, name: 'L'}
-          ]
-};
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'},
+               {key: '3XL', name: '3XL'}
+            ]
+  },
+  '3_0':{ //T恤女
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}, 
+               {key: 0, name: '体验款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'black', name: '#000000'}, 
+                {key: 'yellow', name: '#f8f12a'}, 
+                {key: 'pink', name: '#ffb8d0'}, 
+                {key: 'green', name: '#149150'}, 
+                {key: 'blue', name: '#37b0ca'}, 
+                {key: 'cyan', name: 'skyblue'},
+                {key: 'red', name: '#ee2e1f'}
+          ],
+      size: [  {key: 'S', name: 'S'}, 
+               {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '4_1':{ //卫衣男
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'black', name: '#000000'}, 
+                {key: 'yellow', name: '#f8f12a'},  
+                {key: 'blue', name: '#37b0ca'}
+          ],
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'},
+               {key: '3XL', name: '3XL'}
+            ]
+  },
+  '4_0':{ //卫衣女
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'yellow', name: '#f8f12a'},
+                {key: 'green', name: '#149150'}, 
+                {key: 'blue', name: '#37b0ca'}, 
+                {key: 'cyan', name: 'skyblue'},
+                {key: 'red', name: '#ee2e1f'}
+          ],
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '6_1':{ //帽衫男
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'black', name: '#000000'}
+          ],
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '6_0':{ //帽衫女
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}
+          ],
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '7_1':{ //开衫男
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}
+          ],
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '7_0':{ //开衫女
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}
+          ],
+      size: [  {key: 'M', name: 'M'}, 
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '8_1':{ //童装男
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'black', name: '#000000'}, 
+                {key: 'yellow', name: '#f8f12a'}, 
+                {key: 'green', name: '#149150'}, 
+                {key: 'blue', name: '#37b0ca'}, 
+                {key: 'cyan', name: 'skyblue'},
+                {key: 'red', name: '#ee2e1f'}
+          ],
+      size: [  {key: 'S', name: 'S'}, 
+               {key: 'M', name: 'M'},
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  },
+  '8_0':{ //童装女
+      sex: [  {key: 1, name: '男款'}, 
+              {key: 0, name: '女款'}
+           ],
+      type: [  {key: 1, name: '经典款'}
+            ],
+      ccolor: [ {key: 'white', name: '#ffffff'}, 
+                {key: 'gray', name: '#99989e'}, 
+                {key: 'black', name: '#000000'}, 
+                {key: 'yellow', name: '#f8f12a'}, 
+                {key: 'green', name: '#149150'}, 
+                {key: 'blue', name: '#37b0ca'}, 
+                {key: 'cyan', name: 'skyblue'},
+                {key: 'red', name: '#ee2e1f'}
+          ],
+      size: [  {key: 'S', name: 'S'}, 
+               {key: 'M', name: 'M'},
+               {key: 'L', name: 'L'},
+               {key: 'XL', name: 'XL'},
+               {key: '2XL', name: '2XL'}
+            ]
+  }
+}
+var testGoodsOptions = clothesData['6_1'];
 
 var app = new Vue({
     el: '#app',
