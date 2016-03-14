@@ -7,6 +7,8 @@ var jsonpcb = [];
 var config = {
     getProduceUrl: 'http://www.zizuozishou.com:8080/SSH/shareInteface',
     getProduceFn: 'getProduceById',
+    getStudioFn: 'personCenter',
+    getStudioProduceListFn: 'getDesinerProduceByState',
     getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
 }
 var util = {

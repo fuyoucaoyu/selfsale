@@ -248,9 +248,9 @@ var app = new Vue({
         buying: false,
         goodsOptions: testGoodsOptions,
         front: true,
-        title: '石头家的小饭桶',
-        nick: '名字',
-        detail: '每个人都带着一个标签。<br/> 80或者签。<br/> 8090后，颓废的遗嘱。<br/> tes人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testiting',
+        title: '',
+        nick: '',
+        detail: '',
         avatarUrl: '../../../static/images/test_avatar.png',
         workDisplayImgs: {
             frontUrl: '',

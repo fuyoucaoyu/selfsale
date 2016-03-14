@@ -12,12 +12,12 @@ var app = new Vue({
     el: '#app',
     data: {
         front: true,
-        title: '石头家的小饭桶',
+        title: '',
         male: false,
         avatarUrl: '../../../static/images/test_avatar.png',
-        follow: 19,
-        fans: 28,
-        signature: '我不喜欢散步，但是偶尔吃饱了会飞一会儿',
+        follow: 0,
+        fans: 0,
+        signature: '',
         workItems: [{title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
                     {title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
                     {title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
@@ -39,3 +39,60 @@ var app = new Vue({
         'works': Works
     }
 });
+
+// 参数解析
+function getUrlParams(data) {
+    if (!data) {
+        return;
+    }
+    var paramsArray = data.split('&');
+    var params = {};
+    paramsArray.forEach(function (p) {
+        var pa = p.split('=');
+        params[pa[0]] = (pa[1] === undefined ? '' : pa[1]);
+    });
+    return params;
+}
+
+// 路由控制
+function router(e) {
+    if (e) {
+        e.preventDefault();
+    }
+
+    var params = getUrlParams(window.location.href.split('?')[1]);
+    params.function = config.getStudioFn;
+    util.jsonp(config.getProduceUrl, params, function (error, data) {
+        if ('error' === error || !data) {
+            alert('show error page');
+            return;
+        }
+
+        var result = data;
+        app.$data.title = result.nick;
+        app.$data.male = result.sex === '1';
+        app.$data.follow = result.zcount;
+        app.$data.fans = result.dcount;
+        app.$data.signature = result.desc;
+        if (result.headurl && '' !== result.headurl) {
+          app.$data.avatarUrl = config.getImgUrl + result.headurl;
+        }
+    });
+
+    // var params1 = {
+    //     userId: params.userId,
+    //     function: config.getStudioProduceListFn
+    // };
+    // util.jsonp(config.getProduceUrl, params1, function (error, data) {
+    //     if ('error' === error || !data || !data.data || 0 != data.success) {
+    //         alert('show error page');
+    //         return;
+    //     }
+
+    //     var result = data.data;
+    //     app.$data.workItems = result;
+    // });
+}
+
+router();
+window.addEventListener('hashchange', router);
