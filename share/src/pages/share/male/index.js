@@ -6,6 +6,9 @@ var Vue = window.Vue;
 Vue.config.debug = true;
 Vue.use(window.tap);
 
+var BuyPopup = require('../../../components/buyPopup/buyPopup.js');
+var WorkDisplay = require('../../../components/workDisplay/workDisplay.js');
+
 var clothesdic = {
     cstyle:{
         '7':'cardigan',
@@ -42,30 +45,60 @@ var getClothes = function (moldId, color, gender, direction) {
     url = url + clothesdic.direction[direction];
     return url;
 }
+
+var testGoodsOptions = {
+    sex: [  {key: 0, name: '男款'}, 
+            {key: 1, name: '女款'}, 
+            {key: 2, name: '无'}
+         ],
+    type: [  {key: 0, name: '经典款'}, 
+             {key: 1, name: '基本款'}
+          ],
+    ccolor: [ {key: 'white', name: '#ffffff'}, 
+              {key: 'gray', name: '#99989e'}, 
+              {key: 'black', name: '#000000'}, 
+              {key: 'yellow', name: '#f8f12a'}, 
+              {key: 'pink', name: '#ffb8d0'}, 
+              {key: 'green', name: '#149150'}, 
+              {key: 'blue', name: '#37b0ca'}, 
+              {key: 'cyan', name: 'skyblue'},
+              {key: 'red', name: '#ee2e1f'}
+        ],
+    size: [  {key: 0, name: 'M'}, 
+             {key: 1, name: 'L'}
+          ]
+};
+
 var app = new Vue({
     el: '#app',
     data: {
+        buying: false,
+        goodsOptions: testGoodsOptions,
         front: true,
         title: '石头家的小饭桶',
         nick: '名字',
         detail: '每个人都带着一个标签。<br/> 80或者签。<br/> 8090后，颓废的遗嘱。<br/> tes人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testi人都带着一个标签。<br/> 80或者签。<br/> 80签。<br/> 8090后，颓废的遗嘱。<br/> testiting',
         avatarUrl: '../../../static/images/test_avatar.png',
-        frontUrl: '../../../static/images/myfront.png',
-        backUrl: '../../../static/images/myback.png',
-        frontbgUrl: getClothes(3, 'yellow', 1, 'front'),
-        backbgUrl: getClothes(3, 'yellow', 1, 'back'),
+        workDisplayImgs: {
+            frontUrl: '../../../static/images/myfront.png',
+            backUrl: '../../../static/images/myback.png',
+            frontbgUrl: getClothes(3, 'yellow', 1, 'front'),
+            backbgUrl: getClothes(3, 'yellow', 1, 'back')
+        }
     },
     methods: {
         onTouchDownloadHandler: function (event) {
             alert('click download');
         },
         onTouchBuyHandler: function (event) {
-            alert('buy?');
+            this.$data.buying = true;
         },
         onTouchWorkHandler: function (event) {
             this.$data.front = !this.$data.front;
         }
     },
     components: {
+        'buy-popup': BuyPopup,
+        'work-display': WorkDisplay
     }
 });
