@@ -47,21 +47,26 @@
 
 .instr-detail {
 	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .maleInstr {
 	width: 640px;
 	height: 2355px;
+	background-size: 640px 2355px;
 }
 
 .femaleInstr {
 	width: 640px;
 	height: 2350px;
+	background-size: 640px 2350px;
 }
 
 .childInstr {
 	width: 640px;
 	height: 484px;
+	background-size: 640px 484px;
 }
 
 .material-instr-wrap {
