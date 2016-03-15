@@ -6,3 +6,226 @@
 	width: 640px;
 	margin: auto;
 }
+
+ #to_person_name,
+ #to_person_phone,
+ #detial_adress_info,
+ #good_beizhu,
+ #s_province,
+ #s_city,
+ #s_county {
+ 	display: block;
+ 	width: 650px;
+ 	font-family: "微软雅黑";
+ 	color: #A3A3A3;
+ 	font-size: 26px;
+ 	margin-left: 26px;
+ 	background: white;
+ 	height: 80px;
+ 	padding-left: 20px;
+ 	border-radius: 10px;  
+}
+ #s_province,
+ #s_city,
+ #s_county {
+ 	width: 686px;
+ }
+ #detial_adress_info,
+ #good_beizhu {
+ 	margin-top: 30px;
+ }
+ #detial_adress_info {
+ 	padding-top:20px;
+ 	height: 200px;
+ }
+ #person_info,
+ #order_info,
+ #confirm_pay {
+ 	width: 640px;
+ 	margin: 10px auto;
+ }
+ #good_adress {
+ 	width: 640px;
+ 	font-family: "微软雅黑";
+ }
+ #good_adress h3,
+ #order_info h3,
+ #person_info h3 {
+ 	font-family: "微软雅黑";
+ 	font-size: 30px;
+ 	margin-top: 54px;
+ 	margin-bottom: 78px;
+ 	margin-left: 26px;
+ 	color: #262525;
+ }
+ #good_adress span {
+ 	display: inline-block;
+ 	margin-top: 20px;
+ }	
+ /*发票*/
+.orderbill {
+	font-size: 28px;
+	color: #A5A5A5;
+	margin-top: 16px;
+	padding-left: 30px;
+}
+#mb10 {
+	margin: 15px 0 0 15px;
+	display: none;
+}
+.mb10 {
+	margin: 10px;
+}
+.mb10 .txt {
+	width: 478px;
+ 	margin-left: 10px;
+ 	font-size: 28px;
+ 	padding: 6px;
+}
+#needbill {}
+#all_price{
+	text-align: end;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	margin-right: 20px;
+}
+#all_price_tag{
+	color:#f4597a ;
+	font-size: 24px;
+}
+#all_price_num{
+	color:#f4597a ;
+	font-size: 36px;
+}		
+.js_cloth {
+	width: 640px;
+	margin: 20px auto;
+}
+.js_cloth_name {
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 36px;
+	color: #3a3a3a;
+	margin-left: 30px;
+}
+.js_cloth_name_tag {
+	cursor: pointer;
+	float: right;
+	display: inline-block;
+	border: solid 1px #818181;
+	width: 48px;
+	height: 48px;
+	font-size: 48px;
+	border-radius: 24px;
+	text-align: center;
+	line-height: 50px;
+	vertical-align: middle;
+	margin-right: 30px;
+}
+.js_cloth_name_tag:hover{
+	color: #3ECCC4;
+}
+
+/*����ͼ*/
+.js_cloth_content {
+	/*width: 180px;*/
+	width: 144px;
+	height: 180px;
+	border: solid 1px #d5d5d5;
+	box-shadow: 0px 0px 4px #f9f9f9;
+	float: left;
+	margin-left: 10px;
+	position: relative;
+}
+.design_cloth{
+	width: 100%;
+	height: auto;
+	z-index: 10;
+	position: absolute;
+}
+.design_img{
+	width:53px;
+	height: 74px;
+	z-index: 100;
+	position: absolute;
+	top:53px;
+	left: 46px;
+}
+
+hr {
+	width: 640px;
+}
+
+.middle_line {
+	width: 730px;
+	margin: 10px auto;
+	margin-bottom: 30px;
+}
+.js_designer_info {
+	float: left;
+	margin-left: 30px;
+	font-family: "微软雅黑";
+	width: 500px;
+}
+.js_designer_info h2 {
+	font-size: 28px;
+	color: #3a3a3a;
+}
+.js_designer_info h3 {
+	margin-top: 10px;
+	font-size: 24px;
+	color: #3a3a3a;
+}
+.js_designer_info ul li {
+	float: left;
+	color: #a6a6a6;
+	font-size: 24px;
+	margin-right: 20px;
+}
+.js_designer_info p {
+	color: #a6a6a6;
+	font-size: 24px;
+}
+.js_pirce {
+	color: #f35a78;
+	float: right;
+	font-size: 36px;
+}
+/*支付方式*/
+#pay_way{
+	width: 640px;
+	margin:0px auto;
+}
+#pay_way h2{
+	font-family: "微软雅黑";
+	font-size: 26px;
+	padding-left: 42px;
+	color: #262525;
+}
+#pay_way li{
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-left: 44px;
+	margin-right: -12px;
+}
+#pay_way img{
+	width: 100%;
+	height: auto;
+}
+#shop_right_now {
+	display: block;
+	height: 44px;
+	width: 282px;
+	margin: 170px auto;
+	color: white;
+	background: #00AA55;
+	border-radius: 5px;
+	padding-top: 15px;
+	font-family: "微软雅黑";
+	font-size: 30px;
+	text-align: center;
+	/*line-height: 120px;*/
+	vertical-align: middle;
+}
+

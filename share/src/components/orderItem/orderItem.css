@@ -1,0 +1,76 @@
+@charset 'utf-8';
+
+.order-info-wrap {
+	position: relative;
+	width: 100%;
+	height: 167px;
+	border-bottom: solid 1px #000; /*no*/
+	background-color: #fff;
+}
+
+.order-img {
+	position: absolute;
+	width: 166px;
+	height: 166px;
+	left: 50px;
+	overflow: hidden;
+}
+
+.order-item-work-display {
+	position: absolute;
+	top: -236px;
+	left: -236px;/**-640 * (1 - 0.26) * 0.5**/
+	transform: scale(0.26, 0.26); /**167 / 640**/
+}
+.order-item-work-display .work-wrap {
+	width: 640px;
+	height: 640px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.order-item-work-display .work {
+	/**border-radius: 100%;**/
+	/**border: 2px solid #000;**//*no*/
+}
+
+.order-detail-wrap {
+	position: absolute;
+	height: 147px;
+	left: 230px;
+	right: 10px;
+	padding-top: 20px;
+	line-height: 150%;
+}
+
+.title-wrap {
+	display: inline-block;
+	width: 100%;
+	height: 60px;
+	white-space: normal
+　　word-break: break-all; /*支持IE，chrome，FF不支持*/
+　　word-wrap: break-word;/*支持IE，chrome，FF*/
+}
+
+.color-size-wrap {
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+
+.price-wrap {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	color: #ff6600;
+	float: left;
+}
+
+.num-wrap {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-right: 20px;
+}

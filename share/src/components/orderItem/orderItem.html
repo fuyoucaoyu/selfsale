@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="./orderItem.css?__inline">
+<div class="order-info-wrap">
+    <div class="order-img">
+        <work-display :display-imgs="orderInfo.workDisplayImgs" :front="true" spec-class="order-item-work-display"></work-display>
+    </div>
+    <div class="order-detail-wrap">
+        <span class="title-wrap">{{orderInfo.title}}</span>
+        <span class="color-size-wrap">颜色分类：{{orderInfo.color}} 尺码：{{orderInfo.size}}</span>
+        <span class="price-wrap">￥{{orderInfo.price}}</span>
+        <span class="num-wrap">{{orderInfo.num}}</span>
+    </div>
+</div>

@@ -16,7 +16,15 @@
     </head>
     <body>
         <div id="app">
-            <h1>hello 我的订单</h1>
+            <div class="nav-bar">
+                <span v-for="item in states" class="nav-item" v-bind:class="{'selected-nav-item': item.state === selectState}" v-tap="clickNavItem(item)">{{item.name}}</span>
+            </div>
+            <div v-for="items in orderItems" class="orders-wrap">
+                <order-item v-for="item in items" :order-info="item"></order-item>
+                <div class="order-btn-wrap">
+                    <span class="order-btn">交易完成</span>
+                </div>
+            </div>
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>

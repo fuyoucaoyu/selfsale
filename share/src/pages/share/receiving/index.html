@@ -16,7 +16,40 @@
     </head>
     <body>
         <div id="app">
-        
+            <form name="theForm" method="post" action="/box/order1.shtml">
+                <input id="pdid" type="hidden" name="orderBeans.pdId" value="" />
+                <div id="person_info">
+                  <h3>收货地址</h3>
+                  <input id="to_person_name" name="orderUserInfo.name" placeholder="收货人：" value=""/><br>
+                  <input id="to_person_phone" name="orderUserInfo.phone" placeholder="手机号：" type="tel" value=""/><br>
+                  <div id="good_adress">
+                    <div class="info" style="">
+                      <div>
+                        <select id="s_province" name="orderUserInfo.s_province"></select>  
+                        <select id="s_city" name="orderUserInfo.s_city" ></select>  
+                        <select id="s_county" name="orderUserInfo.s_county"></select>
+                      </div>
+                    <div id="show"></div>
+                    <textarea id="detial_adress_info" name="orderUserInfo.adress" placeholder="详细地址：" value=""></textarea>
+                    <input id="good_beizhu" name="orderUserInfo.beizhu" placeholder="备注信息：" value="">
+                  </div>
+                </div>
+                
+                <div id="pay_way">
+                  <h2>支付方式:</h2>
+                  <ul>
+                    <input type="hidden" id="pay_type" name="orderUserInfo.pay_type" value="0"/>
+                    <li><img class="pay_way" src="../images/payway0.png"></li>
+                    <li><img class="pay_way" src="../images/payway1.png"></li>
+                    <div class="clear"></div>
+                  </ul>
+                <hr>
+
+                </div>
+                <div id="confirm_pay">
+                  <a id="shop_right_now" href="#" onclick="orderZf();">确定</a> 
+                </div>
+            </form>
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>
