@@ -19,20 +19,23 @@
             <div class="size-instr-wrap" v-if="isSize">
                 <div class="nav-bar">
                     <div class="left-item-wrap" v-bind:style="{backgroundImage: leftUrl}" v-tap="clickLeftItem">
-                        <span>男装</span>
                     </div>
                     <div class="mid-item-wrap" v-bind:style="{backgroundImage: midUrl}" v-tap="clickMidItem">
-                        <span>女装</span>
                     </div>
                     <div class="right-item-wrap" v-bind:style="{backgroundImage: rightUrl}" v-tap="clickRightItem">
-                        <span>童装</span>
                     </div>
                 </div>
-                <img src="./test.png">
             </div>
-            <div class="mat-instr-wrap" v-else>
+
+            <div class="mat-instr-wrap">
+                <img class="work-bg" src="../../../static/images/materialsize/size_male.png">
             </div>
+
             <div class="bottom-nav">
+                <div class="left-tab-wrap" v-bind:style="{backgroundImage: leftTabUrl}" v-tap="clickLeftTabItem">
+                </div>
+                <div class="right-tab-wrap" v-bind:style="{backgroundImage: rightTabUrl}" v-tap="clickRightTabItem">
+                </div>
             </div>
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
