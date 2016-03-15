@@ -11,12 +11,30 @@
 
         <script src="../../../static/lib/flexible.debug.js"></script>
         <script src="../../../static/lib/flexible_css.debug.js"></script>
-        <title>收货地址信息</title>
+        <title>摇一摇分享</title>
         <link rel="stylesheet" type="text/css" href="./index.css?__inline">
     </head>
     <body>
         <div id="app">
-        
+            <div class="display-wrap">
+                <img class="work-bg" src="../../../static/images/shake/work_bg.jpg">
+                <div class="detail-wrap" v-html="detail"></div>
+
+                <work-display :display-imgs="workDisplayImgs" :front="front" :touch-work-callback="onTouchWorkHandler"></work-display>
+
+
+                <div class="front-back-wrap" v-tap="onTouchWorkHandler">
+                    <img class="front" src="../../../static/images/front.png" v-if="front">
+                    <img class="back" src="../../../static/images/back.png" v-else>
+                </div>
+            </div>
+            <div class="footer-wrap">
+                <img class="app-info" src="../../../static/images/shake/footer.jpg">
+                <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
+            </div>
+
+            <buy-popup :options="goodsOptions" :display-imgs="workDisplayImgs" v-if="buying"></buy-popup>
+
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>

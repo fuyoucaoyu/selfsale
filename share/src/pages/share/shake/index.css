@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+@import url('../../../components/workDisplay/workDisplay.css?__inline');
+
+#app {
+	width: 640px;
+	margin: auto;
+}
+
+.display-wrap {
+	width: 100%;
+	height: 1364px;
+	position: relative;
+}
+
+.work-bg {
+	width: 640px;
+	height: 1364px;
+}
+
+.work-display-wrap {
+	position: absolute;
+	width: 640px;
+	height: 657px;
+	top: 90px;
+	text-align: center;
+	z-index: 1;
+}
+
+.user-avatar {
+	position: absolute;
+	width: 140px;
+	height: 140px;
+	top: 745px;
+	left: 175px;
+	z-index: 30;
+}
+
+.front-back-wrap {
+	position: absolute;
+	width: 62px;
+	height: 62px;
+	top: 634px;
+	right: 74px;
+	z-index: 20;
+}
+
+.front,
+.back {
+	width: 62px;
+	height: 62px;
+}
+
+.app-intro {
+	width: 640px;
+	height: 1284px;
+}
+
+.footer-wrap {
+	text-align: center;
+	position: relative;
+}
+
+.app-download-bottom {
+    position: absolute;
+	width: 183px;
+	height: 68px;
+    top: 1902px;
+    left: 227px;
+    z-index: 10;
+}
+
+.app-info {
+	width: 640px;
+	height: 2168px;
+}

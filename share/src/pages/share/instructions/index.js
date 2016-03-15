@@ -18,6 +18,7 @@ var app = new Vue({
     	isSize: true,
         selectIndex: 1,
         selectTabIndex: 1,
+        showUrl: 'url(../../../static/images/materialsize/size_male.png)',
         leftUrl: generateUrl(1, 1),
         midUrl: generateUrl(2, 1),
         rightUrl: generateUrl(3, 1),
@@ -45,14 +46,17 @@ var app = new Vue({
     	clickLeftItem: function (event) {
     		this.$data.selectIndex = 1;
     		this.updateUrl();
+            this.$data.showUrl = 'url(../../../static/images/materialsize/size_male.png)';
     	},
     	clickMidItem: function (event) {
     		this.$data.selectIndex = 2;
     		this.updateUrl();
+            this.$data.showUrl ='url(../../../static/images/materialsize/size_female.png)';
     	},
     	clickRightItem: function (event) {
     		this.$data.selectIndex = 3;
     		this.updateUrl();
+            this.$data.showUrl = 'url(../../../static/images/materialsize/size_child.png)';
     	}
     },
     components: {
