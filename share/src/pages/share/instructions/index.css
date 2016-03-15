@@ -45,39 +45,62 @@
 	background-size: cover; 
 }
 
-.mat-instr-wrap{
-	width: 100%;
-	height: 900px;
-	text-align:center;
+.instr-detail {
+	text-align: center;
 }
-.mat-instr{
-	width: 100%;
-	height: 100%;
-	float:left;
-	text-align:center;
+
+.maleInstr {
+	width: 640px;
+	height: 2355px;
+}
+
+.femaleInstr {
+	width: 640px;
+	height: 2350px;
+}
+
+.childInstr {
+	width: 640px;
+	height: 484px;
+}
+
+.material-instr-wrap {
+	width: 640px;
+	height: 4875px;
+	background-image: url('../../../static/images/materialsize/material_bg.jpg');
+	background-position: center;
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-size: cover; 
 }
 
 .bottom-nav{
-	position: absolute;
-    top: 965px;
-    left: 227px;
-    z-index: 10;
+	position: fixed;
 	width: 100%;
-	height: 98px;
+	height: 91px;
+	padding-top: 7px;
+	bottom: 0;
+    z-index: 10;
+    background-color: #fff;
+    border-top: solid 1px #000;
 }
+
 .left-tab-wrap {
-	width: 77px;
-	height: 98px;
-	float:left;
+	position: relative;
+	width: 66px;
+	height: 84px;
+	left: 134px;
+	display: inline-block;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover; 
 }
 .right-tab-wrap {
-	width: 77px;
-	height: 98px;
-	float:left;
+	position: relative;
+	width: 66px;
+	height: 84px;
+	left: 340px;
+	display: inline-block;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover; 
 }
