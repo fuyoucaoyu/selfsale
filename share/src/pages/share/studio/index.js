@@ -79,19 +79,19 @@ function router(e) {
         }
     });
 
-    // var params1 = {
-    //     userId: params.userId,
-    //     function: config.getStudioProduceListFn
-    // };
-    // util.jsonp(config.getProduceUrl, params1, function (error, data) {
-    //     if ('error' === error || !data || !data.data || 0 != data.success) {
-    //         alert('show error page');
-    //         return;
-    //     }
+    var params1 = {
+        userId: params.userId,
+        function: config.getStudioProduceListFn
+    };
+    util.jsonp(config.getProduceUrl, params1, function (error, data) {
+        if ('error' === error || !data || !data.data || 0 != data.success) {
+            alert('show error page');
+            return;
+        }
 
-    //     var result = data.data;
-    //     app.$data.workItems = result;
-    // });
+        var result = data.data;
+        app.$data.workItems = result;
+    });
 }
 
 router();
