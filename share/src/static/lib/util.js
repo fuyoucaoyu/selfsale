@@ -9,6 +9,7 @@ var config = {
     getProduceFn: 'getProduceById',
     getStudioFn: 'personCenter',
     getStudioProduceListFn: 'getDesinerProduceByState',
+    getOrderByBuyerId: 'getOrderByBuyerIdState',
     getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
 }
 var util = {

@@ -37,6 +37,20 @@ var clothesdic = {
     }
 };
 
+var clothesChinesedic = {
+	ccolor: {
+        'white':'白色',
+        'gray':'灰色',
+        'black':'黑色',
+        'yellow':'黄色',
+        'blue':'蓝色',
+        'cyan':'天兰',
+        'green':'绿色',
+        'pink':'粉色',
+        'red':'红色'
+    },
+}
+
 var getClothes = function (moldId, color, gender, direction) {
     var url = '../../../static/images/clothes',
     url = url + '/' + clothesdic.cstyle[moldId];
@@ -54,68 +68,12 @@ var app = new Vue({
     			 {state: 1, name: '代发货'},
     			 {state: 4, name: '代收货'},
     			 {state: 5, name: '交易完成'}],
-    	orderItems: [
-	    	[
-		    	{
-		    		title: '自做自送！人气超T，三色入！夏日专属，自己的品牌！',
-		    		price: '179.00',
-		    		color: '白色',
-		    		size: 'XL',
-		    		num: '1',
-			        workDisplayImgs: {
-			            frontUrl: '',
-			            backUrl: '',
-			            frontbgUrl: getClothes(6, 'gray', 1, 'front'),
-			            backbgUrl: getClothes(6, 'gray', 1, 'back')
-			        }
-		    	},
-		    	{
-		    		title: '2:自做自送！人气超T，三色入！夏日专属，自己的品牌！',
-		    		price: '179.00',
-		    		color: '白色',
-		    		size: 'XL',
-		    		num: '1',
-			        workDisplayImgs: {
-			            frontUrl: '',
-			            backUrl: '',
-			            frontbgUrl: getClothes(6, 'gray', 1, 'front'),
-			            backbgUrl: getClothes(6, 'gray', 1, 'back')
-			        }
-		    	}
-	    	],
-	    	[
-		    	{
-		    		title: '3:自做自送！人气超T，三色入！夏日专属，自己的品牌！',
-		    		price: '179.00',
-		    		color: '白色',
-		    		size: 'XL',
-		    		num: '1',
-			        workDisplayImgs: {
-			            frontUrl: '',
-			            backUrl: '',
-			            frontbgUrl: getClothes(6, 'gray', 1, 'front'),
-			            backbgUrl: getClothes(6, 'gray', 1, 'back')
-			        }
-		    	},
-		    	{
-		    		title: '4:自做自送！人气超T，三色入！夏日专属，自己的品牌！',
-		    		price: '179.00',
-		    		color: '白色',
-		    		size: 'XL',
-		    		num: '1',
-			        workDisplayImgs: {
-			            frontUrl: '',
-			            backUrl: '',
-			            frontbgUrl: getClothes(6, 'gray', 1, 'front'),
-			            backbgUrl: getClothes(6, 'gray', 1, 'back')
-			        }
-		    	}
-	    	]
-    	]
+    	orderItems: []
     },
     methods: {
     	clickNavItem: function (item) {
     		this.$data.selectState = item.state;
+    		router();
     	}
     },
     components: {
@@ -143,25 +101,43 @@ function router(e) {
         e.preventDefault();
     }
 
-    var params = getUrlParams(window.location.href.split('?')[1]);
-    params.function = config.getProduceFn;
+    var params = {
+        userId: '906',
+        state: app.$data.selectState,//0代付款 1已付款 4已快递 5已完成
+        function: config.getOrderByBuyerId
+    };
     util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
             alert('show error page');
+            return;
         }
 
         var result = data.data;
-        app.$data.nick = result.nick;
-        app.$data.title = result.title;
-        app.$data.detail = result.content;
-        if (result.headurl && '' !== result.headurl) {
-          app.$data.avatarUrl = config.getImgUrl + result.headurl;
-        }
-
-        app.$data.workDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
-        app.$data.workDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
-        app.$data.workDisplayImgs.frontbgUrl = getClothes(result.moldId, result.color, result.gender, 'front'),
-        app.$data.workDisplayImgs.backbgUrl = getClothes(result.moldId, result.color, result.gender, 'back')
+        var dataResult = new Array();
+        for (i=0;i<result.length;i++)
+		{
+			dataResult[i] = new Array();
+		    var tempOrders = result[i];
+			for (j=0;j<tempOrders.c.length;j++)
+			{
+				var tempOrder = tempOrders.c[j];
+				var resultOrder = {
+					title: '自做自售！人气潮T，三色入！夏日必备，专属自己的品牌!',
+		    		price: tempOrder.price,
+		    		color: clothesChinesedic.ccolor[tempOrder.color],
+		    		size: tempOrder.size,
+		    		num: 'x 1',
+		    		workDisplayImgs: {
+			            frontUrl: tempOrder.pictrueurl,
+			            backUrl: tempOrder.pictrueurlback,
+			            frontbgUrl: getClothes(tempOrder.moldId, tempOrder.color, tempOrder.gender, 'front'),
+			            backbgUrl: getClothes(tempOrder.moldId, tempOrder.color, tempOrder.gender, 'back')
+			        }
+				}
+				dataResult[i][j] = resultOrder;
+			}
+		}
+        app.$data.orderItems = dataResult;
     });
 }
 
