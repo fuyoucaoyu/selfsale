@@ -49,7 +49,9 @@ module.exports = {
             this.$data.selectNum += 1;
         },
         clickSubHander: function (event) {
-            this.$data.selectNum -= 1;
+            if (this.$data.selectNum > 1){
+                this.$data.selectNum -= 1;
+            }
         }
     },
     components: {
