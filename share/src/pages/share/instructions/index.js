@@ -10,6 +10,9 @@ var generateUrl = function (pos, index) {
 	return 'url(../../../static/images/materialsize/' + pos + '/tab_btn_' + index + '.jpg)';
 }
 var generateTabUrl = function (pos, index) {
+    if (index === 1){
+        index = 3;
+    }
     return 'url(../../../static/images/materialsize/' + pos + '/tab_ms_' + index + '.png)';
 }
 
