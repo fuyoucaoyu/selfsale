@@ -2,7 +2,7 @@
 
 .buy-popup {
 	width: 100%;
-	height: 714px;
+	height: 798px;
 	position: fixed;
 	bottom: 0;
 	z-index: 30;
@@ -11,7 +11,7 @@
 
 .scaled-work-display {
 	position: absolute;
-	top: -47%;
+	top: -42%;
 	left: -169px;/**-613 * (1 - 0.35) * 0.5 + 30**/
 	transform: scale(0.35, 0.35);
 }
@@ -64,6 +64,7 @@
 }
 
 .sex-wrap,
+.model-wrap,
 .type-wrap {
 	width: 100%;
 	height: 84px;
@@ -71,6 +72,7 @@
 }
 
 .sex-label,
+.model-label,
 .type-label {
 	width: 100px;
 	line-height: 84px;

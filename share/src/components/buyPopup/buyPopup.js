@@ -9,6 +9,7 @@ module.exports = {
     props: ['options', 'displayImgs', 'touchCloseCallback'],
     data: function () {
         return {
+            selectModel: 3,
             selectSex: 0,
             selectType: 1,
             selectColor: 'white',
@@ -32,6 +33,9 @@ module.exports = {
         clickSexItem: function (item) {
             this.$data.selectSex = item.key;
         },
+        clickModelItem: function (item) {
+            this.$data.selectModel = item.key;
+        },
         clickTypeItem: function (item) {
             this.$data.selectType = item.key;
         },
@@ -45,7 +49,9 @@ module.exports = {
             this.$data.selectNum += 1;
         },
         clickSubHander: function (event) {
-            this.$data.selectNum -= 1;
+            if (this.$data.selectNum > 1){
+                this.$data.selectNum -= 1;
+            }
         }
     },
     components: {

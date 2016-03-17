@@ -49,6 +49,12 @@ var getClothes = function (moldId, color, gender, direction) {
 
 var clothesData = {
   '3_1':{ //T恤男
+      model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -72,6 +78,12 @@ var clothesData = {
             ]
   },
   '3_0':{ //T恤女
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -96,6 +108,12 @@ var clothesData = {
             ]
   },
   '4_1':{ //卫衣男
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -115,6 +133,12 @@ var clothesData = {
             ]
   },
   '4_0':{ //卫衣女
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -135,6 +159,12 @@ var clothesData = {
             ]
   },
   '6_1':{ //帽衫男
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -151,6 +181,12 @@ var clothesData = {
             ]
   },
   '6_0':{ //帽衫女
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -166,6 +202,12 @@ var clothesData = {
             ]
   },
   '7_1':{ //开衫男
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -181,6 +223,12 @@ var clothesData = {
             ]
   },
   '7_0':{ //开衫女
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -196,6 +244,12 @@ var clothesData = {
             ]
   },
   '8_1':{ //童装男
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -218,6 +272,12 @@ var clothesData = {
             ]
   },
   '8_0':{ //童装女
+    model: [{key: 3, name: 't恤'},
+              {key: 4, name: '卫衣'},
+              {key: 6, name: '帽衫'},
+              {key: 7, name: '开衫'},
+              {key: 8, name: '儿童款'}
+             ],
       sex: [  {key: 1, name: '男款'}, 
               {key: 0, name: '女款'}
            ],
@@ -321,6 +381,8 @@ function router(e) {
         }
         app.$data.workDisplayImgs.frontbgUrl = getClothes(result.moldId, result.color, result.gender, 'front'),
         app.$data.workDisplayImgs.backbgUrl = getClothes(result.moldId, result.color, result.gender, 'back')
+        var infoId = result.moldId + '_' + result.gender;
+        app.$data.goodsOptions = clothesData[infoId];
     });
 }
 

@@ -10,6 +10,14 @@
 				<img src="../../static/images/tip.png">
 			</div>
 		</div>
+		<div class="model-wrap">
+			<div class="model-label">款式</div>
+			<div class="content-wrap">
+				<span v-for="modelItem in options.model"
+					v-bind:class="{'select-txt-btn': selectModel === modelItem.key}"
+					v-tap="clickModelItem(modelItem)">{{modelItem.name}}</span>
+			</div>
+		</div>
 		<div class="sex-wrap">
 			<div class="sex-label">性别</div>
 			<div class="content-wrap">
