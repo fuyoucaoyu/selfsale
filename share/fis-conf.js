@@ -95,6 +95,11 @@ fis.match("static/lib/(directives.js)", {
     release: APP_NAME + '/static/lib/$1'
 });
 
+fis.match("static/lib/(address.js)", {
+    isMod: true,
+    release: APP_NAME + '/static/lib/$1'
+});
+
 fis.match("static/utils/(*.js)", {
     isMod: false,
     release: APP_NAME + '/static/utils/$1'

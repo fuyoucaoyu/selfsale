@@ -17,43 +17,36 @@
     <body>
         <div id="app">
             <form name="theForm" method="post" action="/box/order1.shtml">
-                <input id="pdid" type="hidden" name="orderBeans.pdId" value="" />
-                <div id="person_info">
-                  <h3>收货地址</h3>
-                  <input id="to_person_name" name="orderUserInfo.name" placeholder="收货人：" value=""/><br>
-                  <input id="to_person_phone" name="orderUserInfo.phone" placeholder="手机号：" type="tel" value=""/><br>
-                  <div id="good_adress">
-                    <div class="info" style="">
-                      <div>
-                        <select id="s_province" name="orderUserInfo.s_province"></select>  
-                        <select id="s_city" name="orderUserInfo.s_city" ></select>  
-                        <select id="s_county" name="orderUserInfo.s_county"></select>
-                      </div>
-                    <div id="show"></div>
-                    <textarea id="detial_adress_info" name="orderUserInfo.adress" placeholder="详细地址：" value=""></textarea>
-                    <input id="good_beizhu" name="orderUserInfo.beizhu" placeholder="备注信息：" value="">
-                  </div>
-                </div>
-                
-                <div id="pay_way">
-                  <h2>支付方式:</h2>
-                  <ul>
-                    <input type="hidden" id="pay_type" name="orderUserInfo.pay_type" value="0"/>
-                    <li><img class="pay_way" src="../images/payway0.png"></li>
-                    <li><img class="pay_way" src="../images/payway1.png"></li>
-                    <div class="clear"></div>
-                  </ul>
-                <hr>
+                <input v-for="item in orderInfo" v-bind:id="item.key" v-bind:name="item.key" v-bind:value="item.value" type="hidden" />
 
+                <div class="person-info-wrap">
+                    <h3>收货地址</h3>
+                    <input id="username" name="username" placeholder="收货人：" v-model:value="orderInfo.username"/>
+                    <input id="phone" name="phone" placeholder="手机号：" type="tel" v-model:value="orderInfo.phone"/>
+                    <input id="address" name="address" placeholder="地址：省市区" v-bind:value="orderInfo.address" type="hidden" />
+                    <multi-select :container-id="multiSelectId" :syn-callback="updateAddress"></multi-select>
+                    <input id="detail_address" name="detail_address" placeholder="详细地址：" v-model:value="orderInfo.detail_address" />
+                    <input id="remarks" name="remarks" placeholder="备注信息：" v-model:value="orderInfo.remarks" />
+                
+                    <div class="pay-way-wrap">
+                        <h4>支付方式:</h4>
+                        <input id="pay_type" name="pay_type" v-model:value="payType" type="hidden"/>
+                        <div class="pay-btn-wrap">
+                            <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-tap="selectPayType(0)"></span>
+                            <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType}" v-tap="selectPayType(1)"></span>
+                        </div>
+                    </div>
                 </div>
-                <div id="confirm_pay">
-                  <a id="shop_right_now" href="#" onclick="orderZf();">确定</a> 
+
+                <div class="confirm-btn-wrap">
+                  <span class="confirm-btn" v-tap="validateAndPost">确定</span> 
                 </div>
             </form>
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>
         <script type="text/javascript" src="../../../static/lib/util.js"></script>
+        <script type="text/javascript" src="../../../static/lib/bonzo.js"></script>
         <script type="text/javascript" src="../../../static/lib/mod.js"></script>
         <script type="text/javascript">
             require('./index.js');
