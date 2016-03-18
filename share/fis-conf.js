@@ -85,7 +85,7 @@ fis.match("(components/**)", {
     release: APP_NAME + '/$1'
 });
 
-fis.match("static/lib/(*.js)", {
+fis.match("static/lib/(**)", {
     isMod: false,
     release: APP_NAME + '/static/lib/$1'
 });

@@ -35,6 +35,9 @@ var app = new Vue({
         },
         onTouchWorkHandler: function (event) {
             this.$data.front = !this.$data.front;
+        },
+        closeBuyPopup: function (event) {
+            this.$data.buying = false;
         }
     },
     components: {
