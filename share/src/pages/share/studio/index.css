@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url('../../../components/workDisplay/workDisplay.css?__inline');
+
 #app {
 	width: 640px;
 	margin: auto;
@@ -77,7 +79,7 @@
 
 .fans {
 	position: absolute;
-	width: 200px;
+	width: 180px;
 	height: 40px;/*px*/
 	line-height: 40px;/*px*/
 	top: 380px;
@@ -90,12 +92,23 @@
 .app-intro {
 	width: 640px;
 	height: 1256px;
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+	background-image: url(../../../static/images/studio/app_intro.jpg);
 }
 
 .footer-wrap {
 	text-align: center;
 	position: relative;
-	top: -5px;
+	/**top: -5px;**/
+	top: -1px;
+	width: 640px;
+	height: 1161px;
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+	background-image: url(../../../static/images/studio/footer.jpg);
 }
 
 .app-download-bottom {
@@ -107,7 +120,7 @@
     z-index: 10;
 }
 
-.app-info {
+/**.app-info {
 	width: 640px;
 	height: 1161px;
-}
+}**/

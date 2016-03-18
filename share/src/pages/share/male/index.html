@@ -19,7 +19,8 @@
             <div class="display-wrap">
                 <img class="work-bg" src="../../../static/images/male/work_bg.jpg">
                 <img class="user-avatar" v-bind:src="avatarUrl">
-                <div class="title-wrap">{{title}}</div>
+                <!-- <div class="title-wrap">{{title}}</div> -->
+                <div class="title-wrap" v-html="title"></div>
                 <div class="name-wrap">{{nick}}</div>
                 <div class="detail-wrap" v-html="detail"></div>
                 <!-- <div class="work-wrap" v-tap="onTouchWorkHandler">

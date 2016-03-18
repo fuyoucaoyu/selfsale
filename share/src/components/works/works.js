@@ -2,6 +2,8 @@
  * @file
  */
 
+ var WorkdDisplay = require('../workDisplay/workDisplay.js');
+
 module.exports = {
     template: __inline('./works.html'),
     props: ['items'],
@@ -13,6 +15,16 @@ module.exports = {
     		speed: 400
     	}
     },
+    // watch: {
+    //     'items': function () {
+    //         var mySwiper = new Swiper('.swiper-container', {
+    //             pagination: '.pagination',
+    //             paginationClickable: true,
+    //             slidesPerView: 2,
+    //             loop: true
+    //         })
+    //     }
+    // },
     methods: {
     	countDisplayStatus: function () {
     		var width = $('#displays').css('width');
@@ -48,12 +60,22 @@ module.exports = {
     		this.startswipeAnimation(1);
     	}
     },
-    ready: function (argument) {
-		var mySwiper = new Swiper('.swiper-container', {
-			pagination: '.pagination',
-			paginationClickable: true,
-			slidesPerView: 2,
-			loop: true
-		})
+    components: {
+        'work-display': WorkdDisplay
+    },
+    ready: function () {
+        var intervalId = setInterval(function (event) {
+            if (document.querySelectorAll('.swiper-slide').length > 0) {
+                clearInterval(intervalId);
+                var mySwiper = new Swiper('.swiper-container', {
+                    pagination: '.pagination',
+                    paginationClickable: true,
+                    slidesPerView: 2,
+                    loop: true
+                })
+            }  else {
+                console.log('------------')
+            }
+        }, 500);
     }
 };

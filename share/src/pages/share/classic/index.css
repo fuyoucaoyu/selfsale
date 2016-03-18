@@ -48,7 +48,7 @@
 .work-display-wrap {
 	position: absolute;
 	width: 640px;
-	height: 657px;
+	height: 640px;
 	top: 90px;
 	text-align: center;
 	z-index: 1;
@@ -146,10 +146,10 @@
     z-index: 10;
 }
 
-.app-info {
+/**.app-info {
 	width: 640px;
 	height: 1109px;
-}
+}**/
 
 .buy-btn {
 	position: fixed;

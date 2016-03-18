@@ -45,6 +45,22 @@
 	height: 251px;
 }
 
+.scaled-work-display {
+	position: relative;
+	top: -194px;/**(-640 + 251) * 0.5**/
+	left: -188px;/**(-640 + 263) * 0.5**/
+	transform: scale(0.41, 0.39);
+	-ms-transform: scale(0.41, 0.39);
+	-moz-transform: scale(0.41, 0.39);
+	-webkit-transform: scale(0.41, 0.39);
+	-o-transform: scale(0.41, 0.39);
+}
+.scaled-work-display .work-wrap {
+	width: 640px;
+	height: 640px;
+	overflow: hidden;
+}
+
 .item-title {
 	position: absolute;
 	bottom: 0px;

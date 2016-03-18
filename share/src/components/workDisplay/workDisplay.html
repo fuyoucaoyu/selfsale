@@ -1,13 +1,14 @@
 <!-- <link rel="stylesheet" type="text/css" href="./workDisplay.css?__inline"> -->
 <div class="work-display-wrap" v-bind:class="specClass" v-tap="onTouchWorkHandler">
-    <div class="work-wrap">
+    <!-- <div class="work-wrap">
         <img class="work" v-bind:src="displayImgs.frontbgUrl" v-if="front">
         <img class="work" v-bind:src="displayImgs.backbgUrl" v-else>
     </div>
     <img class="work-content" v-bind:src="displayImgs.frontUrl" v-if="front">
-    <img class="work-content" v-bind:src="displayImgs.backUrl" v-else>
-    <!-- <div class="work-content-wrap">
-        <img class="work-content" v-bind:src="displayImgs.frontUrl" v-if="front">
-        <img class="work-content" v-bind:src="displayImgs.backUrl" v-else>
-    </div> -->
+    <img class="work-content" v-bind:src="displayImgs.backUrl" v-else> -->
+
+    <div class="work-wrap" v-bind:style="{backgroundImage: 'url(' + (front ? displayImgs.frontbgUrl : displayImgs.backbgUrl) + ')'}">
+    </div>
+    <div class="work-content" v-bind:style="{backgroundImage: 'url(' + (front ? displayImgs.frontUrl : displayImgs.backUrl) + ')'}">
+    </div>
 </div>

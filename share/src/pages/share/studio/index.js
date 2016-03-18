@@ -15,14 +15,10 @@ var app = new Vue({
         title: '',
         male: false,
         avatarUrl: '../../../static/images/test_avatar.png',
-        follow: 0,
-        fans: 0,
+        follow: '',
+        fans: '',
         signature: '',
-        workItems: [{title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
-                    {title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
-                    {title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
-                    {title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'},
-                    {title: 'Fan的设计', herf: '../classic/index.html', imgUrl: '../../../static/images/test_back.png'}]
+        workItems: []
     },
     methods: {
         onTouchDownloadHandler: function (event) {
@@ -89,8 +85,29 @@ function router(e) {
             return;
         }
 
+        var sex = app.$data.male ? 'male' : 'female';
+        var workHref = '../' + sex + '/index.html?userId=' + params.userId + '&produceId=';
         var result = data.data;
-        app.$data.workItems = result;
+        var len = result.length;
+        var item;
+        var workItems = [];
+        var workItem;
+        for (var i = 0; i < len; i++) {
+            item = result[i];
+            workItem = {};
+            if (item.pictureUrl && '' !== item.pictureUrl.replace(/ /g, '')) {
+                workItem.frontUrl = config.getImgUrl + item.pictureUrl;
+            }
+            if (item.pictureUrlBack && '' !== item.pictureUrlBack.replace(/ /g, '')) {
+                workItem.backUrl = config.getImgUrl + item.pictureUrlBack;
+            }
+            workItem.frontbgUrl = util.getClothes(item.moldId, item.color, item.gender, 'front');
+            workItem.backbgUrl = util.getClothes(item.moldId, item.color, item.gender, 'back');
+            workItem.title = item.title;
+            workItem.href = workHref + item.id;
+            workItems.push(workItem);
+        }
+        app.$data.workItems = workItems;
     });
 }
 

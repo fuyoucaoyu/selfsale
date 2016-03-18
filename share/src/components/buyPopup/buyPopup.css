@@ -95,6 +95,8 @@
 	padding: 22px 22px;
 	right: 4px;
 	top: 0;
+	width: 37px;
+	height: 37px;
 }
 
 .price-label{
@@ -104,12 +106,25 @@
 	color: #c9210a;
 }
 
-.explanation-label{
+.explanation-label {
+	height: 24px;
+	line-height: 24px;
 	padding-left: 278px;
 	margin-top: 25px;
 	font-size: 18px;/*px*/
-	line-height: 18px;/*px*/
 	color: #cccccc;
+}
+
+.explanation-label img {
+	width: 24px;
+	height: 24px;
+}
+.explanation-label a {
+	height: 24px;
+	font-size: 20px;
+	line-height: 24px;
+	position: relative;
+    top: -5px;
 }
 
 .sex-wrap,
