@@ -159,3 +159,23 @@
 		z-index: 100;
 	}
 }*/
+
+
+
+/*.buy-popup-deacstive {
+	transform: translateY(798px);
+	-ms-transform: translateY(798px);
+	-moz-transform: translateY(798px);
+	-webkit-transform: translateY(798px);
+	-o-transform: translateY(798px);
+	transition: transform 0.3s;
+}
+
+.buy-popup-active {
+	transform: translateY(-798px);
+	-ms-transform: translateY(-798px);
+	-moz-transform: translateY(-798px);
+	-webkit-transform: translateY(-798px);
+	-o-transform: translateY(-798px);
+	transition: transform 0.3s;
+}*/

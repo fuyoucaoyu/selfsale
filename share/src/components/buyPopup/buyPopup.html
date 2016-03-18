@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="./buyPopup.css?__inline">
-<div id="buyPopupWrap" class="buy-popup" v-on:touchmove.stop="onScrollHandler">
+<div id="buyPopupWrap" class="buy-popup" transition="buy-popup-expand" v-on:touchmove.stop="onScrollHandler">
 	<work-display :display-imgs="displayImgs" :front="true" spec-class="scaled-work-display"></work-display>
 	<div class="select-wrap">
 		<div class="title-bar">
@@ -58,7 +58,7 @@
 				<img class="number-btn" src="../../static/images/select/plus.png" v-tap="clickPlusHander">
 			</div>
 		</div>
-		<div class="footer-wrap">
+		<div class="confirm-btn-wrap">
                 <img src="../../../static/images/confirm.png" v-tap="onTouchBuyHandler">
         </div>
 	</div>

@@ -9,6 +9,36 @@
 	background-color: #fff;
 }
 
+/* 必需 */
+.buy-popup-expand-transition {
+    transition: height 0.3s ease;
+    height: 798px;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.buy-popup-expand-enter, .buy-popup-expand-leave {
+    height: 0;
+}
+
+.buy-popup-deacstive {
+	transform: translateY(798px);
+	-ms-transform: translateY(798px);
+	-moz-transform: translateY(798px);
+	-webkit-transform: translateY(798px);
+	-o-transform: translateY(798px);
+	transition: transform 0.3s;
+}
+
+.buy-popup-active {
+	transform: translateY(-798px);
+	-ms-transform: translateY(-798px);
+	-moz-transform: translateY(-798px);
+	-webkit-transform: translateY(-798px);
+	-o-transform: translateY(-798px);
+	transition: transform 1s;
+}
+
 .scaled-work-display {
 	position: absolute;
 	top: -42%;
@@ -86,6 +116,7 @@
 .content-wrap {
 	text-align: center;
 	display: inline-block;
+	max-width: 539px;
 }
 
 .content-wrap span {
@@ -93,8 +124,8 @@
 	line-height: 44px;
 	border: solid 2px #acacac; /*no*/
 	display: inline-block;
-	padding: 0 20px;
-	margin-right: 20px;
+	padding: 0 15px;
+	margin-right: 15px;
 	border-radius: 4px;
 }
 
@@ -183,7 +214,7 @@
     top: 10px;
 }
 
-.footer-wrap {
+.confirm-btn-wrap {
 	text-align: center;
 	position: relative;
 	top: 15px;
