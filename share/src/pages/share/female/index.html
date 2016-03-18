@@ -47,7 +47,7 @@
                 <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
             </div>
 
-            <buy-popup :options="goodsOptions" :display-imgs="workDisplayImgs" :touch-close-callback="closeBuyPopup" v-if="buying"></buy-popup>
+            <buy-popup :options="goodsOptions" :default-options="defultSelectedOptions" :display-imgs="popupDisplayImgs" :touch-close-callback="closeBuyPopup" v-if="buying"></buy-popup>
             <img class="buy-btn" src="../../../static/images/classic/buy.png" v-else v-tap="onTouchBuyHandler">
 
         </div>

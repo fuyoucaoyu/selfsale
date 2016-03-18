@@ -6,14 +6,15 @@
 
 module.exports = {
     template: __inline('./buyPopup.html'),
-    props: ['options', 'displayImgs', 'touchCloseCallback'],
+    props: ['options', 'defaultOptions', 'displayImgs', 'touchCloseCallback'],
     data: function () {
         return {
-            selectModel: 3,
-            selectSex: 0,
-            selectType: 1,
-            selectColor: 'white',
-            selectSize: 'M',
+            selectModel: this.defaultOptions.moldId,
+            selectSex: this.defaultOptions.sex,
+            selectType: this.defaultOptions.type,
+            selectColor: this.defaultOptions.ccolor,
+            selectSize: this.defaultOptions.size,
+            price: this.defaultOptions.price,
             selectNum: 1
         }
     },
@@ -32,15 +33,18 @@ module.exports = {
         },
         clickSexItem: function (item) {
             this.$data.selectSex = item.key;
+            this.updateWorkDisplay();
         },
         clickModelItem: function (item) {
             this.$data.selectModel = item.key;
+            this.updateWorkDisplay();
         },
         clickTypeItem: function (item) {
             this.$data.selectType = item.key;
         },
         clickColorItem: function (item) {
             this.$data.selectColor = item.key;
+            this.updateWorkDisplay();
         },
         clickSizeItem: function (item) {
             this.$data.selectSize = item.key;
@@ -52,6 +56,11 @@ module.exports = {
             if (this.$data.selectNum > 1){
                 this.$data.selectNum -= 1;
             }
+        },
+        updateWorkDisplay: function () {
+            var curData = this.$data;
+            this.displayImgs.frontbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'front');
+            this.displayImgs.backbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'back');
         }
     },
     components: {

@@ -202,8 +202,10 @@
 }
 
 .color-wrap span {
-	width: 40px; 
-	height: 40px;
+	width: 38px; 
+	height: 38px;
+	border: solid 1px #acacac;/*no*/
+	border-radius: 4px;
 }
 
 .size-wrap span {
@@ -295,6 +297,8 @@
 	border: solid 0px #acacac;
 }
 
-.select-box {
-	border: solid 2px #000;/*no*/
+.color-wrap span.select-box {
+	width: 42px; 
+	height: 42px;
+	border: solid 2px #acacac;/*no*/
 }

@@ -4,7 +4,7 @@
 	<div class="select-wrap">
 		<div class="title-bar">
 			<img class="close-btn" src="../../static/images/close.png" v-tap="onTouchCloseHandler">
-			<div class="price-label">$99.00</div>
+			<div class="price-label">￥{{price}}</div>
 			<div class="explanation-label">
 				<a href="../instructions/index.html" target="_self">请查看尺寸及材质说明</a>
 				<img src="../../static/images/tip.png">
@@ -14,7 +14,7 @@
 			<div class="model-label">款式</div>
 			<div class="content-wrap">
 				<span v-for="modelItem in options.model"
-					v-bind:class="{'select-txt-btn': selectModel === modelItem.key}"
+					v-bind:class="{'select-txt-btn': selectModel == modelItem.key}"
 					v-tap="clickModelItem(modelItem)">{{modelItem.name}}</span>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 			<div class="sex-label">性别</div>
 			<div class="content-wrap">
 				<span v-for="sexItem in options.sex"
-					v-bind:class="{'select-txt-btn': selectSex === sexItem.key}"
+					v-bind:class="{'select-txt-btn': selectSex == sexItem.key}"
 					v-tap="clickSexItem(sexItem)">{{sexItem.name}}</span>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 			<div class="type-label">类型</div>
 			<div class="content-wrap">
 				<span v-for="typeItem in options.type"
-					v-bind:class="{'select-txt-btn': selectType === typeItem.key}"
+					v-bind:class="{'select-txt-btn': selectType == typeItem.key}"
 					v-tap="clickTypeItem(typeItem)">{{typeItem.name}}</span>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 			<div class="color-label">颜色</div>
 			<div class="content-big-wrap">
 				<span v-for="colorItem in options.ccolor" v-bind:style="{backgroundColor: colorItem.name }" 
-					v-bind:class="{'select-box': selectColor === colorItem.key}"
+					v-bind:class="{'select-box': selectColor == colorItem.key}"
 					v-tap="clickColorItem(colorItem)"></span>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 			<div class="size-label">尺码</div>
 			<div class="content-big-wrap">
 				<span v-for="sizeItem in options.size"
-					v-bind:class="{'select-txt-btn': selectSize === sizeItem.key}"
+					v-bind:class="{'select-txt-btn': selectSize == sizeItem.key}"
 					v-tap="clickSizeItem(sizeItem)">{{sizeItem.name}}</span>
 			</div>
 		</div>

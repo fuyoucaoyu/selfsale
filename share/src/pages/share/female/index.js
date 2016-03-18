@@ -14,6 +14,7 @@ var app = new Vue({
     data: {
         buying: false,
         goodsOptions: {},
+        defultSelectedOptions: {},
         front: true,
         title: '',
         nick: '',
@@ -22,7 +23,13 @@ var app = new Vue({
         workDisplayImgs: {
             frontUrl: '',
             backUrl: '',
-            frontbgUrl: '',
+            frontbgUrl: '', // util.getClothes(6, 'gray', 1, 'front'),
+            backbgUrl: ''//util.getClothes(6, 'gray', 1, 'back')
+        },
+        popupDisplayImgs: {
+            frontUrl: '',
+            backUrl: '',
+            frontbgUrl: '', 
             backbgUrl: ''
         }
     },
@@ -80,16 +87,29 @@ function router(e) {
         if (result.headurl && '' !== result.headurl) {
           app.$data.avatarUrl = config.getImgUrl + result.headurl;
         }
+
+        var displayImgs = app.$data.workDisplayImgs;
+        var popupDisplayImgs = app.$data.popupDisplayImgs;
         if (result.pictureUrl && '' !== result.pictureUrl.replace(/ /g, '')) {
-            app.$data.workDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+            displayImgs.frontUrl = popupDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
         }
         if (result.pictureUrlBack && '' !== result.pictureUrlBack.replace(/ /g, '')) {
-            app.$data.workDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+            displayImgs.backUrl = popupDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
         }
-        app.$data.workDisplayImgs.frontbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'front');
-        app.$data.workDisplayImgs.backbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'back');
+        displayImgs.frontbgUrl = popupDisplayImgs.frontbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'front');
+        displayImgs.backbgUrl = popupDisplayImgs.backbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'back');
+
         var infoId = result.moldId + '_' + result.gender;
         app.$data.goodsOptions = util.clothesData[infoId];
+
+        var defaultOptions = {};
+        defaultOptions.moldId = result.moldId;
+        defaultOptions.sex = result.gender;
+        defaultOptions.type = 1;
+        defaultOptions.ccolor = result.color;
+        defaultOptions.size = result.size;
+        defaultOptions.price = result.price;
+        app.$data.defultSelectedOptions = defaultOptions;
     });
 }
 
