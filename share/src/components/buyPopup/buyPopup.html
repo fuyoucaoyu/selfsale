@@ -53,9 +53,13 @@
 		<div class="num-wrap">
 			<div class="buynum-label">购买数量</div>
 			<div class="number-wrap">
-				<img class="number-btn" src="../../static/images/select/subtraction.png" v-tap="clickSubHander">
+				<div class="sub-btn-wrap" v-tap="clickSubHander">
+					<img class="number-btn" src="../../static/images/select/subtraction.png">
+				</div>
 				<span>{{selectNum}}</span>
-				<img class="number-btn" src="../../static/images/select/plus.png" v-tap="clickPlusHander">
+				<div class="plus-btn-wrap" v-tap="clickPlusHander">
+					<img class="number-btn" src="../../static/images/select/plus.png">
+				</div>
 			</div>
 		</div>
 		<div class="confirm-btn-wrap">

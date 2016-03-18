@@ -46,7 +46,9 @@
             </div>
 
             <buy-popup :options="goodsOptions" :display-imgs="workDisplayImgs" :touch-close-callback="closeBuyPopup" v-if="buying"></buy-popup>
-            <img class="buy-btn" src="../../../static/images/classic/buy.png" v-else v-tap="onTouchBuyHandler">
+            <img class="buy-btn" src="../../../static/images/classic/buy.png" v-else
+                transition="buy-btn-visible"
+                v-tap="onTouchBuyHandler">
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>

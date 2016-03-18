@@ -151,6 +151,22 @@
 	z-index: 100;
 }
 
+/* 必需 */
+.buy-btn-visible-transition {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+}
+
+/* -enter 定义进入的开始状态 */
+/* -leave 定义离开的结束状态 */
+.buy-btn-visible-enter, .buy-btn-visible-leave {
+    opacity: 0;
+}
+
 /*@media (min-width: 768px){
 	.buy-btn {
 		position: fixed;
