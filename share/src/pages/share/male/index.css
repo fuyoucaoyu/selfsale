@@ -121,12 +121,22 @@
 .app-intro {
 	width: 640px;
 	height: 1377px;
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+	background-image: url(../../../static/images/male/app_intro.jpg);
 }
 
 .footer-wrap {
 	text-align: center;
 	position: relative;
-	top: -5px;
+	/**top: -5px;**/
+	width: 640px;
+	height: 1027px;
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+	background-image: url(../../../static/images/male/footer.jpg);
 }
 
 .app-download-bottom {

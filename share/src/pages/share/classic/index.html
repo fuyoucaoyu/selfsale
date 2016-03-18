@@ -19,7 +19,8 @@
             <div class="display-wrap">
                 <img class="work-bg" src="../../../static/images/classic/work_bg.jpg">
                 <img class="user-avatar" v-bind:src="avatarUrl">
-                <div class="title-wrap">{{title}}</div>
+                <!-- <div class="title-wrap">{{title}}</div> -->
+                <div class="title-wrap" v-html="title"></div>
                 <div class="name-wrap">{{nick}}</div>
                 <div class="detail-wrap" v-html="detail"></div>
 
@@ -39,9 +40,13 @@
                     <img class="back" src="../../../static/images/back.png" v-else>
                 </div>
             </div>
-            <img class="app-intro" src="../../../static/images/classic/app_intro.jpg">
+            <!-- <img class="app-intro" src="../../../static/images/classic/app_intro.jpg">
             <div class="footer-wrap">
                 <img class="app-info" src="../../../static/images/classic/footer.jpg">
+                <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
+            </div> -->
+            <div class="app-intro"></div>
+            <div class="footer-wrap">
                 <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
             </div>
 

@@ -24,6 +24,11 @@
 	position: relative;
 }
 
+.item-img {
+	width: 400px;
+	height: 712px;
+}
+
 .custome-item-last {
 	width: 400px;
 	height: 712px;
@@ -31,9 +36,4 @@
 
 .custome-item-last .item-wrap {
 	margin-right: 0;
-}
-
-.item-img {
-	width: 400px;
-	height: 712px;
 }
