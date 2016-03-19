@@ -1,69 +1,71 @@
 <link rel="stylesheet" type="text/css" href="./buyPopup.css?__inline">
-<div id="buyPopupWrap" class="buy-popup" transition="buy-popup-expand" v-on:touchmove.stop="onScrollHandler">
-	<work-display :display-imgs="displayImgs" :front="true" spec-class="scaled-work-display"></work-display>
-	<div class="select-wrap">
-		<div class="title-bar">
-			<img class="close-btn" src="../../static/images/close.png" v-tap="onTouchCloseHandler">
-			<div class="price-label">￥{{price}}</div>
-			<div class="explanation-label">
-				<a href="../instructions/index.html" target="_self">请查看尺寸及材质说明</a>
-				<img src="../../static/images/tip.png">
-			</div>
-		</div>
-		<div class="model-wrap">
-			<div class="model-label">款式</div>
-			<div class="content-wrap">
-				<span v-for="modelItem in options.model"
-					v-bind:class="{'select-txt-btn': selectModel == modelItem.key}"
-					v-tap="clickModelItem(modelItem)">{{modelItem.name}}</span>
-			</div>
-		</div>
-		<div class="sex-wrap">
-			<div class="sex-label">性别</div>
-			<div class="content-wrap">
-				<span v-for="sexItem in options.sex"
-					v-bind:class="{'select-txt-btn': selectSex == sexItem.key}"
-					v-tap="clickSexItem(sexItem)">{{sexItem.name}}</span>
-			</div>
-		</div>
-		<div class="type-wrap">
-			<div class="type-label">类型</div>
-			<div class="content-wrap">
-				<span v-for="typeItem in options.type"
-					v-bind:class="{'select-txt-btn': selectType == typeItem.key}"
-					v-tap="clickTypeItem(typeItem)">{{typeItem.name}}</span>
-			</div>
-		</div>
-		<div class="color-wrap">
-			<div class="color-label">颜色</div>
-			<div class="content-big-wrap">
-				<span v-for="colorItem in options.ccolor" v-bind:style="{backgroundColor: colorItem.name }" 
-					v-bind:class="{'select-box': selectColor == colorItem.key}"
-					v-tap="clickColorItem(colorItem)"></span>
-			</div>
-		</div>
-		<div class="size-wrap">
-			<div class="size-label">尺码</div>
-			<div class="content-big-wrap">
-				<span v-for="sizeItem in options.size"
-					v-bind:class="{'select-txt-btn': selectSize == sizeItem.key}"
-					v-tap="clickSizeItem(sizeItem)">{{sizeItem.name}}</span>
-			</div>
-		</div>
-		<div class="num-wrap">
-			<div class="buynum-label">购买数量</div>
-			<div class="number-wrap">
-				<div class="sub-btn-wrap" v-tap="clickSubHander">
-					<img class="number-btn" src="../../static/images/select/subtraction.png">
-				</div>
-				<span>{{selectNum}}</span>
-				<div class="plus-btn-wrap" v-tap="clickPlusHander">
-					<img class="number-btn" src="../../static/images/select/plus.png">
+<div class="buy-popup-container" v-on:touchmove.stop="onScrollHandler">
+	<div id="buyPopupWrap" class="buy-popup" transition="buy-popup-expand">
+		<work-display :display-imgs="displayImgs" :front="true" spec-class="scaled-work-display"></work-display>
+		<div class="select-wrap">
+			<div class="title-bar">
+				<img class="close-btn" src="../../static/images/close.png" v-tap="onTouchCloseHandler">
+				<div class="price-label">￥{{price}}</div>
+				<div class="explanation-label">
+					<a href="../instructions/index.html" target="_self">请查看尺寸及材质说明</a>
+					<img src="../../static/images/tip.png">
 				</div>
 			</div>
+			<div class="model-wrap">
+				<div class="model-label">款式</div>
+				<div class="content-wrap">
+					<span v-for="modelItem in options.model"
+						v-bind:class="{'select-txt-btn': selectModel == modelItem.key}"
+						v-tap="clickModelItem(modelItem)">{{modelItem.name}}</span>
+				</div>
+			</div>
+			<div class="sex-wrap">
+				<div class="sex-label">性别</div>
+				<div class="content-wrap">
+					<span v-for="sexItem in options.sex"
+						v-bind:class="{'select-txt-btn': selectSex == sexItem.key}"
+						v-tap="clickSexItem(sexItem)">{{sexItem.name}}</span>
+				</div>
+			</div>
+			<div class="type-wrap">
+				<div class="type-label">类型</div>
+				<div class="content-wrap">
+					<span v-for="typeItem in options.type"
+						v-bind:class="{'select-txt-btn': selectType == typeItem.key}"
+						v-tap="clickTypeItem(typeItem)">{{typeItem.name}}</span>
+				</div>
+			</div>
+			<div class="color-wrap">
+				<div class="color-label">颜色</div>
+				<div class="content-big-wrap">
+					<span v-for="colorItem in options.ccolor" v-bind:style="{backgroundColor: colorItem.name }" 
+						v-bind:class="{'select-box': selectColor == colorItem.key}"
+						v-tap="clickColorItem(colorItem)"></span>
+				</div>
+			</div>
+			<div class="size-wrap">
+				<div class="size-label">尺码</div>
+				<div class="content-big-wrap">
+					<span v-for="sizeItem in options.size"
+						v-bind:class="{'select-txt-btn': selectSize == sizeItem.key}"
+						v-tap="clickSizeItem(sizeItem)">{{sizeItem.name}}</span>
+				</div>
+			</div>
+			<div class="num-wrap">
+				<div class="buynum-label">购买数量</div>
+				<div class="number-wrap">
+					<div class="sub-btn-wrap" v-tap="clickSubHander">
+						<img class="number-btn" src="../../static/images/select/subtraction.png">
+					</div>
+					<span>{{selectNum}}</span>
+					<div class="plus-btn-wrap" v-tap="clickPlusHander">
+						<img class="number-btn" src="../../static/images/select/plus.png">
+					</div>
+				</div>
+			</div>
+			<div class="confirm-btn-wrap">
+	                <img src="../../../static/images/confirm.png" v-tap="onTouchBuyHandler">
+	        </div>
 		</div>
-		<div class="confirm-btn-wrap">
-                <img src="../../../static/images/confirm.png" v-tap="onTouchBuyHandler">
-        </div>
 	</div>
 </div>

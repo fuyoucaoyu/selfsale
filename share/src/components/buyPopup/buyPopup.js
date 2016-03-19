@@ -74,6 +74,7 @@ module.exports = {
             var curData = this.$data;
             this.displayImgs.frontbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'front');
             this.displayImgs.backbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'back');
+            this.options = util.clothesData[this.$data.selectModel + '_' + this.$data.selectSex];
         }
     },
     components: {
