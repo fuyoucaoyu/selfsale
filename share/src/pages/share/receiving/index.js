@@ -24,6 +24,7 @@ var app = new Vue({
         multiSelectId: 'addrMultiSelect',
         payType: 0,
         errMsg: null,
+        workOptions: {},
         orderInfo: {
             username: '',
             phone: '',
@@ -78,12 +79,16 @@ function getUrlParams(data) {
         return;
     }
     var paramsArray = data.split('&');
-    var params = {};
+    var params = [];
+    var pa;
+    var item;
     paramsArray.forEach(function (p) {
-        var pa = p.split('=');
+        pa = p.split('=');
         // params[pa[0]] = (pa[1] === undefined ? '' : pa[1]);
-        params.key = pa[0];
-        params.value = (pa[1] === undefined ? '' : pa[1]);
+        item = {};
+        item.key = pa[0];
+        item.value = (pa[1] === undefined ? '' : pa[1]);
+        params.push(item);
     });
     return params;
 }
@@ -94,10 +99,7 @@ function router(e) {
         e.preventDefault();
     }
 
-    var params = getUrlParams(window.location.href.split('?')[1]);
-    for (var p in params) {
-        app.$data.orderInfo[p] = params[p];
-    }
+    app.$data.workOptions = getUrlParams(window.location.href.split('?')[1]);
 }
 
 router();

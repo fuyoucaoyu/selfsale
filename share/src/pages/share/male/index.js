@@ -92,12 +92,15 @@ function router(e) {
         var popupDisplayImgs = app.$data.popupDisplayImgs;
         if (result.pictureUrl && '' !== result.pictureUrl.replace(/ /g, '')) {
             displayImgs.frontUrl = popupDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+            popupDisplayImgs.pictureUrl = result.pictureUrl;
         }
         if (result.pictureUrlBack && '' !== result.pictureUrlBack.replace(/ /g, '')) {
             displayImgs.backUrl = popupDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+            popupDisplayImgs.pictureUrlBack = result.pictureUrlBack;
         }
         displayImgs.frontbgUrl = popupDisplayImgs.frontbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'front');
         displayImgs.backbgUrl = popupDisplayImgs.backbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'back');
+        popupDisplayImgs.produceId = params.produceId;
         
         var infoId = result.moldId + '_' + result.gender;
         app.$data.goodsOptions = util.clothesData[infoId];

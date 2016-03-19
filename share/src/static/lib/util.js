@@ -93,8 +93,29 @@ var util = {
         // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(data);
     },
-    isInMap: function () {
-        return (navigator.userAgent && /baidumap_ANDR|baidumap_IPHO/ig.test(navigator.userAgent.toLowerCase()));
+    gotoPage: function (loc, params) {
+        loc = loc + (-1 < loc.indexOf('?') ? '&': '?');
+        var data;
+        var isFirst = true;
+        for (var key in params) {
+            data = params[key];
+
+            if (isFirst) {
+               loc += key + '=';
+            } else {
+                loc += '&' + key + '=';
+            }
+
+            if (typeof data === 'object') {
+                loc += JSON.stringify(data);
+            } else {
+                loc += data;
+            }
+
+            isFirst = false;
+        }
+
+        window.location.href = loc;
     },
     // 滚动条在Y轴上的滚动距离
     getScrollTop: function () {

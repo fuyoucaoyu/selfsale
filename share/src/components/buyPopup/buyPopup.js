@@ -20,7 +20,20 @@ module.exports = {
     },
     methods: {
         onTouchBuyHandler: function (event) {
-            alert('buy click');
+            var params = {
+                moldId: this.$data.selectModel,
+                gender: this.$data.selectSex,
+                corftype: this.$data.selectType,
+                color: this.$data.selectColor,
+                size: this.$data.selectSize,
+                price: this.$data.price,
+                num: this.$data.selectNum,
+                produceid: this.displayImgs.produceId,
+                pictrueurl: this.displayImgs.pictureUrl,
+                pictrueurlback: this.displayImgs.pictureUrlBack
+            };
+
+            util.gotoPage('../receiving/index.html', params);
         },
         onTouchCloseHandler: function (event) {
             this.touchCloseCallback && this.touchCloseCallback(event);

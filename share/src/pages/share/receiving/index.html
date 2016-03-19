@@ -17,7 +17,7 @@
     <body>
         <div id="app">
             <form name="theForm" method="post" action="/box/order1.shtml">
-                <input v-for="item in orderInfo" v-bind:id="item.key" v-bind:name="item.key" v-bind:value="item.value" type="hidden" />
+                <input v-for="item in workOptions" v-bind:id="item.key" v-bind:name="item.key" v-bind:value="item.value" type="hidden" />
 
                 <div class="person-info-wrap">
                     <h3>收货地址</h3>
