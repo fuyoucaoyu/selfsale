@@ -1,4 +1,4 @@
-var APP_NAME = '/selfsaleshare';
+var APP_NAME = '/SSH/selfsaleshare';
 fis.match('*', {
   charset: 'utf8'
 })
@@ -7,6 +7,10 @@ fis.match('*', {
 // 加 md5，与缓存机制配套使用较好
 fis.match('*.{js,css,png,jpg}', {
   useHash: true
+});
+
+fis.match('static/images/clothes/**/*.{png,jpg}', {
+  useHash: false
 });
 
 // fis-optimizer-uglify-js 插件进行压缩，已内置
@@ -38,9 +42,9 @@ fis.match('*.css', {
 });
 
 // fis-optimizer-png-compressor 插件进行压缩，已内置
-fis.match('*.png', {
-  optimizer: fis.plugin('png-compressor')
-});
+// fis.match('*.png', {
+//   optimizer: fis.plugin('png-compressor')
+// });
 
 
 /*********************** 依赖 *********************/
@@ -111,12 +115,20 @@ fis.match("static/lib/(mod.js)", {
 });
 
 // 图片
-fis.match("static/images/(**.png)", {
+fis.match("static/images/(*.png)", {
+    isMod: true,
+    release: APP_NAME + '/static/images/$1'
+});
+fis.match("static/images/(**/*.png)", {
     isMod: true,
     release: APP_NAME + '/static/images/$1'
 });
 
-fis.match("static/images/(**.jpg)", {
+fis.match("static/images/(*.jpg)", {
+    isMod: true,
+    release: APP_NAME + '/static/images/$1'
+});
+fis.match("static/images/(**/*.jpg)", {
     isMod: true,
     release: APP_NAME + '/static/images/$1'
 });

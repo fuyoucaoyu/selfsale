@@ -11,11 +11,11 @@ var Display = require('../../../components/displays/display.js');
 var app = new Vue({
     el: '#app',
     data: {
-        displayUrls: ['../../../static/images/app/displays/1-2.jpg',
-                    '../../../static/images/app/displays/2-2.jpg',
-                    '../../../static/images/app/displays/3-2.jpg',
-                    '../../../static/images/app/displays/4-2.jpg',
-                    '../../../static/images/app/displays/5-2.jpg']
+        displayUrls: [__uri('../../../static/images/app/displays/1-2.jpg'),
+                    __uri('../../../static/images/app/displays/2-2.jpg'),
+                    __uri('../../../static/images/app/displays/3-2.jpg'),
+                    __uri('../../../static/images/app/displays/4-2.jpg'),
+                    __uri('../../../static/images/app/displays/5-2.jpg')]
     },
     methods: {
         onTouchDownloadHandler: function (event) {

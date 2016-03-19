@@ -14,7 +14,7 @@ var app = new Vue({
         front: true,
         title: '',
         male: false,
-        avatarUrl: '../../../static/images/test_avatar.png',
+        avatarUrl: __uri('../../../static/images/test_avatar.png'),
         follow: '',
         fans: '',
         signature: '',

@@ -19,7 +19,7 @@ var app = new Vue({
         title: '',
         nick: '',
         detail: '',
-        avatarUrl: '../../../static/images/test_avatar.png',
+        avatarUrl: __uri('../../../static/images/test_avatar.png'),
         workDisplayImgs: {
             frontUrl: '',
             backUrl: '',

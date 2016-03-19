@@ -77,10 +77,7 @@ module.exports = {
                     pagination: '.pagination',
                     paginationClickable: true,
                     slidesPerView: 2,
-                    loop: true,
-                    onTouchStart: function (param) {
-                        console.log(param);
-                    }
+                    loop: true
                 })
             }
         }, 500);
