@@ -2,7 +2,29 @@
  * @file
  */
 
- var WorkdDisplay = require('../workDisplay/workDisplay.js');
+var WorkdDisplay = require('../workDisplay/workDisplay.js');
+
+var pricedic = {
+    '1':{
+        '7':199,
+        '6':199,
+        '4':139,
+        '8':99,
+        '3':59
+    },
+    '0':{
+        '3':99
+    }
+};
+
+var getPrice = function(){
+    var otherprice = 0;
+    if ('' != this.defaultOptions.pictureUrlBack){
+        otherprice = 20;
+    }
+    var resultPrice = baseprice *（1+this.defaultOptions.percent/100.0）+otherprice+this.defaultOptions.matsPrice;
+    return resultPrice;
+}
 
 module.exports = {
     template: __inline('./buyPopup.html'),
@@ -14,7 +36,7 @@ module.exports = {
             selectType: this.defaultOptions.type,
             selectColor: this.defaultOptions.ccolor,
             selectSize: this.defaultOptions.size,
-            price: this.defaultOptions.price,
+            price: getPrice(),
             selectNum: 1
         }
     },
