@@ -17,7 +17,7 @@
     <body>
         <div id="app">
             <form name="theForm" method="post" action="/box/order1.shtml">
-                <input v-for="item in workOptions" v-bind:id="item.key" v-bind:name="item.key" v-bind:value="item.value" type="hidden" />
+                <!-- <input v-for="item in workOptions" v-bind:id="item.key" v-bind:name="item.key" v-bind:value="item.value" type="hidden" /> -->
 
                 <div class="person-info-wrap">
                     <h3>收货地址</h3>
@@ -32,8 +32,8 @@
                         <h4>支付方式:</h4>
                         <input id="pay_type" name="pay_type" v-model:value="payType" type="hidden"/>
                         <div class="pay-btn-wrap">
-                            <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-tap="selectPayType(0)"></span>
-                            <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType}" v-tap="selectPayType(1)"></span>
+                            <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-tap="selectPayType(0)" v-show="isInWeixin"></span>
+                            <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType, 'zhifubao-btn-left': false === isInWeixin}" v-tap="selectPayType(1)" ></span>
                         </div>
                     </div>
                 </div>
@@ -42,6 +42,8 @@
                   <span class="confirm-btn" v-tap="validateAndPost">确定</span> 
                 </div>
             </form>
+
+            <div id="msgPopup" class="msg-popup-wrap" v-html="errMsg" transition="msg-popup-expand" v-show="showPopup"></div>
         </div>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>

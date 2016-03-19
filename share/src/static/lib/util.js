@@ -10,6 +10,7 @@ var config = {
     getProduceFn: 'getProduceById',
     getStudioFn: 'personCenter',
     getStudioProduceListFn: 'getDesinerProduceByState',
+    addOrderFn: 'addOrder',
     getOrderByBuyerId: 'getOrderByBuyerIdState',
     getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
 };
@@ -44,17 +45,42 @@ var clothesdic = {
 };
 
 var util = {
+    objToString: function (params) {
+        var result = '';
+        var data;
+        var isFirst = true;
+        for (var key in params) {
+            data = params[key];
+
+            if (isFirst) {
+               result += key + '=';
+            } else {
+                result += '&' + key + '=';
+            }
+
+            if (typeof data === 'object') {
+                result += JSON.stringify(data);
+            } else {
+                result += data;
+            }
+
+            isFirst = false;
+        }
+
+        return result;
+    },
     jsonp: function (url, data, onload, fn) {
         var cbn = 'jsonpcb' + (callback_number++);
         fn = fn || 'callback';
         url = url + (url.indexOf('?') > -1 ? '&' : '?') + fn + '=window.jsonpcb.' + cbn;
-        for (var key in data) {
-            if (typeof data[key] === 'object') {
-                url += '&' + key + '=' + JSON.stringify(data[key]);
-            } else {
-                url += '&' + key + '=' + data[key];
-            }
-        }
+        url +=  '&' + this.objToString(data);
+        // for (var key in data) {
+        //     if (typeof data[key] === 'object') {
+        //         url += '&' + key + '=' + JSON.stringify(data[key]);
+        //     } else {
+        //         url += '&' + key + '=' + data[key];
+        //     }
+        // }
         var s = document.createElement('script');
         window.jsonpcb[cbn] = function (response) {
             s.parentNode.removeChild(s);
@@ -80,18 +106,20 @@ var util = {
         })();
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
                     var data = JSON.parse(xhr.responseText);
-                    callback(data);
+                    callback(null, data);
                 } else {
-                    // alert('请求失败！');
+                    callback('error');
                 }
             }
         };
         xhr.open('post', url);
-        xhr.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.send(data);
+        // xhr.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        var dataStr = this.objToString(data);
+        xhr.send(dataStr);
     },
     gotoPage: function (loc, params) {
         if (!params || undefined === params) {
@@ -100,28 +128,25 @@ var util = {
         }
 
         loc = loc + (-1 < loc.indexOf('?') ? '&': '?');
-        var data;
-        var isFirst = true;
-        for (var key in params) {
-            data = params[key];
-
-            if (isFirst) {
-               loc += key + '=';
-            } else {
-                loc += '&' + key + '=';
-            }
-
-            if (typeof data === 'object') {
-                loc += JSON.stringify(data);
-            } else {
-                loc += data;
-            }
-
-            isFirst = false;
-        }
+        loc += this.objToString(params);
 
         window.location.href = loc;
     },
+    ua: (function () {
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = ua.indexOf('android') > -1;
+        var isIphone = ua.indexOf('iphone') > -1;
+        var isIOS = ua.indexOf('iphone') > -1 || ua.indexOf('ipod') > -1 || ua.indexOf('ios') > -1;
+        var isMobile = isAndroid || isIOS;
+        var isWeiXin = ua.indexOf('micromessenger') > -1;
+        var isChrome = ua.indexOf('chrome') > -1;
+        return {
+            isAndroid: isAndroid,
+            isIOS: isIOS,
+            isMobile: isMobile,
+            isWeiXin: isWeiXin
+        }
+    })(),
     // 滚动条在Y轴上的滚动距离
     getScrollTop: function () {
         var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;

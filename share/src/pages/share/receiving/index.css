@@ -94,6 +94,10 @@
 	background-image: url(../../../static/images/receiving/payway1_select.png?__inline);
 }
 
+.zhifubao-btn-left {
+	left: 0px;
+}
+
 .confirm-btn-wrap {
 	position: absolute;
 	height: 80px;
@@ -111,4 +115,46 @@
 	line-height: 80px;
 	background-color: #36BD36;
 	border-radius: 10px;
+}
+
+.msg-popup-wrap {
+	position: fixed;
+	width: 90%;
+	height: 150px;
+	line-height: 150px;
+	top: 50%;
+	left: 5%;
+	margin-top: -75px;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+	border: solid 1px #000;/*no*/
+	border-radius: 10px;
+	z-index: 100;
+}
+
+/* 必需 */
+.msg-popup-expand-transition {
+	transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	-moz-transform: scale(1, 1);
+	-webkit-transform: scale(1, 1);
+	-o-transform: scale(1, 1);
+
+    transition: transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.msg-popup-expand-enter, .msg-popup-expand-leave {
+	transform: scale(0, 0);
+	-ms-transform: scale(0, 0);
+	-moz-transform: scale(0, 0);
+	-webkit-transform: scale(0, 0);
+	-o-transform: scale(0, 0);
 }
