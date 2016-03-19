@@ -12,6 +12,12 @@ fis.match('*.{js,css,png,jpg}', {
 fis.match('static/images/clothes/**/*.{png,jpg}', {
   useHash: false
 });
+fis.match('static/images/materialsize/*.{png,jpg}', {
+  useHash: false
+}); 
+fis.match('static/images/materialsize/**/*.{png,jpg}', {
+  useHash: false
+}); 
 
 // fis-optimizer-uglify-js 插件进行压缩，已内置
 fis.match('*.js', {
