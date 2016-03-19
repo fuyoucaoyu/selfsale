@@ -17,15 +17,6 @@ var pricedic = {
     }
 };
 
-var getPrice = function(){
-    var otherprice = 0;
-    if ('' != this.defaultOptions.pictureUrlBack){
-        otherprice = 20;
-    }
-    var resultPrice = baseprice *（1+this.defaultOptions.percent/100.0）+otherprice+this.defaultOptions.matsPrice;
-    return resultPrice;
-}
-
 module.exports = {
     template: __inline('./buyPopup.html'),
     props: ['options', 'defaultOptions', 'displayImgs', 'touchCloseCallback'],
@@ -36,7 +27,7 @@ module.exports = {
             selectType: this.defaultOptions.type,
             selectColor: this.defaultOptions.ccolor,
             selectSize: this.defaultOptions.size,
-            price: getPrice(),
+            price: this.getPrice(),
             selectNum: 1
         }
     },
@@ -73,9 +64,11 @@ module.exports = {
         clickModelItem: function (item) {
             this.$data.selectModel = item.key;
             this.updateWorkDisplay();
+            this.updatePrice();
         },
         clickTypeItem: function (item) {
             this.$data.selectType = item.key;
+            this.updatePrice();
         },
         clickColorItem: function (item) {
             this.$data.selectColor = item.key;
@@ -118,6 +111,21 @@ module.exports = {
 
             this.displayImgs.frontbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'front');
             this.displayImgs.backbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'back');
+        },
+        getPrice: function () {
+            var otherprice = 0;
+            if (this.defaultOptions.pictureUrlBack && '' !== this.defaultOptions.pictureUrlBack.replace(/ /g, '')){
+                otherprice = 20;
+            }
+
+            var type = undefined === this.$data.selectType ? this.defaultOptions.type : this.$data.selectType;
+            var module = undefined === this.$data.selectModel ? this.defaultOptions.moldId : this.$data.selectModel;
+            var baseprice = pricedic[type][module];
+            var resultPrice = baseprice * (1 + this.defaultOptions.percent / 100.0)+ otherprice + this.defaultOptions.matsPrice;
+            return resultPrice;
+        },
+        updatePrice: function () {
+            this.$data.price = this.getPrice();
         }
     },
     components: {

@@ -112,6 +112,10 @@ function router(e) {
         defaultOptions.ccolor = result.color;
         defaultOptions.size = result.size;
         defaultOptions.price = result.price;
+        defaultOptions.matsPrice = result.matsPrice;
+        defaultOptions.pictureUrl = result.pictureUrl;
+        defaultOptions.pictureUrlBack = result.pictureUrlBack;
+        defaultOptions.percent = result.percent;
         app.$data.defultSelectedOptions = defaultOptions;
     });
 }
