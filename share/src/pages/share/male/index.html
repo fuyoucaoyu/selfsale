@@ -45,7 +45,8 @@
             </div> -->
             <div class="app-intro"></div>
             <div class="footer-wrap">
-                <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
+                <img class="app-download-bottom" src="../../../static/images/download.png">
+                <a class="app-download-a" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usef.zizuozishou"></a>
             </div>
 
             <buy-popup :options="goodsOptions" :default-options="defultSelectedOptions" :display-imgs="popupDisplayImgs" :touch-close-callback="closeBuyPopup" v-if="buying"></buy-popup>

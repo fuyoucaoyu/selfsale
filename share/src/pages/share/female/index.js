@@ -34,9 +34,6 @@ var app = new Vue({
         }
     },
     methods: {
-        onTouchDownloadHandler: function (event) {
-            alert('click download');
-        },
         onTouchBuyHandler: function (event) {
             this.$data.buying = true;
         },

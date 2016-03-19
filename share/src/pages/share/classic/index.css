@@ -145,6 +145,14 @@
     left: 227px;
     z-index: 10;
 }
+.app-download-a {
+    position: absolute;
+	width: 183px;
+	height: 68px;
+    top: 855px;
+    left: 227px;
+    z-index: 20;
+}
 
 /**.app-info {
 	width: 640px;

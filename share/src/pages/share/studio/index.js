@@ -21,9 +21,6 @@ var app = new Vue({
         workItems: []
     },
     methods: {
-        onTouchDownloadHandler: function (event) {
-            alert('click download');
-        },
         onTouchBuyHandler: function (event) {
             alert('buy?');
         },

@@ -147,9 +147,6 @@ var util = {
             isWeiXin: isWeiXin
         }
     })(),
-    downloadApp: function () {
-
-    },
     // 滚动条在Y轴上的滚动距离
     getScrollTop: function () {
         var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;

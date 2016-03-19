@@ -18,9 +18,6 @@ var app = new Vue({
                     __uri('../../../static/images/app/displays/5-2.jpg')]
     },
     methods: {
-        onTouchDownloadHandler: function (event) {
-            window.location.href = 'http://tu.quhua.com/js/zzzs.apk';
-        }
     },
     components: {
         'display': Display
