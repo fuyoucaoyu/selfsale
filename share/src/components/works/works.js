@@ -26,6 +26,11 @@ module.exports = {
     //     }
     // },
     methods: {
+        onTouchItem: function () {
+            var targetUrl = 'test-----------';
+            console.log(targetUrl);
+            // util.gotoPage(targetUrl);
+        },
     	countDisplayStatus: function () {
     		var width = $('#displays').css('width');
     		var parentWidth = $('#displaysWrap').css('width');
@@ -68,13 +73,15 @@ module.exports = {
             if (document.querySelectorAll('.swiper-slide').length > 0) {
                 clearInterval(intervalId);
                 var mySwiper = new Swiper('.swiper-container', {
+                    preventLinks: false,
                     pagination: '.pagination',
                     paginationClickable: true,
                     slidesPerView: 2,
-                    loop: true
+                    loop: true,
+                    onTouchStart: function (param) {
+                        console.log(param);
+                    }
                 })
-            }  else {
-                console.log('------------')
             }
         }, 500);
     }

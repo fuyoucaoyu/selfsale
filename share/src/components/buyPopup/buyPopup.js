@@ -70,11 +70,32 @@ module.exports = {
                 this.$data.selectNum -= 1;
             }
         },
+        validateSelectedOption: function (opts, name) {
+            var curData = this.$data;
+            var len = opts.length;
+            var selectedIndex = -1;
+            var i = 0;
+            for (i = 0; i < len; i++) {
+                if (opts[i].key == curData[name]) {
+                    selectedIndex = i;
+                    break;
+                }
+            }
+
+            if (-1 >= selectedIndex) {
+                curData[name] = opts[0].key;
+            }
+        },
         updateWorkDisplay: function () {
             var curData = this.$data;
+            this.options = util.clothesData[this.$data.selectModel + '_' + this.$data.selectSex];
+            
+            this.validateSelectedOption(this.options.type, 'selectType');
+            this.validateSelectedOption(this.options.ccolor, 'selectColor');
+            this.validateSelectedOption(this.options.size, 'selectSize');
+
             this.displayImgs.frontbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'front');
             this.displayImgs.backbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'back');
-            this.options = util.clothesData[this.$data.selectModel + '_' + this.$data.selectSex];
         }
     },
     components: {

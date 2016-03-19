@@ -31,7 +31,7 @@ var clothesdic = {
         'gray':'gray',
         'black':'black',
         'yellow':'yellow',
-        'blue':'darkblue',
+        'blue':'blue',
         'cyan':'skyblue',
         'green':'green',
         'pink':'pink',
@@ -94,6 +94,11 @@ var util = {
         xhr.send(data);
     },
     gotoPage: function (loc, params) {
+        if (!params || undefined === params) {
+            window.location.href = loc;
+            return;
+        }
+
         loc = loc + (-1 < loc.indexOf('?') ? '&': '?');
         var data;
         var isFirst = true;
@@ -170,8 +175,8 @@ var util = {
                     {key: 'black', name: '#000000'}, 
                     {key: 'yellow', name: '#f8f12a'}, 
                     {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#37b0ca'}, 
-                    {key: 'cyan', name: 'skyblue'},
+                    {key: 'blue', name: '#000079'}, 
+                    {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
           size: [  {key: 'M', name: 'M'}, 
@@ -200,8 +205,8 @@ var util = {
                     {key: 'yellow', name: '#f8f12a'}, 
                     {key: 'pink', name: '#ffb8d0'}, 
                     {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#37b0ca'}, 
-                    {key: 'cyan', name: 'skyblue'},
+                    {key: 'blue', name: '#000079'}, 
+                    {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
           size: [  {key: 'S', name: 'S'}, 
@@ -227,7 +232,7 @@ var util = {
                     {key: 'gray', name: '#99989e'}, 
                     {key: 'black', name: '#000000'}, 
                     {key: 'yellow', name: '#f8f12a'},  
-                    {key: 'blue', name: '#37b0ca'}
+                    {key: 'blue', name: '#000079'}
               ],
           size: [  {key: 'M', name: 'M'}, 
                    {key: 'L', name: 'L'},
@@ -252,8 +257,8 @@ var util = {
                     {key: 'gray', name: '#99989e'}, 
                     {key: 'yellow', name: '#f8f12a'},
                     {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#37b0ca'}, 
-                    {key: 'cyan', name: 'skyblue'},
+                    {key: 'blue', name: '#000079'}, 
+                    {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
           size: [  {key: 'M', name: 'M'}, 
@@ -364,8 +369,8 @@ var util = {
                     {key: 'black', name: '#000000'}, 
                     {key: 'yellow', name: '#f8f12a'}, 
                     {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#37b0ca'}, 
-                    {key: 'cyan', name: 'skyblue'},
+                    {key: 'blue', name: '#000079'}, 
+                    {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
           size: [  {key: 'S', name: 'S'}, 
@@ -392,8 +397,8 @@ var util = {
                     {key: 'black', name: '#000000'}, 
                     {key: 'yellow', name: '#f8f12a'}, 
                     {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#37b0ca'}, 
-                    {key: 'cyan', name: 'skyblue'},
+                    {key: 'blue', name: '#000079'}, 
+                    {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
           size: [  {key: 'S', name: 'S'}, 

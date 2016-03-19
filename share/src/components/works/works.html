@@ -2,7 +2,7 @@
 <div class="swiper-container">
 	<div class="swiper-wrapper">
 		<!-- <div v-for="item in items" class="swiper-slide" v-bind:class="{'custome-item-last': $index === (items.length - 1)}"> -->
-		<div v-for="item in items" class="swiper-slide" track-by="$index">
+		<div v-for="item in items" class="swiper-slide" v-on:touchStart="onTouchItem()">
 			<a v-bind:href="item.href" target="_self"></a>
 			<div class="item-wrap">
 				<!-- <img class="item-img" v-bind:src="item.imgUrl"> -->

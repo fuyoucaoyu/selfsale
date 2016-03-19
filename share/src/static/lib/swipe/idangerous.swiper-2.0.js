@@ -1941,8 +1941,7 @@ var Swiper = function (selector, params) {
     }
     _this.createLoop = function(){
         if (_this.slides.length==0) return;
-        // @alvin: use loopedSlides by default
-        _this.loopedSlides = params.loopedSlides || (params.slidesPerView+params.loopAdditionalSlides);
+        _this.loopedSlides = params.slidesPerView+params.loopAdditionalSlides;
 
         var slideFirstHTML = '';
         var slideLastHTML = '';
