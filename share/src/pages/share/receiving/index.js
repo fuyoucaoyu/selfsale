@@ -78,7 +78,7 @@ var app = new Vue({
 
             var orderInfo = this.$data.orderInfo;
             var params = {
-                function: config.addOrderFn,
+                // function: config.addOrderFn,
                 name: orderInfo.username,
                 phone: orderInfo.phone,
                 address: orderInfo.address + ' ' + orderInfo.detail_address,
@@ -91,7 +91,9 @@ var app = new Vue({
                 params.c.push(workOptions);
             }
 
-            util.post (config.getProduceUrl, params, function (error, data) {
+            var paramsStr = util.objToString(params);
+            paramsStr = '{' + paramsStr + '}';
+            util.post (config.getProduceUrl + '?function=' + config.addOrderFn , paramsStr, function (error, data) {
                 console.log(error);
                 console.log(data);
             });

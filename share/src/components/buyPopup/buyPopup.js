@@ -41,9 +41,9 @@ module.exports = {
                 size: this.$data.selectSize,
                 price: this.$data.price,
                 num: this.$data.selectNum,
-                produceid: this.displayImgs.produceId,
-                pictrueurl: this.displayImgs.pictureUrl,
-                pictrueurlback: this.displayImgs.pictureUrlBack
+                produceid: undefined === this.displayImgs.produceId ? '' : this.displayImgs.produceId,
+                pictrueurl: undefined === this.displayImgs.pictureUrl ? '' : this.displayImgs.pictureUrl,
+                pictrueurlback: undefined === this.displayImgs.pictureUrlBack ? '' : this.displayImgs.pictureUrlBack
             };
 
             util.gotoPage('../receiving/index.html', params);
