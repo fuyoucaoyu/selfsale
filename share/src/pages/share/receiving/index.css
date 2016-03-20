@@ -13,12 +13,27 @@
 	overflow: hidden;
 }
 
+#addrMultiSelect {
+    width: 604px;
+    color: #a3a3a3;
+    font-size: 35px;
+}
+
+#addrMultiSelect > span {
+    width: 604px;
+    color: #a3a3a3;
+    font-size: 35px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 50px;
+}
+
 .person-info-wrap h3 {
 	color: #262525;
 	font-size: 40px;
 	line-height: 40px;
 	padding-left: 26px;
-	padding-bottom: 78px;
+	padding-bottom: 50px;
 }
 
 .person-info-wrap input {
@@ -99,20 +114,19 @@
 }
 
 .confirm-btn-wrap {
-	position: absolute;
-	height: 80px;
 	width: 100%;
-	bottom: 118px;
+	padding-top: 100px;
+	height: 62px;
 	text-align: center;
 }
 .confirm-btn {
-	height: 80px;
-	width: 240px;
+	height: 62px;
+	width: 280px;
 	margin: auto;
 	display: inline-block;
 	color: #fff;
 	font-size: 40px;
-	line-height: 80px;
+	line-height: 62px;
 	background-color: #36BD36;
 	border-radius: 10px;
 }
@@ -132,6 +146,11 @@
 	border: solid 1px #000;/*no*/
 	border-radius: 10px;
 	z-index: 100;
+	display: none;
+}
+
+.msg-popup-show {
+	display: block;
 }
 
 /* 必需 */

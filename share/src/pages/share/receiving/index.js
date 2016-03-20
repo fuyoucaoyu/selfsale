@@ -96,9 +96,24 @@ var app = new Vue({
                 params: params
             }
 
-            $.post(config.getProduceUrl, data, function (result) {
-                console.log(result);
+            util.jsonp(config.getProduceUrl, data, function (error, data) {
+                if ('error' === error || !data) {
+                    return;
+                }
+
+                if (util.ua.isWeiXin) {
+                    data.WXid = 'wxdd4769913d1583db';
+                    var myurl = window.location.href.split('?')[0].replace('receiving', 'pay');
+                    myurl += '?orderNo=' + data.orderNo + '&userId=' + data.userId;
+                    var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + data.WXid + '&redirect_uri=' 
+                        + encodeURIComponent(myurl) + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect&showwxpaytitle=1';
+                    window.location.href = url;
+                }
             });
+
+            // $.post(config.getProduceUrl, data, function (result) {
+            //     console.log(result);
+            // });
 
             // var paramsStr = 'params=' +  JSON.stringify(params);
             // util.post (config.getProduceUrl + '?function=' + config.addOrderFn , paramsStr, function (error, data) {

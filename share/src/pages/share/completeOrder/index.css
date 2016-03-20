@@ -5,28 +5,75 @@
 #app {
 	width: 640px;
 	margin: auto;
+ 	font-family: "MicrosoftYaHei";
 }
 
 .tip-wrap{
  	position: absolute;
 	width: 640px;
- 	font-family: "微软雅黑";
  	color: #242424;
     top: 256px;
     font-size: 40px;
 	text-align:center;
 }
 
-.query-wrap{
+.query-btn {
 	position: absolute;
-	width: 640px;
- 	font-family: "微软雅黑";
+	width: 210px;
+	height: 80px;
+	line-height: 80px;
+	left: 50%;
+	margin-left: -105px;
+	border: solid 1px #4fc281;/*no*/
+	border-radius: 8px;
  	color: #4fc281;
     top: 366px;
     font-size: 37px;
 	text-align:center;
 }
 
-.query-text{
-	
+.msg-popup-bg-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 50;
+}
+
+.msg-popup-wrap {
+	position: fixed;
+	width: 403px;
+	height: 268px;
+	top: 256px;
+	left: 50%;
+	margin-left: -201px;
+	background-size: 403px 268px;
+	background-position: center;
+	background-repeat: no;
+	background-image: url('../../../static/images/tip_content.png');
+}
+
+.confirm-btn {
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	bottom: 0;
+}
+
+/* 必需 */
+.msg-popup-expand-transition {
+	opacity: 1;
+    transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.msg-popup-expand-enter, .msg-popup-expand-leave {
+	opacity: 0;
 }

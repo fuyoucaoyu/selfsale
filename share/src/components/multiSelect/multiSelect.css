@@ -202,6 +202,10 @@ div.cs-skin-slide::before {
 	.cs-skin-slide .cs-options { padding-top: 3em; }
 }
 
+.cs-skin-slide .cs-options ul {
+	overflow-x: hidden;
+}
+
 .cs-skin-slide .cs-options li {
 	opacity: 0;
 	-webkit-transform: translate3d(30%,0,0);
