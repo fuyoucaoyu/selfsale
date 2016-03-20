@@ -120,7 +120,7 @@ var util = {
 
         var dataStr = data;
         if (typeof data === 'object') {
-            dataStr = this.objToString(data);
+            dataStr = JSON.stringify(data);
         }
         xhr.send(dataStr);
     },

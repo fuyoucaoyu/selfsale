@@ -91,12 +91,20 @@ var app = new Vue({
                 params.c.push(workOptions);
             }
 
-            var paramsStr = util.objToString(params);
-            paramsStr = '{' + paramsStr + '}';
-            util.post (config.getProduceUrl + '?function=' + config.addOrderFn , paramsStr, function (error, data) {
-                console.log(error);
-                console.log(data);
+            var data = {
+                function: config.addOrderFn,
+                params: params
+            }
+
+            $.post(config.getProduceUrl, data, function (result) {
+                console.log(result);
             });
+
+            // var paramsStr = 'params=' +  JSON.stringify(params);
+            // util.post (config.getProduceUrl + '?function=' + config.addOrderFn , paramsStr, function (error, data) {
+            //     console.log(error);
+            //     console.log(data);
+            // });
         },
         updateAddress: function (value) {
             this.$data.orderInfo.address = value;
