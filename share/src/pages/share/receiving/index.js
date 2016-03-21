@@ -105,9 +105,9 @@ var app = new Vue({
 
                 // 为了获取微信支付的code，需要重定向。重定向域名需要是微信用户信息系统认可的域名
                 if (0 == self.$data.payType && util.ua.isWeiXin) {
-                    var myurl = window.location.href.split('?')[0].replace('receiving', 'pay');
+                    var myurl = window.location.href.split('?')[0].replace('receiving', 'zzzspay');
                     var params = {
-                        orderNo: data.orderNo,
+                        orderCde: data.orderNo,
                         userId: data.userId,
                         payType: self.$data.payType,
                         order_price: workOptions.num * workOptions.price

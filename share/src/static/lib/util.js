@@ -6,7 +6,8 @@ var $$CB = [];
 var jsonpcb = [];
 
 var config = {
-    getProduceUrl: 'http://www.zizuozishou.com:8080/SSH/shareInteface',
+    // getProduceUrl: 'http://www.zizuozishou.com:8080/SSH/shareInteface',
+    getProduceUrl: 'http://fx.zizuozishou.com/SSH/shareInteface',
     getProduceFn: 'getProduceById',
     getStudioFn: 'personCenter',
     getStudioProduceListFn: 'getDesinerProduceByState',

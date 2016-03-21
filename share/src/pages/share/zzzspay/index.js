@@ -5,7 +5,6 @@
 
 var Vue = window.Vue;
 Vue.config.debug = true;
-Vue.use(window.tap);
 
 var app = new Vue({
     el: '#app',
@@ -99,16 +98,35 @@ function router(e) {
     params.function = config.payFn;
 
     // jsonp获取微信支付的参数
-    util.jsonp(config.getProduceUrl, params, function (error, data) {
-        if ('error' === error || !data) {
-            return;
-        }
+    // util.jsonp(config.getProduceUrl, params, function (error, data) {
+    //     if ('error' === error || !data) {
+    //         return;
+    //     }
 
-        var requesturl = window.location.href.split('?')[0].replace('zzzspay', 'completeOrder');
+    //     var requesturl = window.location.href.split('?')[0].replace('zzzspay', 'completeOrder');
 
-        // 用户选择微信支付且是在微信内，则调起微信支付
-        if (0 == params.payType && util.ua.isWeiXin) {
-        	requestWxPay(params.appId, params.timeStamp, params.nonceStr, params.package, params.signType, params.paySign, requesturl);
+    //     // 用户选择微信支付且是在微信内，则调起微信支付
+    //     if (0 == params.payType && util.ua.isWeiXin) {
+    //     	requestWxPay(data.appId, data.timeStamp, data.nonceStr, data.package, data.signType, data.paySign, requesturl);
+    //     }
+    // });
+
+
+    $.ajax({
+        url: config.getProduceUrl,
+        type: 'get',
+        data: params,
+        dataType: 'json',
+        error: function (evt) {
+        },
+        success: function (data) {
+
+	        var requesturl = window.location.href.split('?')[0].replace('zzzspay', 'completeOrder');
+
+	        // 用户选择微信支付且是在微信内，则调起微信支付
+	        if (0 == params.payType && util.ua.isWeiXin) {
+	        	requestWxPay(data.appId, data.timeStamp, data.nonceStr, data.package, data.signType, data.paySign, requesturl);
+	        }
         }
     });
 }
