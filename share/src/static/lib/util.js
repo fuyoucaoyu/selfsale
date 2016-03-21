@@ -12,6 +12,7 @@ var config = {
     getStudioProduceListFn: 'getDesinerProduceByState',
     addOrderFn: 'addOrder',
     getOrderByBuyerId: 'getOrderByBuyerIdState',
+    payFn: 'payParameter',
     getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
 };
 

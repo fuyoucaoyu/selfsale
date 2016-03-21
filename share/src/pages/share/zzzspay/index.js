@@ -1,5 +1,6 @@
 /**
  * @file
+ * 调起支付
  */
 
 var Vue = window.Vue;
@@ -95,14 +96,20 @@ function router(e) {
     }
 
     var params = getUrlParams(window.location.href.split('?')[1]);
+    params.function = config.payFn;
 
+    // jsonp获取微信支付的参数
     util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data) {
             return;
         }
 
         var requesturl = window.location.href.split('?')[0].replace('zzzspay', 'completeOrder');
-        requestWxPay(params.appId, params.timeStamp, params.nonceStr, params.package, params.signType, params.paySign, requesturl);
+
+        // 用户选择微信支付且是在微信内，则调起微信支付
+        if (0 == params.payType && util.ua.isWeiXin) {
+        	requestWxPay(params.appId, params.timeStamp, params.nonceStr, params.package, params.signType, params.paySign, requesturl);
+        }
     });
 }
 

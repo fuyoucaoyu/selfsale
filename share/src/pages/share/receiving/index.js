@@ -44,6 +44,7 @@ var app = new Vue({
             return (value && '' !== value.replace(/ /g, ''));
         },
         validateAndPost: function (event) {
+            var self = this;
             if (!this.isOpen()) {
                 event.preventDefault();
                 event.stopPropagation();
@@ -79,6 +80,7 @@ var app = new Vue({
             var orderInfo = this.$data.orderInfo;
             var params = {
                 // function: config.addOrderFn,
+                payType: curOrderInfo.payType,
                 name: orderInfo.username,
                 phone: orderInfo.phone,
                 address: orderInfo.address + ' ' + orderInfo.detail_address,
@@ -101,13 +103,24 @@ var app = new Vue({
                     return;
                 }
 
-                if (util.ua.isWeiXin) {
-                    data.WXid = 'wxdd4769913d1583db';
+                // 为了获取微信支付的code，需要重定向。重定向域名需要是微信用户信息系统认可的域名
+                if (0 == self.$data.payType && util.ua.isWeiXin) {
                     var myurl = window.location.href.split('?')[0].replace('receiving', 'pay');
-                    myurl += '?orderNo=' + data.orderNo + '&userId=' + data.userId;
+                    var params = {
+                        orderNo: data.orderNo,
+                        userId: data.userId,
+                        payType: self.$data.payType,
+                        order_price: workOptions.num * workOptions.price
+                    }
+                    myurl += '?' + util.objToString(params);
+
                     var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + data.WXid + '&redirect_uri=' 
                         + encodeURIComponent(myurl) + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect&showwxpaytitle=1';
                     window.location.href = url;
+                } 
+                // 支付宝支付
+                else if (1 == self.$data.payType) {
+                    
                 }
             });
 
