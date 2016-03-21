@@ -45,7 +45,7 @@ function onBridgeReady(appId, timeStamp, nonceStr, packageStr, signType, paySign
 		"appId": appId,
 		"timeStamp": timeStamp,
 		"nonceStr": nonceStr,
-		"package": packageStr,
+		"package": 'prepay_id=' + packageStr,
 		"signType": signType,
 		"paySign": paySign
 	},

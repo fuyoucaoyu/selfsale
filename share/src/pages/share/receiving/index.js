@@ -115,7 +115,7 @@ var app = new Vue({
                     myurl += '?' + util.objToString(params);
 
                     var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + data.WXid + '&redirect_uri=' 
-                        + encodeURIComponent(myurl) + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect&showwxpaytitle=1';
+                        + encodeURIComponent(myurl) + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect';
                     window.location.href = url;
                 } 
                 // 支付宝支付
