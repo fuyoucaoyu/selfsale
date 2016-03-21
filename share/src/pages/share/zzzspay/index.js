@@ -122,6 +122,7 @@ function router(e) {
         success: function (data) {
 
 	        var requesturl = window.location.href.split('?')[0].replace('zzzspay', 'completeOrder');
+	        requesturl += '?userId=' + params.userId;
 
 	        // 用户选择微信支付且是在微信内，则调起微信支付
 	        if (0 == params.payType && util.ua.isWeiXin) {

@@ -9,13 +9,25 @@ Vue.use(window.tap);
 var app = new Vue({
     el: '#app',
     data: {
+        userId: undefined,
     	showMsgPopup: true,
     	payResultMsg: ''
     },
     methods: {
     	hiddenMsgPopup: function () {
     		this.$data.showMsgPopup = false;
-    	}
+    	},
+        queryOrders: function () {
+            var userId = this.$data.userId;
+            if (undefined === userId || '' === userId.replace(/ /gi, '')) {
+                return;
+            }
+
+            var params = {
+                userId: userId
+            }
+            util.gotoPage('../order/index.html', params);
+        }
     },
     components: {
     }
@@ -51,6 +63,8 @@ function router(e) {
     } else {
     	app.$data.payResultMsg = '支付过程中出现问题';
     }
+
+    app.$data.userId = params.userId;
 }
 
 router();

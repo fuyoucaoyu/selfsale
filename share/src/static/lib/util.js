@@ -14,6 +14,7 @@ var config = {
     addOrderFn: 'addOrder',
     getOrderByBuyerId: 'getOrderByBuyerIdState',
     payFn: 'payParameter',
+    updateOrderFn: 'updateOrder',
     getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
 };
 
