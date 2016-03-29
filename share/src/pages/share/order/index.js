@@ -193,7 +193,8 @@ function router(e) {
 
     util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
-            alert('show error page');
+            // alert('show error page');
+            util.gotoPage('../app/index.html');
             return;
         }
 

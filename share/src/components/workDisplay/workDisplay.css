@@ -29,13 +29,15 @@
 
 .work-content {
 	position: absolute;
-	width: 140px;
-	height: 266px;
+	width: 234px;
+	height: 330px;
 	padding: 0;
-	top: 45%;
+	/*top: 45%;
 	margin-top: -133px;
 	left: 50%;
-	margin-left: -70px;
+	margin-left: -70px;*/
+	left: 204px;
+	top: 119px;
 
 	background-repeat: no-repeat;
     background-size: 100% 100%;

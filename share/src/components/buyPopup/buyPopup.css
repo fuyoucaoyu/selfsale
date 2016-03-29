@@ -299,14 +299,16 @@
 	height: 62px;
 }
 
-.select-txt-btn {
-	background-color: #ffd200;
+.content-wrap .select-txt-btn,
+.content-big-wrap .select-txt-btn {
+	background-color: #ff9c01;
 	color: #fff;
-	border: solid 0px #acacac;
+	border: solid 1px #ff9c01; /*no*/
 }
 
 .color-wrap span.select-box {
 	width: 42px; 
 	height: 42px;
-	border: solid 2px #acacac;/*no*/
+	/**border: solid 2px #acacac;**/
+	border: solid 2px #ff9c01; /*no*/
 }

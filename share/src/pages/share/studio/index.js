@@ -57,7 +57,8 @@ function router(e) {
     params.function = config.getStudioFn;
     util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data) {
-            alert('show error page');
+            // alert('show error page');
+            util.gotoPage('../app/index.html');
             return;
         }
 
@@ -78,7 +79,8 @@ function router(e) {
     };
     util.jsonp(config.getProduceUrl, params1, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
-            alert('show error page');
+            // alert('show error page');
+            util.gotoPage('../app/index.html');
             return;
         }
 
