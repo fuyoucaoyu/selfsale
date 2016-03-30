@@ -113,6 +113,14 @@
 	left: 0px;
 }
 
+.open-in-weixin-msg {
+	position: relative;
+	left: 10px;
+	font-size: 26px;
+	text-align: left;
+	color: #4b423a;
+}
+
 .confirm-btn-wrap {
 	width: 100%;
 	padding-top: 100px;

@@ -228,6 +228,7 @@ function router(e) {
                 var percent = (undefined === tempOrder.percent || '' === tempOrder.percent) ? 0 : tempOrder.percent;
                 var matsPrice = (undefined === baseprice.matsPrice || '' === baseprice.matsPrice) ? 0 : baseprice.matsPrice;
                 var resultPrice = baseprice * (1 + percent / 100.0) + otherprice + matsPrice;
+                resultPrice = resultPrice.toFixed(2);
 
 				var resultOrder = {
 					title: '自做自售！人气潮T，三色入！夏日必备，专属自己的品牌!',

@@ -62,30 +62,36 @@
 .title-wrap {
 	position: absolute;
 	width: 100%;
-	height: 37px;/*px*/
-	line-height: 37px;/*px*/
-	top: 42px;
-	font-size: 42px;/*px*/
-	z-index: 10;
+	height: 34px;
+	line-height: 34px;
+	top: 70px;
+	font-size: 34px;
 	color: #fe80ae;
 	text-align:center;
+	word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+	z-index: 10;
+	overflow: hidden;
 }
 
 .name-wrap{
 	position: absolute;
-	height: 50px;
+	height: 34px;
 	left: 330px;
-	right: 0;
-	line-height: 50px;
-	top: 780px;
-	font-size: 42px;
+	right: 10px;
+	line-height: 34px;
+	top: 785px;
+	font-size: 34px;
 	font-weight: bold;
 	z-index: 10;
 	color: #7a0fa7;
 	text-align:left;
-	word-wrap: break-word;
-	word-break: normal;
-	word-break:break-all;
+	text-align: left;
+	word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+	overflow: hidden;
 }
 
 .detail-wrap {
@@ -93,9 +99,9 @@
 	height: 405px;
 	left: 0;
 	right: 120px;
-	top: 935px;
-	line-height: 140%;
-	font-size: 29px;
+	top: 920px;
+	line-height: 180%;
+	font-size: 22px;
 	text-align:center;
 	color: #f76464;
 	z-index: 10;

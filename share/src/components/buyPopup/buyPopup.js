@@ -136,6 +136,7 @@ module.exports = {
             var module = undefined === this.$data.selectModel ? this.defaultOptions.moldId : this.$data.selectModel;
             var baseprice = pricedic[type][module];
             var resultPrice = baseprice * (1 + this.defaultOptions.percent / 100.0)+ otherprice + this.defaultOptions.matsPrice;
+            resultPrice = resultPrice.toFixed(2);
             return resultPrice;
         },
         updatePrice: function () {

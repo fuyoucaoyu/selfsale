@@ -74,7 +74,6 @@ module.exports = {
                 clearInterval(intervalId);
                 var mySwiper = new Swiper('.swiper-container', {
                     preventLinks: false,
-                    pagination: '.pagination',
                     paginationClickable: true,
                     slidesPerView: 2,
                     loop: true

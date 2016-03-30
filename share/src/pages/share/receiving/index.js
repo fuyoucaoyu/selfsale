@@ -23,6 +23,7 @@ var app = new Vue({
     el: '#app',
     data: {
         isInWeixin: util.ua.isWeiXin,
+        openInWeixin: '请在微信中打开并支付！',
         multiSelectId: 'addrMultiSelect',
         payType: util.ua.isWeiXin ? 0 : 1,
         errMsg: null,
@@ -48,6 +49,11 @@ var app = new Vue({
             if (!this.isOpen()) {
                 event.preventDefault();
                 event.stopPropagation();
+            }
+
+            if (!util.ua.isWeiXin) {
+                this.showMessagePopup(this.$data.openInWeixin);
+                return;
             }
 
             this.$data.errMsg = null;
