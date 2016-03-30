@@ -30,6 +30,10 @@ var app = new Vue({
     },
     components: {
         'works': Works
+    },
+    ready: function (argument) {
+        // 添加微信二次分享设置
+        util.supportAppShare(window.location.href, 'http://' + window.location.host + __uri('../../../static/images/app/app_header.jpg'));
     }
 });
 

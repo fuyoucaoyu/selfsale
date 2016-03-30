@@ -42,12 +42,12 @@ var app = new Vue({
         },
         closeBuyPopup: function (event) {
             this.$data.buying = false;
-        }
+        },
     },
     components: {
         'buy-popup': BuyPopup,
         'work-display': WorkDisplay
-    }
+    },
 });
 
 // 参数解析
@@ -81,6 +81,8 @@ function router(e) {
 
         var result = data.data;
         app.$data.nick = result.nick;
+        util.supportPersonalShare(app.$data.nick , window.location.href, 'http://' + window.location.host + __uri('../../../static/images/app/app_header.jpg'));
+
         if (result.title && '' !== result.title.replace(/ /g, '')) {
             app.$data.title = result.title;
         } else {

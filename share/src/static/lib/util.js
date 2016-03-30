@@ -457,5 +457,80 @@ var util = {
         url = url + '/' + clothesdic.ccolor[color];
         url = url + clothesdic.direction[direction];
         return url;
+    },
+    supportWeixinShare: function (shareData) {
+        // 配置微信的二次分享
+        var ua = navigator.userAgent.toLowerCase();
+        var isWeiXin = ua.indexOf('micromessenger') > -1;
+        if (isWeiXin) {
+            jsonp(config.getProduceUrl, {}, function (error, data) {
+                if (error !== 'error') {
+                    var config = data.result;
+                    // 是否为调试状态，false为否
+                    config.debug = false;
+                    // 需要使用的接口列表
+                    config.jsApiList = ['onMenuShareAppMessage', 'onMenuShareTimeline'];
+                    wx.config(config);
+                    // 添加验证通过后的回调
+                    wx.ready(function () {
+                        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+                        // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+                        wx.onMenuShareTimeline({
+                            title: shareData.desc, // 分享标题
+                            link: shareData.url, // 分享链接
+                            imgUrl: shareData.imgUrl, // 分享图标
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                        // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+                        wx.onMenuShareAppMessage({
+                            title: shareData.title, // 分享标题
+                            desc: shareData.desc, // 分享描述
+                            link: shareData.url, // 分享链接
+                            imgUrl: shareData.imgUrl, // 分享图标
+                            type: 'link', // 分享类型,music、video或link，不填默认为link
+                            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                            success: function () {
+                                // 用户确认分享后执行的回调函数
+                            },
+                            cancel: function () {
+                                // 用户取消分享后执行的回调函数
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    },
+    supportAppShare: function (url, imgUrl) {
+        var shareData = {
+            title: '自做自售',
+            desc: '@自做自售 小伙伴们：分享一个不错的APP软件给大家，“自做自售”：Just Me，没有什么能阻挡我的创作，我是设计师，我为自己代言',
+            url: url,
+            imgUrl: imgUrl
+        };
+        this.supportWeixinShare(shareData);
+    },
+    supportPersonalShare: function (username, url, imgUrl) {
+        var shareData = {
+            title: '好友' + username + '的设计',
+            desc: 'Just Me，没有什么能阻挡我的创作，我是设计师，我为自己代言!',
+            url: url,
+            imgUrl: imgUrl
+        };
+        this.supportWeixinShare(shareData);
+    },
+    supportShakeShare: function (url, imgUrl) {
+        var shareData = {
+            title: '自做自售',
+            desc: '摇一摇秒创T恤，有创意零压力赚取佣金',
+            url: url,
+            imgUrl: imgUrl
+          };
+        this.supportWeixinShare(shareData);
     }
 };
