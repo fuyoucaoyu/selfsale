@@ -48,6 +48,8 @@ var clothesdic = {
 };
 
 var util = {
+    defaultTitle: '遇到自己，邂逅你的特殊',
+    defaultDetail: '每个人都带着一张判书：<br/>80后或者90后，颓废的一族，消沉的群体。<br/>不管你怎么发声，都摘不掉它。<br/>家长心目中的乖小孩，老师眼里的坏学生，<br/>像是挥之不去的噩梦，你打不破它。<br/>注定横平竖直的整齐，像是刚刚割过的嫩韭菜。<br/>其实只需要可能一夜，我们又都重新成长起来，<br/>想要突破，注定需要勇气，敢于尝试。<br/>当遇到自做自售，请扔掉你的面具，撕掉你的判书，<br/>在这里，勇敢做自己，做不一样的自己。',
     objToString: function (params) {
         var result = '';
         var data;
@@ -210,6 +212,10 @@ var util = {
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
+          experienceColor: [ {key: 'white', name: '#ffffff'}, 
+                    {key: 'gray', name: '#99989e'}, 
+                    {key: 'black', name: '#000000'}
+              ],
           size: [  {key: 'M', name: 'M'}, 
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
@@ -239,6 +245,10 @@ var util = {
                     {key: 'blue', name: '#000079'}, 
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
+              ],
+          experienceColor: [ {key: 'white', name: '#ffffff'}, 
+                    {key: 'gray', name: '#99989e'}, 
+                    {key: 'black', name: '#000000'}
               ],
           size: [  {key: 'S', name: 'S'}, 
                    {key: 'M', name: 'M'}, 

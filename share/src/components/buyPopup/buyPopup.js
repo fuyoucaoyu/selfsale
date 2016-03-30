@@ -22,6 +22,7 @@ module.exports = {
     props: ['options', 'defaultOptions', 'displayImgs', 'touchCloseCallback'],
     data: function () {
         return {
+            showingColor: {},
             selectModel: this.defaultOptions.moldId,
             selectSex: this.defaultOptions.sex,
             selectType: this.defaultOptions.type,
@@ -29,6 +30,11 @@ module.exports = {
             selectSize: this.defaultOptions.size,
             price: this.getPrice(),
             selectNum: 1
+        }
+    },
+    computed: {
+        showingColor: function () {
+            return (3 == this.$data.selectModel && 0 == this.$data.selectType) ? this.options.experienceColor : this.options.ccolor;
         }
     },
     methods: {
@@ -68,6 +74,7 @@ module.exports = {
         },
         clickTypeItem: function (item) {
             this.$data.selectType = item.key;
+            this.updateWorkDisplay();
             this.updatePrice();
         },
         clickColorItem: function (item) {
@@ -106,7 +113,14 @@ module.exports = {
             this.options = util.clothesData[this.$data.selectModel + '_' + this.$data.selectSex];
             
             this.validateSelectedOption(this.options.type, 'selectType');
-            this.validateSelectedOption(this.options.ccolor, 'selectColor');
+
+            // T恤体验款颜色只有黑色白色灰色
+            if (3 == this.$data.selectModel && 0 == this.$data.selectType) {
+                this.validateSelectedOption(this.options.experienceColor, 'selectColor');
+            } else {
+                this.validateSelectedOption(this.options.ccolor, 'selectColor');
+            }
+
             this.validateSelectedOption(this.options.size, 'selectSize');
 
             this.displayImgs.frontbgUrl = util.getClothes(curData.selectModel, curData.selectColor, curData.selectSex, 'front');

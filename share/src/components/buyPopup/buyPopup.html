@@ -38,7 +38,7 @@
 			<div class="color-wrap">
 				<div class="color-label">颜色</div>
 				<div class="content-big-wrap">
-					<span v-for="colorItem in options.ccolor" v-bind:style="{backgroundColor: colorItem.name }" 
+					<span v-for="colorItem in showingColor" v-bind:style="{backgroundColor: colorItem.name }" 
 						v-bind:class="{'select-box': selectColor == colorItem.key}"
 						v-tap="clickColorItem(colorItem)"></span>
 				</div>

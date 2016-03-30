@@ -81,8 +81,16 @@ function router(e) {
 
         var result = data.data;
         app.$data.nick = result.nick;
-        app.$data.title = result.title;
-        app.$data.detail = result.content;
+        if (result.title && '' !== result.title.replace(/ /g, '')) {
+            app.$data.title = result.title;
+        } else {
+            app.$data.title = util.defaultTitle;
+        }
+        if (result.content && '' !== result.content.replace(/ /g, '')) {
+            app.$data.detail = result.content;
+        } else {
+            app.$data.detail = util.defaultDetail;
+        }
         if (result.headurl && '' !== result.headurl.replace(/ /g, '')) {
             app.$data.avatarUrl = config.getImgUrl + result.headurl;
         }
