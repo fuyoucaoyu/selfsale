@@ -3,7 +3,7 @@
  */
 
 var Vue = window.Vue;
-Vue.config.debug = true;
+Vue.config.debug = false;
 Vue.use(window.tap);
 
 var BuyPopup = require('../../../components/buyPopup/buyPopup.js');
