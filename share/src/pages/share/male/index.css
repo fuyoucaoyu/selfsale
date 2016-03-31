@@ -61,7 +61,8 @@
 
 .title-wrap {
 	position: absolute;
-	width: 100%;
+	left: 145px;
+	right: 125px;
 	height: 34px;
 	top: 120px;
 	line-height: 34px;
