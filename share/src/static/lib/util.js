@@ -463,7 +463,7 @@ var util = {
         var ua = navigator.userAgent.toLowerCase();
         var isWeiXin = ua.indexOf('micromessenger') > -1;
         if (isWeiXin) {
-            jsonp(config.getProduceUrl, {}, function (error, data) {
+            this.jsonp(config.getProduceUrl, {}, function (error, data) {
                 if (error !== 'error') {
                     var config = data.result;
                     // 是否为调试状态，false为否
