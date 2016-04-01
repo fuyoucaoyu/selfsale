@@ -465,7 +465,7 @@ var util = {
         var ua = navigator.userAgent.toLowerCase();
         var isWeiXin = ua.indexOf('micromessenger') > -1;
         if (isWeiXin) {
-            this.jsonp(config.getProduceUrl, {function: config.shareConfFn}, function (error, data) {
+            this.jsonp(config.getProduceUrl, {function: config.shareConfFn, url: encodeURIComponent(window.location.href.split('#')[0])}, function (error, data) {
                 if (error !== 'error') {
                     var config = data;
                     // -1错误：获取不到Token;
@@ -475,7 +475,7 @@ var util = {
                     }
 
                     // 是否为调试状态，false为否
-                    config.debug = false;
+                    config.debug = true;
                     // 需要使用的接口列表
                     config.jsApiList = ['onMenuShareAppMessage', 'onMenuShareTimeline'];
                     wx.config(config);
