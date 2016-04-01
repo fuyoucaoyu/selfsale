@@ -81,7 +81,7 @@ function router(e) {
 
         var result = data.data;
         app.$data.nick = result.nick;
-        util.supportPersonalShare(app.$data.nick , window.location.href, 'http://' + window.location.host + __uri('../../../static/images/app/app_header.jpg'));
+        util.supportPersonalShare(app.$data.nick , window.location.href, 'http://' + window.location.host + __uri('../../../static/images/share_logo.png'));
         
         if (result.title && '' !== result.title.replace(/ /g, '')) {
             app.$data.title = result.title;
