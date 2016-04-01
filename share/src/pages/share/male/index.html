@@ -51,8 +51,9 @@
 
             <buy-popup :options="goodsOptions" :default-options="defultSelectedOptions" :display-imgs="popupDisplayImgs" :touch-close-callback="closeBuyPopup" v-if="buying"></buy-popup>
             <img class="buy-btn" src="../../../static/images/male/buy.png" v-else v-tap="onTouchBuyHandler">
-
         </div>
+        
+        <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>
         <script type="text/javascript" src="../../../static/lib/util.js"></script>
