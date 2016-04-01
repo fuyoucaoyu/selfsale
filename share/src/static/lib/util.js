@@ -15,7 +15,9 @@ var config = {
     getOrderByBuyerId: 'getOrderByBuyerIdState',
     payFn: 'payParameter',
     updateOrderFn: 'updateOrder',
-    getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
+    shareConfFn: 'configParameter',
+    // getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
+    getImgUrl: 'http://fx.zizuozishou.com/SSH/FileDownload.action?filename='
 };
 
 var clothesdic = {
@@ -463,9 +465,15 @@ var util = {
         var ua = navigator.userAgent.toLowerCase();
         var isWeiXin = ua.indexOf('micromessenger') > -1;
         if (isWeiXin) {
-            this.jsonp(config.getProduceUrl, {}, function (error, data) {
+            this.jsonp(config.getProduceUrl, {function: config.shareConfFn}, function (error, data) {
                 if (error !== 'error') {
-                    var config = data.result;
+                    var config = data;
+                    // -1错误：获取不到Token;
+                    // -2错误：获取不到Ticket;
+                    if ('-1' == config.retcode || '-2' == config.retcode) {
+                        return;
+                    }
+
                     // 是否为调试状态，false为否
                     config.debug = false;
                     // 需要使用的接口列表
