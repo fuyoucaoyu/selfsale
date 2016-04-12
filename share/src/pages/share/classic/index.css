@@ -49,7 +49,7 @@
 	position: absolute;
 	width: 640px;
 	height: 640px;
-	top: 32px;
+	top: 25px;
 	text-align: center;
 	z-index: 1;
 	transform: scale(0.9, 0.9);
