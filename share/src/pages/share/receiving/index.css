@@ -8,20 +8,25 @@
 .person-info-wrap {
 	/**padding: 54px 24px 0px 26px;**/
 	padding: 0px;
-	padding-top: 54px;
+	padding-top: 56px;
 	margin: auto;
 	overflow: hidden;
 }
 
 #addrMultiSelect {
-    width: 604px;
-    color: #a3a3a3;
+    width: 584px;
+    text-indent: 0;
+    padding-left: 28px;
+    padding-right: 28px;
+    /*color: #a3a3a3;*/
+    color: #070100;
     font-size: 35px;
 }
 
 #addrMultiSelect > span {
     width: 604px;
-    color: #a3a3a3;
+    /*color: #a3a3a3;*/
+    color: #070100;
     font-size: 35px;
 	height: 40px;
 	line-height: 40px;
@@ -32,9 +37,11 @@
 	color: #070100;
 	font-size: 40px;
 	line-height: 40px;
-	padding-left: 28px;
-	padding-top: 26px;
-	padding-bottom: 50px;
+    width: 584px;
+    padding-left: 28px;
+    padding-right: 28px;
+	padding-top: 0px;
+	padding-bottom: 34px;
 }
 
 .person-info-wrap-input-a {
@@ -53,13 +60,15 @@
 	display: block;
 	/*width: 100%;*/
 	height: 40px;
-	margin-top: 50px;
+	margin-top: 44px;
 	padding-bottom: 10px;
     /*padding-left: 14px;*/
     left: 0px;
     right: 0px;
-    width: 640px;
-    text-indent: 14px;
+    width: 584px;
+    /*text-indent: 14px;*/
+    padding-left: 28px;
+    padding-right: 28px;
     border: none;
     color: #070100;
     font-size: 35px;
@@ -67,7 +76,7 @@
     background-size: 100% auto;
     background-position: bottom;
 
-	background-image: url(../../../static/images/receiving/line_normal2.png?__inline);
+	background-image: url(../../../static/images/receiving/line_normal.png?__inline);
 }
 
 .person-info-wrap-input-b {
@@ -75,13 +84,15 @@
 	display: block;
 	/*width: 100%;*/
 	height: 40px;
-	margin-top: 50px;
+	margin-top: 44px;
 	padding-bottom: 30px;
     /*padding-left: 14px;*/
     left: 0px;
     right: 0px;
-    width: 640px;
-    text-indent: 14px;
+    width: 584px;
+    /*text-indent: 14px;*/
+    padding-left: 28px;
+    padding-right: 28px;
     border: none;
     color: #070100;
     font-size: 35px;
@@ -89,8 +100,21 @@
     background-size: 100% auto;
     background-position: bottom;
 
-	background-image: url(../../../static/images/receiving/line_normal2.png?__inline);
+	background-image: url(../../../static/images/receiving/line_normal.png?__inline);
 }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+	color: #070100; 
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+	color: #070100; 
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+	color: #070100; 
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+	color: #070100; 
+} 
 
 .pay-way-wrap {
 	position: relative;
@@ -148,8 +172,9 @@
 
 .confirm-btn-wrap {
 	width: 100%;
-	padding-top: 100px;
+	padding-top: 70px;
 	height: 78px;
+	padding-bottom: 50px;
 	text-align: center;
 }
 .confirm-btn {
