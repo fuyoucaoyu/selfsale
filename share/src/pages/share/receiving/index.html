@@ -20,16 +20,16 @@
                 <!-- <input v-for="item in workOptions" v-bind:id="item.key" v-bind:name="item.key" v-bind:value="item.value" type="hidden" /> -->
 
                 <div class="person-info-wrap">
-                    <h3>收货地址</h3>
-                    <input id="username" name="username" placeholder="收货人：" v-model:value="orderInfo.username"/>
-                    <input id="phone" name="phone" placeholder="手机号：" type="tel" v-model:value="orderInfo.phone"/>
-                    <input id="address" name="address" placeholder="地址：省市区" v-bind:value="orderInfo.address" type="hidden" />
+                    <p class="person-info-wrap-hc">收货地址</p>
+                    <input class="person-info-wrap-input-a" id="username" name="username" placeholder="收货人：" v-model:value="orderInfo.username"/>
+                    <input class="person-info-wrap-input-a" id="phone" name="phone" placeholder="手机号：" type="tel" v-model:value="orderInfo.phone"/>
+                    <input class="person-info-wrap-input-a" id="address" name="address" placeholder="地址：省市区" v-bind:value="orderInfo.address" type="hidden" />
                     <multi-select :container-id="multiSelectId" :syn-callback="updateAddress"></multi-select>
-                    <input id="detail_address" name="detail_address" placeholder="详细地址：" v-model:value="orderInfo.detail_address" />
-                    <input id="remarks" name="remarks" placeholder="备注信息：" v-model:value="orderInfo.remarks" />
+                    <input class="person-info-wrap-input-a" id="detail_address" name="detail_address" placeholder="详细地址：" v-model:value="orderInfo.detail_address" />
+                    <input class="person-info-wrap-input-b" id="remarks" name="remarks" placeholder="备注信息：" v-model:value="orderInfo.remarks" />
                 
                     <div class="pay-way-wrap">
-                        <h4>支付方式:</h4>
+                        <p class="pay-way-wrap-hd">支付方式:</p>
                         <input id="pay_type" name="pay_type" v-model:value="payType" type="hidden"/>
                         <div class="pay-btn-wrap">
                             <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-tap="selectPayType(0)" v-show="isInWeixin"></span>

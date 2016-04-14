@@ -28,15 +28,16 @@
 	margin-top: 50px;
 }
 
-.person-info-wrap h3 {
-	color: #262525;
+.person-info-wrap-hc {
+	color: #070100;
 	font-size: 40px;
 	line-height: 40px;
-	padding-left: 26px;
+	padding-left: 28px;
+	padding-top: 26px;
 	padding-bottom: 50px;
 }
 
-.person-info-wrap input {
+.person-info-wrap-input-a {
 	/**display: block;
 	width: 100%;
 	height: 40px;
@@ -53,19 +54,42 @@
 	/*width: 100%;*/
 	height: 40px;
 	margin-top: 50px;
+	padding-bottom: 10px;
     /*padding-left: 14px;*/
-    left: 26px;
-    right: 10px;
-    width: 604px;
+    left: 0px;
+    right: 0px;
+    width: 640px;
     text-indent: 14px;
     border: none;
-    color: #a3a3a3;
+    color: #070100;
     font-size: 35px;
 	background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
 
-	background-image: url(../../../static/images/receiving/line_normal.png?__inline);
+	background-image: url(../../../static/images/receiving/line_normal2.png?__inline);
+}
+
+.person-info-wrap-input-b {
+	position: relative;
+	display: block;
+	/*width: 100%;*/
+	height: 40px;
+	margin-top: 50px;
+	padding-bottom: 30px;
+    /*padding-left: 14px;*/
+    left: 0px;
+    right: 0px;
+    width: 640px;
+    text-indent: 14px;
+    border: none;
+    color: #070100;
+    font-size: 35px;
+	background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
+
+	background-image: url(../../../static/images/receiving/line_normal2.png?__inline);
 }
 
 .pay-way-wrap {
@@ -73,11 +97,12 @@
 	padding: 40px 10px 0px 16px;
 }
 
-.pay-way-wrap h4 {
-	color: #262525;
+.pay-way-wrap-hd {
+	color: #070100;
 	font-size: 35px;
 	line-height: 35px;
 	padding-bottom: 36px;
+	padding-top: 20px;
 }
 
 .pay-way-wrap span {
@@ -124,18 +149,18 @@
 .confirm-btn-wrap {
 	width: 100%;
 	padding-top: 100px;
-	height: 62px;
+	height: 78px;
 	text-align: center;
 }
 .confirm-btn {
-	height: 62px;
-	width: 280px;
+	height: 78px;
+	width: 497px;
 	margin: auto;
 	display: inline-block;
 	color: #fff;
 	font-size: 40px;
-	line-height: 62px;
-	background-color: #36BD36;
+	line-height: 78px;
+	background-color: #ff9c01;
 	border-radius: 10px;
 }
 

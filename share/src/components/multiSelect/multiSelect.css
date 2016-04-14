@@ -111,17 +111,18 @@ div.cs-skin-slide {
 	display: block;
 	height: 40px;
 	margin-top: 50px;
-    left: 26px;
-    right: 10px;
-    width: 604px;
+	padding-bottom: 10px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
     text-indent: 14px;
     border: none;
-    color: #a3a3a3;
+    color: #070100;
     font-size: 35px;
 	background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
-	background-image: url(../../static/images/receiving/line_normal.png?__inline);
+	background-image: url(../../static/images/receiving/line_normal3.png?__inline);
 }
 
 @media screen and (max-width: 30em) {
