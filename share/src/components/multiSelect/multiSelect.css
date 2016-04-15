@@ -122,6 +122,7 @@ div.cs-skin-slide {
 	background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
+    border-bottom: 1px solid #0f0207; /*no*/
 	background-image: url(../../static/images/receiving/line_normal3.png?__inline);
 }
 
