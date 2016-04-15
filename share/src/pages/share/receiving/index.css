@@ -75,8 +75,8 @@
 	background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
-
-	background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);
+	border-bottom: 1px solid #0f0207; /*no*/
+	/*background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);*/
 }
 
 .person-info-wrap-input-b {
@@ -99,8 +99,8 @@
 	background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
-
-	background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);
+	border-bottom: 1px solid #0f0207; /*no*/
+	/*background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);*/
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
