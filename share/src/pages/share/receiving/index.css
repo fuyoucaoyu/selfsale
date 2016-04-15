@@ -76,7 +76,7 @@
     background-size: 100% auto;
     background-position: bottom;
 
-	background-image: url(../../../static/images/receiving/line_normal.png?__inline);
+	background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);
 }
 
 .person-info-wrap-input-b {
@@ -100,7 +100,7 @@
     background-size: 100% auto;
     background-position: bottom;
 
-	background-image: url(../../../static/images/receiving/line_normal.png?__inline);
+	background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
