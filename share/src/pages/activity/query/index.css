@@ -9,71 +9,92 @@
 .app-header-wrap {
 	position: relative;
 	width: 100%;
-	height: 572px;
+	height: 87px;
+	border-bottom: 2px solid #d6d6d6;/*no*/
 }
 
-.header-bg {
-	width: 640px;
-	height: 572px;
-}
-
-.header-download-btn {
+.icon-img{
 	position: absolute;
-	width: 190px;
-	height: 71px;
-	top: 450px;
-	left: 220px;
-	z-index: 10;
+	width: 64px;
+	height: 64px;
+	top: 11.5px;
+	left: 20px;
+
 }
 
-.header-dwonload-a {
-	position: absolute;
-	width: 190px;
-	height: 71px;
-	top: 450px;
-	left: 220px;
-	z-index: 20;
+.title-text{
+	width: 100%;
+	height: 87px;
+	line-height: 87px;
+	color: #242424;
+	font-size: 42px;
+	font-weight: bold;
+	text-align: center;
 }
 
-.app-intro {
+.query-container {
+	position: relative;
+	width: 100%;
+	padding-top: 64px;
+	padding-bottom: 90px;
+	text-align: center;
+}
+
+.query-input {
+	width: 504px;
+	height: 86px;
+	margin: auto;
+	font-size: 37px;
+	color: #595959;
+	border: solid 2px #AAAAAA;/*no*/
+	text-align: center;
+	border-radius: 10px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+	color: #595959; 
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+	color: #595959; 
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+	color: #595959; 
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+	color: #595959; 
+} 
+
+.query-btn {
+	width: 240px;
+	height: 60px;
+	margin-top: 40px;
+}
+
+.contact-detail {
 	width: 640px;
-	height: 1301px;
+	height: 568px;
 	background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-	background-image: url(../../../static/images/app/app_intro.jpg);
+	background-image: url(../../../static/images/query/contactdetail.png);
 }
 
 .footer-wrap {
-	text-align: center;
-	position: relative;
+	position: fixed;
+	bottom: 0;
 	width: 640px;
-	height: 1134px;
+	height: 97px;
 	background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-	background-image: url(../../../static/images/app/footer.jpg);
-}
+	background-image: url(../../../static/images/query/goappbotton.png);
 
-.app-download-bottom {
-    position: absolute;
-	width: 183px;
-	height: 68px;
-    top: 875px;
-    left: 227px;
-    z-index: 10;
 }
 
 .app-download-a {
+	width: 100px;
+    height: 97px;
     position: absolute;
-	width: 183px;
-	height: 68px;
-    top: 875px;
-    left: 227px;
-    z-index: 20;
+    right: 18px;
 }
 
-.app-info {
-	width: 640px;
-	height: 1134px;
-}

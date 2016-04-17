@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="./userWorkDisplay.css?__inline">
+<div class="user-work-wrap" v-tap="clickItemHandler">
+	<work-display :display-imgs="item.workItem" :front="true" spec-class="scaled-work-display"></work-display>
+	<div class="user-profile-wrap">
+        <img class="user-avatar" v-bind:src="item.userItem.avatarUrl">
+        <div class="title-wrap" v-html="item.userItem.title"></div>
+        <div class="name-wrap" v-html="item.userItem.nick"></div>
+        <div class="praise-wrap">
+        	<img class="praise-icon" src="../../static/images/recommend/love.png">
+        	<div class="praise-count" >8976</div>
+        </div>
+	</div>
+</div>

@@ -11,21 +11,26 @@
 
         <script src="../../../static/lib/flexible.debug.js"></script>
         <script src="../../../static/lib/flexible_css.debug.js"></script>
-        <title>推荐页面</title>
+        <title>查询订单</title>
         <link rel="stylesheet" type="text/css" href="../../../static/lib/swipe/idangerous.swiper.css?__inline">
         <link rel="stylesheet" type="text/css" href="./index.css?__inline">
     </head>
     <body>
         <div id="app">
             <div class="app-header-wrap">
-                <img class="header-bg" src="../../../static/images/app/app_header.jpg">
-                <div class="app-intro"></div>
+                <img class="icon-img" src="../../../static/images/recommend/logo.png">
+                <div class="title-text">查询订单</div>
             </div>
             
-            <div class="app-intro"></div>
-            
+            <div class="query-container">
+                <input class="query-input" type="text" placeholder="请输入订单号/手机号" v-model:value="queryId" />
+                <img class="query-btn" src="../../../static/images/query/querybtn.png" v-tap="queryById" />
+            </div>
+
+            <div class="contact-detail">
+            </div>
             <div class="footer-wrap">
-                <img class="app-download-bottom" src="../../../static/images/download.png">
+                <!-- <img class="app-download-bottom" src="../../../static/images/query/goappbotton.png"> -->
                 <a class="app-download-a" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usef.zizuozishou"></a>
             </div>
         </div>

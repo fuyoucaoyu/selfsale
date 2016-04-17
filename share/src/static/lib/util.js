@@ -2,8 +2,7 @@
  * @file 公用方法
  */
 var callback_number = 1;
-var $$CB = [];
-var jsonpcb = [];
+var jsonpcb = {};
 
 var config = {
     // getProduceUrl: 'http://www.zizuozishou.com:8080/SSH/shareInteface',
@@ -17,7 +16,9 @@ var config = {
     updateOrderFn: 'updateOrder',
     shareConfFn: 'configParameter',
     // getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
-    getImgUrl: 'http://fx.zizuozishou.com/SSH/FileDownload.action?filename='
+    getImgUrl: 'http://fx.zizuozishou.com/SSH/FileDownload.action?filename=',
+    getWorkList: 'http://fx.zizuozishou.com/SSH/mobileInteface',
+    getWorkListFn: 'getRecommend'
 };
 
 var clothesdic = {
@@ -81,22 +82,15 @@ var util = {
         fn = fn || 'callback';
         url = url + (url.indexOf('?') > -1 ? '&' : '?') + fn + '=window.jsonpcb.' + cbn;
         url +=  '&' + this.objToString(data);
-        // for (var key in data) {
-        //     if (typeof data[key] === 'object') {
-        //         url += '&' + key + '=' + JSON.stringify(data[key]);
-        //     } else {
-        //         url += '&' + key + '=' + data[key];
-        //     }
-        // }
         var s = document.createElement('script');
         window.jsonpcb[cbn] = function (response) {
             s.parentNode.removeChild(s);
-            delete window.$$CB[cbn];
+            delete window.jsonpcb[cbn];
             onload && onload(null, response);
         }
         s.onerror = function () {
             s.parentNode.removeChild(s);
-            delete window.$$CB[cbn];
+            delete window.jsonpcb[cbn];
             onload && onload('error');
         }
         s.src = url;
@@ -130,6 +124,46 @@ var util = {
             dataStr = JSON.stringify(data);
         }
         xhr.send(dataStr);
+    },
+    ajax: function (url, data, callback, method, type) {
+        var xhr = (function () {
+            if (window.ActiveXObject) {
+              return new ActiveXObject('Microsoft.XMLHTTP');
+            } else {
+                return new XMLHttpRequest();
+            }
+        })();
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                    var data = JSON.parse(xhr.responseText);
+                    callback(null, data);
+                } else {
+                    callback('error');
+                }
+            }
+        }
+
+        if (!method) {
+          method = 'get';
+        }
+
+        if ('post' !== method && typeof data === 'object') {
+            url = url + (url.indexOf('?') > -1 ? '&' : '?') + this.objToString(data);
+        }
+        xhr.open(method, url);
+        xhr.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+
+        if ('post' === method) {
+            var dataStr = data;
+            if (typeof data === 'object') {
+                dataStr = JSON.stringify(data);
+            }
+            xhr.send(dataStr);
+        } else {
+            xhr.send();
+        }
     },
     gotoPage: function (loc, params) {
         if (!params || undefined === params) {

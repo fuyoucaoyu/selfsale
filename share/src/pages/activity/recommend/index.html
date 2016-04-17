@@ -19,14 +19,26 @@
         <div id="app">
             <div class="app-header-wrap">
                 <img class="icon-img" src="../../../static/images/recommend/logo.png">
-                <div class="title-text"></div>
-                <img class="detail-btn" src="../../../static/images/recommend/queryordersbtn.png">
+                <div class="title-text">推荐</div>
+                <img class="detail-btn" src="../../../static/images/recommend/queryordersbtn.png" v-tap="showQueryPage">
             </div>
             
             <img class="banner" src="../../../static/images/recommend/bannerbg.jpg">
+
+            <div id="workItemsContainer" class="work-items">
+                <div class="work-item-wrap">
+                    <div class="work-item" v-for="item in userWorkItems" v-bind:class="$index % 2 == 0 ? 'item-left' : 'item-right'">
+                        <user-work-display v-bind:item="item"></user-work-display>
+                    </div>
+                </div>
+                <div class="loading-container" v-bind:style="{display: isLoading ? 'block' : 'none'}">
+                    <div class="loading-icon"></div>
+                    <div class="loading-text">加载中…</div>
+                </div>
+            </div>
                 
             <div class="footer-wrap">
-                <img class="app-download-bottom" src="../../../static/images/query/goappbotton.png">
+                <!-- <img class="app-download-bottom" src="../../../static/images/query/goappbotton.png"> -->
                 <a class="app-download-a" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usef.zizuozishou"></a>
             </div>
         </div>

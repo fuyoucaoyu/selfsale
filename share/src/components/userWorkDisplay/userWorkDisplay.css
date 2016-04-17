@@ -1,0 +1,97 @@
+@charset 'utf-8';
+
+@import url('../workDisplay/workDisplay.css?__inline');
+
+
+.user-work-wrap {
+	position: relative;
+	width: 280px;
+	height: 385px;
+	border-radius: 20px;
+	border: 1px solid #d6d6d6;/*no*/
+	text-align: center;
+	overflow: hidden;
+}
+
+.scaled-work-display {
+	position: relative;
+	top: -170px;/**(-640 + 0.5 * 640) * 0.5**/
+	left: -180px;/**(-640 + 0.5 * 640) * 0.5**/
+	transform: scale(0.54, 0.5);
+	-ms-transform: scale(0.54, 0.5);
+	-moz-transform: scale(0.54, 0.5);
+	-webkit-transform: scale(0.54, 0.5);
+	-o-transform: scale(0.54, 0.5);
+}
+.scaled-work-display .work-wrap {
+	width: 640px;
+	height: 640px;
+	overflow: hidden;
+}
+
+.user-profile-wrap {
+	position: absolute;
+	width: 100%;
+	height: 80px;
+	bottom: 0;
+	text-align: left;
+}
+
+.user-avatar {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	left: 18px;
+	border-radius: 35px;
+}
+
+.title-wrap {
+	position: absolute;
+	left: 98px;
+	right: 10px;
+	bottom: 50px;
+	font-size: 24px;
+	color: #000;
+}
+
+.name-wrap {
+	position: absolute;
+	height: 20px;
+	left: 98px;
+	bottom: 20px;
+	right: 100px;
+	font-size: 20px;
+	color: #3f3f3f;
+	line-height: 20px;
+	white-space: normal
+　　 word-break: break-all; /*支持IE，chrome，FF不支持*/
+　　 word-wrap: break-word;/*支持IE，chrome，FF*/
+	overflow: hidden;
+}
+
+.praise-wrap {
+	position: absolute;
+	right: 10px;
+	bottom: 16px;
+	width: 80px;
+	height: 24px;
+}
+
+.praise-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 28px;
+	height: 24px;
+}
+
+.praise-count {
+	position: absolute;
+	height: 24px;
+	line-height: 24px;
+	top: 0;
+	left: 34px;
+	color: #525252;
+	font-size: 22px;
+}
+
