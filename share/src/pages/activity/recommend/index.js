@@ -32,7 +32,7 @@ var app = new Vue({
             var scrollTop = dom.scrollTop;  
             var clientHeight = dom.clientHeight;  
             var scrollHeight = dom.scrollHeight;  
-            if (scrollTop + clientHeight == scrollHeight) {  
+            if (scrollTop + clientHeight >= (scrollHeight - 2)) {  
                 return true;  
             } else {  
                 return false;  
@@ -56,7 +56,7 @@ var app = new Vue({
             }  
             // 知识点：Math.max 比较大小，取最大值返回  
             scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);  
-            if (scrollTop + clientHeight == scrollHeight) {  
+            if (scrollTop + clientHeight >= (scrollHeight - 2)) {  
                 return true;  
             } else {  
                 return false;  
