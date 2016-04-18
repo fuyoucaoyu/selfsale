@@ -22,10 +22,10 @@
                 <div class="title-text">推荐</div>
                 <img class="detail-btn" src="../../../static/images/recommend/queryordersbtn.png" v-tap="showQueryPage">
             </div>
-            
-            <img class="banner" src="../../../static/images/recommend/bannerbg.jpg">
 
             <div id="workItemsContainer" class="work-items">
+                <img class="banner" src="../../../static/images/recommend/bannerbg.jpg">
+
                 <div class="work-item-wrap">
                     <div class="work-item" v-for="item in userWorkItems" v-bind:class="$index % 2 == 0 ? 'item-left' : 'item-right'">
                         <user-work-display v-bind:item="item"></user-work-display>

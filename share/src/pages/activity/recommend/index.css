@@ -17,6 +17,10 @@ body {
 	width: 100%;
 	height: 87px;
 	border-bottom: 2px solid #d6d6d6;/*no*/
+	
+	-webkit-box-shadow: 10px 10px 25px #ccc;
+　　-moz-box-shadow: 10px 10px 25px #ccc;
+　　box-shadow: 10px 10px 25px #ccc;
 }
 
 .icon-img{
@@ -46,25 +50,27 @@ body {
 	height: 64px;
 }
 
-.banner{
-	width: 640px;
-	height: 233px;	
-}
-
 .work-items {
 	position: absolute;
-	top: 342px; /** 89 + 233 + 20 **/
+	top: 89px; /** 89 + 20 **/
 	bottom: 100px; /** 97 + 20 **/
-	width: 592px;
-	padding-left: 24px;
-	padding-right: 24px;
+	width: 100%;
 	overflow-y: auto;
+}
+
+.banner{
+	position: relative;
+	width: 640px;
+	height: 233px;	
+	margin-bottom: 20px;
 }
 
 .work-item-wrap {
 	position: relative;
-	width: 100%;
 	height: auto;
+	width: 592px;
+	padding-left: 24px;
+	padding-right: 24px;
 }
 
 .work-item {
