@@ -17,7 +17,7 @@ var config = {
     shareConfFn: 'configParameter',
     // getImgUrl: 'http://www.zizuozishou.com:8080/SSH/FileDownload.action?filename='
     getImgUrl: 'http://fx.zizuozishou.com/SSH/FileDownload.action?filename=',
-    getWorkList: 'http://fx.zizuozishou.com/SSH/mobileInteface',
+    // getWorkList: 'http://fx.zizuozishou.com/SSH/mobileInteface',
     getWorkListFn: 'getRecommend'
 };
 

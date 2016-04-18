@@ -88,7 +88,7 @@ function requestPagination() {
         page: curPage,
         pageSize: pageSize
     };
-    util.jsonp(config.getWorkList, params, function (error, data) {
+    util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
             // alert('show error page');
             util.gotoPage('../../app/index.html');
