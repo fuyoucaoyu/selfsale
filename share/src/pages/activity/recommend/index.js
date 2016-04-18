@@ -88,7 +88,7 @@ function requestPagination() {
         page: curPage,
         pageSize: pageSize
     };
-    util.ajax('http://192.168.1.104:3001', params, function (error, data) {
+    util.jsonp(config.getWorkList, params, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
             // alert('show error page');
             util.gotoPage('../../app/index.html');
@@ -135,7 +135,7 @@ function requestPagination() {
         // app.$data.userWorkItems = userWorkItems;
         isRequesting = false;
         app.$data.isLoading = false;
-    }, 'get');
+    });
 }
 
 

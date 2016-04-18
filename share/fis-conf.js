@@ -5,7 +5,7 @@ fis.match('*', {
 
 /*********************** JS CSS png 压缩 *********************/
 // 加 md5，与缓存机制配套使用较好
-fis.match('*.{js,css,png,jpg}', {
+fis.match('*.{js,css,png,jpg,gif}', {
   useHash: true
 });
 
@@ -139,6 +139,15 @@ fis.match("static/images/(**/*.jpg)", {
     release: APP_NAME + '/static/images/$1'
 });
 
+fis.match("static/images/(*.gif)", {
+    isMod: true,
+    release: APP_NAME + '/static/images/$1'
+});
+fis.match("static/images/(**/*.gif)", {
+    isMod: true,
+    release: APP_NAME + '/static/images/$1'
+});
+
 fis.match("static/swf/(*.swf)", {
     isMod: false,
     release: APP_NAME + '/static/swf/$1'
@@ -160,7 +169,7 @@ fis.set('project.ignore', [
 // fis.media() 接口提供多种状态功能
 // debug时的特性
 fis.media('debug')
-    .match('*.{js,css,png,jpg}', {
+    .match('*.{js,css,png,jpg,gif}', {
       useHash: false,
       useSprite: false,
       optimizer: null
