@@ -1,79 +1,73 @@
 @charset "utf-8";
 
+@import url('../../../components/workDisplay/workDisplay.css?__inline');
 
 #app {
 	width: 640px;
 	margin: auto;
 }
 
-.app-header-wrap {
-	position: relative;
+.buy-button{
 	width: 100%;
-	height: 572px;
+	height: 70px;
 }
 
-.header-bg {
-	width: 640px;
-	height: 572px;
+.nav-bar {
+	width: 100%;
+	height: 68px;
 }
 
-.header-download-btn {
-	position: absolute;
-	width: 190px;
-	height: 71px;
-	top: 450px;
-	left: 220px;
-	z-index: 10;
-}
-
-.header-dwonload-a {
-	position: absolute;
-	width: 190px;
-	height: 71px;
-	top: 450px;
-	left: 220px;
-	z-index: 20;
-}
-
-.app-intro {
-	width: 640px;
-	height: 1301px;
+.left-item-wrap {
+	width: 33%;
+	height: 100%;
+	float:left;
+	text-align:center;
+	color: #4b423a;
 	background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-	background-image: url(../../../static/images/app/app_intro.jpg);
+	background-size: cover; 
 }
 
-.footer-wrap {
+.mid-item-wrap {
+	width: 34%;
+	height: 100%;
+	float:left;
+	text-align:center;
+	color: #4b423a;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+.right-item-wrap {
+	width: 33%;
+	height: 100%;
+	float:left;
+	text-align:center;
+	color: #4b423a;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+.instr-detail {
 	text-align: center;
-	position: relative;
-	width: 640px;
-	height: 1134px;
+	background-position: center;
 	background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
-	background-image: url(../../../static/images/app/footer.jpg);
+	padding-bottom: 98px;
 }
 
-.app-download-bottom {
-    position: absolute;
-	width: 183px;
-	height: 68px;
-    top: 875px;
-    left: 227px;
-    z-index: 10;
-}
-
-.app-download-a {
-    position: absolute;
-	width: 183px;
-	height: 68px;
-    top: 875px;
-    left: 227px;
-    z-index: 20;
-}
-
-.app-info {
+.maleInstr {
 	width: 640px;
-	height: 1134px;
+	height: 4604px;
+	background-size: 640px 4604px;
+}
+
+.femaleInstr {
+	width: 640px;
+	height: 4875px;
+	background-size: 640px 4875px;
+}
+
+.childInstr {
+	width: 640px;
+	height: 1037px;
+	background-size: 640px 1037px;
 }
