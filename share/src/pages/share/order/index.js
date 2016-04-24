@@ -88,12 +88,12 @@ var app = new Vue({
         errMsg: null,
         showPopup: false,
     	selectState: 0,
-    	states: [{state: 0, name: '待付款'}, 
+    	states: [{state: 0, name: '待付款'},
     			 {state: 1, name: '待发货'},
     			 {state: 4, name: '待收货'},
     			 {state: 5, name: '交易完成'}],
         showQueryBtn: false,
-        btnNames: {'0': '去支付', 
+        btnNames: {'0': '去支付',
                    '1': '提醒发货',
                    '4': '确认收货',
                    '5': '交易完成'},
@@ -185,7 +185,7 @@ function router(e) {
 
     // for test: userId: '906',
     var params = getUrlParams(window.location.href.split('?')[1]);
-    if (undefined === params || undefined === params.userId) {
+    if (undefined === params || (undefined === params.userId && undefined === params.phone)) {
         return;
     }
     params.function = config.getOrderByBuyerId;
@@ -239,6 +239,8 @@ function router(e) {
 		    		workDisplayImgs: {
 			            frontUrl: (undefined !== tempOrder.pictrueurl || '' !== tempOrder.pictrueurl) ? config.getImgUrl + tempOrder.pictrueurl : '',
 			            backUrl: (undefined !== tempOrder.pictrueurlback || '' !== tempOrder.pictrueurlback) ? config.getImgUrl + tempOrder.pictrueurlback : '',
+                        // frontUrl: (undefined !== tempOrder.pictrueurl || '' !== tempOrder.pictrueurl) ? util.getImageUrl(tempOrder.pictrueurl, 200) : '',
+                        // backUrl: (undefined !== tempOrder.pictrueurlback || '' !== tempOrder.pictrueurlback) ? util.getImageUrl(tempOrder.pictrueurlback, 200) : '',
 			            frontbgUrl: getClothes(tempOrder.moldId, tempOrder.color, tempOrder.gender, 'front'),
 			            backbgUrl: getClothes(tempOrder.moldId, tempOrder.color, tempOrder.gender, 'back')
 			        }

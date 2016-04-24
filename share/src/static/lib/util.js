@@ -53,6 +53,13 @@ var clothesdic = {
 var util = {
     defaultTitle: '遇到自己,邂逅你的特殊',
     defaultDetail: '做自己，绝不穿撞衫爆款<br/>做自己，绝不用劣质廉价<br/>做自己，绝不能随便将就<br/>做自己新梦想，自做自售<br/>',
+    getImageUrl(pictrueId, width) {
+        if (undefined === width || 0 > width) {
+            return config.getImgUrl + pictrueId;
+        } else {
+            return config.getImgUrl + pictrueId + '&w=' + width;
+        }
+    },
     objToString: function (params) {
         var result = '';
         var data;
@@ -233,26 +240,26 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
-          type: [  {key: 1, name: '经典款'}, 
+          type: [  {key: 1, name: '经典款'},
                    {key: 0, name: '体验款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
-                    {key: 'black', name: '#000000'}, 
-                    {key: 'yellow', name: '#f8f12a'}, 
-                    {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#000079'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
+                    {key: 'black', name: '#000000'},
+                    {key: 'yellow', name: '#f8f12a'},
+                    {key: 'green', name: '#149150'},
+                    {key: 'blue', name: '#000079'},
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
-          experienceColor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
+          experienceColor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
                     {key: 'black', name: '#000000'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'},
@@ -266,28 +273,28 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
-          type: [  {key: 1, name: '经典款'}, 
+          type: [  {key: 1, name: '经典款'},
                    {key: 0, name: '体验款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
-                    {key: 'black', name: '#000000'}, 
-                    {key: 'yellow', name: '#f8f12a'}, 
-                    {key: 'pink', name: '#ffb8d0'}, 
-                    {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#000079'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
+                    {key: 'black', name: '#000000'},
+                    {key: 'yellow', name: '#f8f12a'},
+                    {key: 'pink', name: '#ffb8d0'},
+                    {key: 'green', name: '#149150'},
+                    {key: 'blue', name: '#000079'},
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
-          experienceColor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
+          experienceColor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
                     {key: 'black', name: '#000000'}
               ],
-          size: [  {key: 'S', name: 'S'}, 
-                   {key: 'M', name: 'M'}, 
+          size: [  {key: 'S', name: 'S'},
+                   {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'}
@@ -300,18 +307,18 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
-                    {key: 'black', name: '#000000'}, 
-                    {key: 'yellow', name: '#f8f12a'},  
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
+                    {key: 'black', name: '#000000'},
+                    {key: 'yellow', name: '#f8f12a'},
                     {key: 'blue', name: '#000079'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'},
@@ -325,20 +332,20 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
                     {key: 'yellow', name: '#f8f12a'},
-                    {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#000079'}, 
+                    {key: 'green', name: '#149150'},
+                    {key: 'blue', name: '#000079'},
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'}
@@ -351,16 +358,16 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
                     {key: 'black', name: '#000000'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'}
@@ -373,15 +380,15 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
                     {key: 'gray', name: '#99989e'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'}
@@ -394,15 +401,15 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
                     {key: 'gray', name: '#99989e'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'}
@@ -415,15 +422,15 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
                     {key: 'gray', name: '#99989e'}
               ],
-          size: [  {key: 'M', name: 'M'}, 
+          size: [  {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
                    {key: '2XL', name: '2XL'}
@@ -436,21 +443,21 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
-                    {key: 'black', name: '#000000'}, 
-                    {key: 'yellow', name: '#f8f12a'}, 
-                    {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#000079'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
+                    {key: 'black', name: '#000000'},
+                    {key: 'yellow', name: '#f8f12a'},
+                    {key: 'green', name: '#149150'},
+                    {key: 'blue', name: '#000079'},
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
-          size: [  {key: 'S', name: 'S'}, 
+          size: [  {key: 'S', name: 'S'},
                    {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},
@@ -464,21 +471,21 @@ var util = {
                   {key: 7, name: '开衫'},
                   {key: 8, name: '儿童款'}
                  ],
-          sex: [  {key: 1, name: '男款'}, 
+          sex: [  {key: 1, name: '男款'},
                   {key: 0, name: '女款'}
                ],
           type: [  {key: 1, name: '经典款'}
                 ],
-          ccolor: [ {key: 'white', name: '#ffffff'}, 
-                    {key: 'gray', name: '#99989e'}, 
-                    {key: 'black', name: '#000000'}, 
-                    {key: 'yellow', name: '#f8f12a'}, 
-                    {key: 'green', name: '#149150'}, 
-                    {key: 'blue', name: '#000079'}, 
+          ccolor: [ {key: 'white', name: '#ffffff'},
+                    {key: 'gray', name: '#99989e'},
+                    {key: 'black', name: '#000000'},
+                    {key: 'yellow', name: '#f8f12a'},
+                    {key: 'green', name: '#149150'},
+                    {key: 'blue', name: '#000079'},
                     {key: 'cyan', name: '#00FFFF'},
                     {key: 'red', name: '#ee2e1f'}
               ],
-          size: [  {key: 'S', name: 'S'}, 
+          size: [  {key: 'S', name: 'S'},
                    {key: 'M', name: 'M'},
                    {key: 'L', name: 'L'},
                    {key: 'XL', name: 'XL'},

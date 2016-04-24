@@ -13,7 +13,7 @@ var app = new Vue({
     },
     methods: {
         queryById: function() {
-            alert(this.$data.queryId);
+            util.gotoPage('../../share/order/index.html', {phone: this.$data.queryId})
         }
     },
     components: {
