@@ -55,10 +55,10 @@ var util = {
     defaultDetail: '做自己，绝不穿撞衫爆款<br/>做自己，绝不用劣质廉价<br/>做自己，绝不能随便将就<br/>做自己新梦想，自做自售<br/>',
     getImageUrl(pictrueId, width) {
         if (undefined === width || 0 > width) {
-            return config.getImgUrl + pictrueId;
-        } else {
-            return config.getImgUrl + pictrueId + '&w=' + width;
+            width = 200;
         }
+
+        return config.getImgUrl + pictrueId + '?w=' + width;
     },
     objToString: function (params) {
         var result = '';

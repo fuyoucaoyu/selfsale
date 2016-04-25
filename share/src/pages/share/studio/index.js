@@ -73,7 +73,8 @@ function router(e) {
         app.$data.fans = result.dcount;
         app.$data.signature = result.desc;
         if (result.headurl && '' !== result.headurl) {
-          app.$data.avatarUrl = config.getImgUrl + result.headurl;
+          // app.$data.avatarUrl = config.getImgUrl + result.headurl;
+          app.$data.avatarUrl = util.getImageUrl(result.headurl, 70);
         }
     });
 
@@ -99,10 +100,12 @@ function router(e) {
             item = result[i];
             workItem = {};
             if (item.pictureUrl && '' !== item.pictureUrl.replace(/ /g, '')) {
-                workItem.frontUrl = config.getImgUrl + item.pictureUrl;
+                // workItem.frontUrl = config.getImgUrl + item.pictureUrl;
+                workItem.frontUrl = util.getImageUrl(item.pictureUrl);
             }
             if (item.pictureUrlBack && '' !== item.pictureUrlBack.replace(/ /g, '')) {
-                workItem.backUrl = config.getImgUrl + item.pictureUrlBack;
+                // workItem.backUrl = config.getImgUrl + item.pictureUrlBack;
+                workItem.backUrl = util.getImageUrl(item.pictureUrlBack);
             }
             workItem.frontbgUrl = util.getClothes(item.moldId, item.color, item.gender, 'front');
             workItem.backbgUrl = util.getClothes(item.moldId, item.color, item.gender, 'back');

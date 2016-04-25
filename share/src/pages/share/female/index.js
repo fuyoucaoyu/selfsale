@@ -29,7 +29,7 @@ var app = new Vue({
         popupDisplayImgs: {
             frontUrl: '',
             backUrl: '',
-            frontbgUrl: '', 
+            frontbgUrl: '',
             backbgUrl: ''
         }
     },
@@ -82,7 +82,7 @@ function router(e) {
         var result = data.data;
         app.$data.nick = result.nick;
         util.supportPersonalShare(app.$data.nick , window.location.href, 'http://' + window.location.host + __uri('../../../static/images/share_logo.png'));
-        
+
         if (result.title && '' !== result.title.replace(/ /g, '')) {
             app.$data.title = result.title;
         } else {
@@ -94,17 +94,20 @@ function router(e) {
             app.$data.detail = util.defaultDetail;
         }
         if (result.headurl && '' !== result.headurl) {
-          app.$data.avatarUrl = config.getImgUrl + result.headurl;
+            // app.$data.avatarUrl = config.getImgUrl + result.headurl;
+            app.$data.avatarUrl = util.getImageUrl(result.headurl, 70);
         }
 
         var displayImgs = app.$data.workDisplayImgs;
         var popupDisplayImgs = app.$data.popupDisplayImgs;
         if (result.pictureUrl && '' !== result.pictureUrl.replace(/ /g, '')) {
-            displayImgs.frontUrl = popupDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+            // displayImgs.frontUrl = popupDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+            displayImgs.frontUrl = popupDisplayImgs.frontUrl = util.getImageUrl(result.pictureUrl);
             popupDisplayImgs.pictureUrl = result.pictureUrl;
         }
         if (result.pictureUrlBack && '' !== result.pictureUrlBack.replace(/ /g, '')) {
-            displayImgs.backUrl = popupDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+            // displayImgs.backUrl = popupDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+            displayImgs.backUrl = popupDisplayImgs.backUrl = util.getImageUrl(result.pictureUrlBack);
             popupDisplayImgs.pictureUrlBack = result.pictureUrlBack;
         }
         displayImgs.frontbgUrl = popupDisplayImgs.frontbgUrl = util.getClothes(result.moldId, result.color, result.gender, 'front');
