@@ -17,11 +17,11 @@
     <body>
         <div id="app">
             <div class="tip-wrap" v-html="payResultMsg"></div>
-            <div class="query-btn" v-tap="queryOrders">订单查询</div>
+            <div class="query-btn" v-on:click="queryOrders">订单查询</div>
 
             <div class="msg-popup-bg-wrap" transition="msg-popup-expand" v-show="showMsgPopup">
                 <div id="msgPopup" class="msg-popup-wrap">
-                    <div class="confirm-btn" v-tap="hiddenMsgPopup"></div>
+                    <div class="confirm-btn" v-on:click="hiddenMsgPopup"></div>
                 </div>
             </div>
         </div>

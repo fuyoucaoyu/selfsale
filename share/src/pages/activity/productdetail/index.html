@@ -16,15 +16,15 @@
     </head>
     <body>
         <div id="app">
-            <div class="buy-button"></div>            
+            <div class="buy-button"></div>
 
             <div class="size-instr-wrap" v-if="isSize">
                 <div class="nav-bar">
-                    <div class="left-item-wrap" v-bind:style="{backgroundImage: leftUrl}" v-tap="clickLeftItem">
+                    <div class="left-item-wrap" v-bind:style="{backgroundImage: leftUrl}" v-on:click="clickLeftItem">
                     </div>
-                    <div class="mid-item-wrap" v-bind:style="{backgroundImage: midUrl}" v-tap="clickMidItem">
+                    <div class="mid-item-wrap" v-bind:style="{backgroundImage: midUrl}" v-on:click="clickMidItem">
                     </div>
-                    <div class="right-item-wrap" v-bind:style="{backgroundImage: rightUrl}" v-tap="clickRightItem">
+                    <div class="right-item-wrap" v-bind:style="{backgroundImage: rightUrl}" v-on:click="clickRightItem">
                     </div>
                 </div>
                 <div class="instr-detail" v-bind:style="{backgroundImage: instructionUrl}"

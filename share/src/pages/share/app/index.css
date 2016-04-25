@@ -33,6 +33,7 @@
 	top: 450px;
 	left: 220px;
 	z-index: 20;
+    cursor: pointer;
 }
 
 .app-intro {
@@ -71,6 +72,7 @@
     top: 875px;
     left: 227px;
     z-index: 20;
+    cursor: pointer;
 }
 
 .app-info {

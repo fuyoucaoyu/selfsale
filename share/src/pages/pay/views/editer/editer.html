@@ -5,13 +5,13 @@
 	</section>
 	<section class="mediaWrap">
 		<p>
-			<video id="monitor" autoplay></video> 
+			<video id="monitor" autoplay></video>
 			<canvas id="photo"></canvas>
-		<p><input type=button value="拍照" v-tap="useMedia" /></p>
+		<p><input type=button value="拍照" v-on:click="useMedia" /></p>
 		<p><input type="file" accept="image/*" /></p>
 		<p>
 		    <input type="file" accept="image/*;capture=camera" />
-		    <input type="file" accept="video/*;capture=camcorder" /> 
+		    <input type="file" accept="video/*;capture=camcorder" />
 		    <input type="file" accept="audio/*;capture=microphone" />
 		</p>
 	</section>

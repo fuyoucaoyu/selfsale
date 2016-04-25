@@ -32,13 +32,13 @@
                 <div class="sign-wrap" v-html="signature"></div>
                 <span class="follow" v-html="follow"></span>
                 <span class="fans" v-html="fans"></span>
-                
+
                 <works :items="workItems"></works>
             </div>
             <!-- <img class="app-intro" src="../../../static/images/studio/app_intro.jpg">
             <div class="footer-wrap">
                 <img class="app-info" src="../../../static/images/studio/footer.jpg">
-                <img class="app-download-bottom" src="../../../static/images/download.png" v-tap="onTouchDownloadHandler">
+                <img class="app-download-bottom" src="../../../static/images/download.png" v-on:click="onTouchDownloadHandler">
             </div> -->
             <div class="app-intro"></div>
             <div class="footer-wrap">
@@ -47,7 +47,7 @@
                 <a class="app-download-a" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usef.zizuozishou"></a>
             </div>
         </div>
-        
+
         <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>

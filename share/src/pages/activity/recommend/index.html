@@ -20,7 +20,7 @@
             <div class="app-header-wrap">
                 <img class="icon-img" src="../../../static/images/recommend/logo.png">
                 <div class="title-text">推荐</div>
-                <img class="detail-btn" src="../../../static/images/recommend/queryordersbtn.png" v-tap="showQueryPage">
+                <img class="detail-btn" src="../../../static/images/recommend/queryordersbtn.png" v-on:click="showQueryPage">
             </div>
 
             <div id="workItemsContainer" class="work-items">
@@ -36,13 +36,13 @@
                     <div class="loading-text">加载中…</div>
                 </div>
             </div>
-                
+
             <div class="footer-wrap">
                 <!-- <img class="app-download-bottom" src="../../../static/images/query/goappbotton.png"> -->
                 <a class="app-download-a" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usef.zizuozishou"></a>
             </div>
         </div>
-        
+
         <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
         <script type="text/javascript" src="../../../static/lib/vue.js"></script>
         <script type="text/javascript" src="../../../static/lib/tap.js"></script>

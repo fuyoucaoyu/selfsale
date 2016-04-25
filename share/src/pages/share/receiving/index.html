@@ -27,20 +27,20 @@
                     <multi-select :container-id="multiSelectId" :syn-callback="updateAddress"></multi-select>
                     <input class="person-info-wrap-input-a" id="detail_address" name="detail_address" placeholder="详细地址：" v-model:value="orderInfo.detail_address" />
                     <input class="person-info-wrap-input-b" id="remarks" name="remarks" placeholder="备注信息：" v-model:value="orderInfo.remarks" />
-                
+
                     <div class="pay-way-wrap">
                         <p class="pay-way-wrap-hd">支付方式:</p>
                         <input id="pay_type" name="pay_type" v-model:value="payType" type="hidden"/>
                         <div class="pay-btn-wrap">
-                            <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-tap="selectPayType(0)" v-show="isInWeixin"></span>
-                            <!-- <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType, 'zhifubao-btn-left': false === isInWeixin}" v-tap="selectPayType(1)" ></span> -->
+                            <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-on:click="selectPayType(0)" v-show="isInWeixin"></span>
+                            <!-- <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType, 'zhifubao-btn-left': false === isInWeixin}" v-on:click="selectPayType(1)" ></span> -->
                             <span class="open-in-weixin-msg" v-html="openInWeixin" v-show="false === isInWeixin"></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="confirm-btn-wrap">
-                  <span class="confirm-btn" v-tap="validateAndPost">确定</span> 
+                  <span class="confirm-btn" v-on:click="validateAndPost">确定</span>
                 </div>
             </form>
 

@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="./multiSelect.css?__inline">
 <div v-bind:id="containerId" class="cs-select cs-skin-slide">
 	<!-- <input type="text" placeholder="请输入：" readonly="true" class="select-result"></input> -->
-	<span class="cs-placeholder" v-tap="showOptions" v-on:click="showOptions">{{selectValue}}</span>
+	<span class="cs-placeholder" v-on:click="showOptions" v-on:click="showOptions">{{selectValue}}</span>
 	<div v-bind:id="optionsId" class="cs-options">
-		<ul v-tap="stopTouchEvent">
-			<li v-for="item in items" track-by="$index" v-bind:data-value="$index" v-tap="selectItem($index, item)"
+		<ul v-on:click="stopTouchEvent">
+			<li v-for="item in items" track-by="$index" v-bind:data-value="$index" v-on:click="selectItem($index, item)"
 				v-bind:class="{'cs-selected': $index === selectedIndex}">
 				<span>{{item}}</span>
 			<li>

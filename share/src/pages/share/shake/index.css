@@ -50,6 +50,7 @@
     top: 1345px;
     left: 227px;
     z-index: 20;
+    cursor: pointer;
 }
 
 .app-info {

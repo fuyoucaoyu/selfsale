@@ -18,11 +18,11 @@
         <div id="app">
             <div class="size-instr-wrap" v-if="isSize">
                 <div class="nav-bar">
-                    <div class="left-item-wrap" v-bind:style="{backgroundImage: leftUrl}" v-tap="clickLeftItem">
+                    <div class="left-item-wrap" v-bind:style="{backgroundImage: leftUrl}" v-on:click="clickLeftItem">
                     </div>
-                    <div class="mid-item-wrap" v-bind:style="{backgroundImage: midUrl}" v-tap="clickMidItem">
+                    <div class="mid-item-wrap" v-bind:style="{backgroundImage: midUrl}" v-on:click="clickMidItem">
                     </div>
-                    <div class="right-item-wrap" v-bind:style="{backgroundImage: rightUrl}" v-tap="clickRightItem">
+                    <div class="right-item-wrap" v-bind:style="{backgroundImage: rightUrl}" v-on:click="clickRightItem">
                     </div>
                 </div>
                 <div class="instr-detail" v-bind:style="{backgroundImage: instructionUrl}"
@@ -34,9 +34,9 @@
             </div>
 
             <div class="bottom-nav">
-                <span class="left-tab-wrap" v-bind:style="{backgroundImage: leftTabUrl}" v-tap="clickLeftTabItem">
+                <span class="left-tab-wrap" v-bind:style="{backgroundImage: leftTabUrl}" v-on:click="clickLeftTabItem">
                 </span>
-                <span class="right-tab-wrap" v-bind:style="{backgroundImage: rightTabUrl}" v-tap="clickRightTabItem">
+                <span class="right-tab-wrap" v-bind:style="{backgroundImage: rightTabUrl}" v-on:click="clickRightTabItem">
                 </span>
             </div>
         </div>

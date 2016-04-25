@@ -197,6 +197,7 @@
     top: 1126px;
     left: 229px;
     z-index: 20;
+	cursor: pointer;
 }
 
 /**.app-info {
@@ -211,6 +212,7 @@
     bottom: 50px;
     right: 14px;
 	z-index: 100;
+	cursor: pointer;
 }
 
 /* 必需 */

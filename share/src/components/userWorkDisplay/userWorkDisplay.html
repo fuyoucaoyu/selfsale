@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="./userWorkDisplay.css?__inline">
-<div class="user-work-wrap" v-tap="clickItemHandler">
+<div class="user-work-wrap" v-on:click="clickItemHandler">
 	<work-display :display-imgs="item.workItem" :front="true" spec-class="scaled-work-display"></work-display>
 	<div class="user-profile-wrap">
         <img class="user-avatar" v-bind:src="item.userItem.avatarUrl">

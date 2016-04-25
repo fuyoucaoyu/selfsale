@@ -210,14 +210,14 @@
 }
 
 .color-wrap span {
-	width: 38px; 
+	width: 38px;
 	height: 38px;
 	border: solid 1px #acacac;/*no*/
 	border-radius: 4px;
 }
 
 .size-wrap span {
-	width: 40px; 
+	width: 40px;
 	height: 40px;
 	padding: 0 15px;
 	line-height: 40px;
@@ -245,11 +245,11 @@
 
 /**.number-wrap{
 	position: relative;
-	width: 400px; 
+	width: 400px;
 	display: inline-block;
-	float: right; 
+	float: right;
 	padding-right: 86px;
-	text-align:right; 
+	text-align:right;
 	vertical-align: middle;
 }**/
 
@@ -297,6 +297,7 @@
 .confirm-btn-wrap img {
 	width: 282px;
 	height: 62px;
+	cursor: pointer;
 }
 
 .content-wrap .select-txt-btn,
@@ -307,7 +308,7 @@
 }
 
 .color-wrap span.select-box {
-	width: 42px; 
+	width: 42px;
 	height: 42px;
 	/**border: solid 2px #acacac;**/
 	border: solid 2px #ff9c01; /*no*/

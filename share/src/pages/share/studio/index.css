@@ -3,7 +3,8 @@
 @import url('../../../components/workDisplay/workDisplay.css?__inline');
 
 #app {
-	width: 100%;
+	/*width: 100%;*/
+	width: 640px;
 	margin: auto;
 	color: #fff;
 	overflow-x: hidden;
@@ -128,6 +129,7 @@
     top: 883px;
     left: 227px;
     z-index: 20;
+	cursor: pointer;
 }
 
 /**.app-info {

@@ -20,7 +20,8 @@
 	font-size: 27px;
 	color: #4b423a;
 	background-repeat: no-repeat;
-	background-size: cover; 
+	background-size: cover;
+	cursor: pointer;
 }
 
 .mid-item-wrap {
@@ -31,7 +32,8 @@
 	font-size: 27px;
 	color: #4b423a;
 	background-repeat: no-repeat;
-	background-size: cover; 
+	background-size: cover;
+	cursor: pointer;
 }
 
 .right-item-wrap {
@@ -42,7 +44,8 @@
 	font-size: 27px;
 	color: #4b423a;
 	background-repeat: no-repeat;
-	background-size: cover; 
+	background-size: cover;
+	cursor: pointer;
 }
 
 .instr-detail {
@@ -98,7 +101,8 @@
 	display: inline-block;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover; 
+	background-size: cover;
+	cursor: pointer;
 }
 .right-tab-wrap {
 	position: relative;
@@ -108,5 +112,6 @@
 	display: inline-block;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover; 
+	background-size: cover;
+	cursor: pointer;
 }

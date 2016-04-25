@@ -51,23 +51,24 @@
 	border-radius: 10px;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
-	color: #595959; 
-} 
-input:-moz-placeholder, textarea:-moz-placeholder { 
-	color: #595959; 
-} 
-input::-moz-placeholder, textarea::-moz-placeholder { 
-	color: #595959; 
-} 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
-	color: #595959; 
-} 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #595959;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+	color: #595959;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+	color: #595959;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color: #595959;
+}
 
 .query-btn {
 	width: 240px;
 	height: 60px;
 	margin-top: 40px;
+	cursor: pointer;
 }
 
 .contact-detail {

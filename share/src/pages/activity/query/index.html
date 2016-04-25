@@ -24,7 +24,7 @@
 
             <div class="query-container">
                 <input class="query-input" type="text" placeholder="请输入手机号" v-model:value="queryId" />
-                <img class="query-btn" src="../../../static/images/query/querybtn.png" v-tap="queryById" />
+                <img class="query-btn" src="../../../static/images/query/querybtn.png" v-on:click="queryById" />
             </div>
 
             <div class="contact-detail">

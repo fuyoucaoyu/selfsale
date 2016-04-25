@@ -11,6 +11,7 @@
 	border: 1px solid #d6d6d6;/*no*/
 	text-align: center;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 .scaled-work-display {

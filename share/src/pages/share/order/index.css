@@ -29,6 +29,7 @@ body {
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .selected-nav-item {
@@ -82,6 +83,7 @@ body {
 	/*float: right;
 	margin-right: 30px;*/
 	right: 30px;
+	cursor: pointer;
 }
 
 .msg-popup-wrap {

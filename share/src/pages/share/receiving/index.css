@@ -103,18 +103,18 @@
 	/*background-image: url(../../../static/images/receiving/line_normal2.jpg?__inline);*/
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
-	color: #070100; 
-} 
-input:-moz-placeholder, textarea:-moz-placeholder { 
-	color: #070100; 
-} 
-input::-moz-placeholder, textarea::-moz-placeholder { 
-	color: #070100; 
-} 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
-	color: #070100; 
-} 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #070100;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+	color: #070100;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+	color: #070100;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color: #070100;
+}
 
 .pay-way-wrap {
 	position: relative;
@@ -187,6 +187,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 	line-height: 78px;
 	background-color: #ff9c01;
 	border-radius: 10px;
+    cursor: pointer;
 }
 
 .msg-popup-wrap {

@@ -17,14 +17,14 @@
     <body>
         <div id="app">
             <div class="nav-bar">
-                <span v-for="item in states" class="nav-item" 
-                    v-bind:class="{'selected-nav-item': item.state === selectState}" v-tap="clickNavItem(item)" v-html="item.name"></span>
+                <span v-for="item in states" class="nav-item"
+                    v-bind:class="{'selected-nav-item': item.state === selectState}" v-on:click="clickNavItem(item)" v-html="item.name"></span>
             </div>
             <div v-for="items in orderItems" class="orders-wrap">
                 <order-item v-for="item in items.c" :order-info="item"></order-item>
                 <div class="order-btn-wrap">
                     <span class="query-btn" v-show="showQueryBtn" v-bind:class="{'query-btn-show': showQueryBtn}">查询物流</span>
-                    <span class="order-btn" v-tap="clickBtnHandler(items)" v-html="btnNames[selectState]"></span>
+                    <span class="order-btn" v-on:click="clickBtnHandler(items)" v-html="btnNames[selectState]"></span>
                 </div>
             </div>
             <div id="msgPopup" class="msg-popup-wrap" v-html="errMsg" transition="msg-popup-expand" v-show="showPopup"
