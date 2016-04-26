@@ -118,6 +118,7 @@ function requestPagination() {
             }
             workItem.frontbgUrl = util.getClothes(item.moldId, item.color, item.gender, 'front');
             workItem.backbgUrl = util.getClothes(item.moldId, item.color, item.gender, 'back');
+            workItem.price = item.price;
 
             userItem = {};
             userItem.praiseCount = item.praisecount;

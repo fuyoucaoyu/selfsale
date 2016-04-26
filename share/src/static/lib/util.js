@@ -53,7 +53,7 @@ var clothesdic = {
 var util = {
     defaultTitle: '遇到自己,邂逅你的特殊',
     defaultDetail: '做自己，绝不穿撞衫爆款<br/>做自己，绝不用劣质廉价<br/>做自己，绝不能随便将就<br/>做自己新梦想，自做自售<br/>',
-    getImageUrl(pictrueId, width) {
+    getImageUrl: function (pictrueId, width) {
         if (undefined === width || 0 > width) {
             width = 200;
         }
