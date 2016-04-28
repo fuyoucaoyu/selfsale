@@ -18,11 +18,11 @@
 	position: relative;
 	top: -170px;/**(-640 + 0.5 * 640) * 0.5**/
 	left: -180px;/**(-640 + 0.5 * 640) * 0.5**/
-	transform: scale(0.54, 0.5);
-	-ms-transform: scale(0.54, 0.5);
-	-moz-transform: scale(0.54, 0.5);
-	-webkit-transform: scale(0.54, 0.5);
-	-o-transform: scale(0.54, 0.5);
+	transform: scale(0.5, 0.5);
+	-ms-transform: scale(0.5, 0.5);
+	-moz-transform: scale(0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5);
+	-o-transform: scale(0.5, 0.5);
 }
 .scaled-work-display .work-wrap {
 	width: 640px;

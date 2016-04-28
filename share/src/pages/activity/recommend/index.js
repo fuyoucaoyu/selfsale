@@ -17,7 +17,7 @@ var app = new Vue({
     },
     methods: {
         showQueryPage: function (argument) {
-            util.gotoPage('../query/index.html');
+            util.gotoPage('./pages/activity/query/index.html');
         }
     },
     components: {
@@ -91,7 +91,7 @@ function requestPagination() {
     util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
             // alert('show error page');
-            util.gotoPage('../../app/index.html');
+            util.gotoPage('./pages/share/app/index.html');
             return;
         }
 
@@ -132,7 +132,8 @@ function requestPagination() {
                 userItem.avatarUrl = __uri('../../../static/images/test_avatar.png');
             }
 
-            workUrl = '../../share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
+            // workUrl = '../../share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
+            workUrl = './pages/share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
             userWorkItem = {workItem: workItem, userItem: userItem, workUrl: workUrl};
             userWorkItems.push(userWorkItem);
         }
