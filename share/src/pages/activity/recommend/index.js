@@ -45,7 +45,9 @@ var app = new Vue({
                     paginationClickable: true,
                     slidesPerView: 1,
                     loop: true,
-                    autoplay: 3500
+                    autoplay: 3500,
+                    simulateTouch: false,
+                    autoplayDisableOnInteraction: false
                 })
             }
         }, 500);
