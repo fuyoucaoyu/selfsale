@@ -33,8 +33,8 @@
                         <input id="pay_type" name="pay_type" v-model:value="payType" type="hidden"/>
                         <div class="pay-btn-wrap">
                             <span class="weixin-btn" v-bind:class="{'weixin-btn-select': 0 === payType}" v-on:click="selectPayType(0)" v-show="isInWeixin"></span>
-                            <!-- <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType, 'zhifubao-btn-left': false === isInWeixin}" v-on:click="selectPayType(1)" ></span> -->
-                            <span class="open-in-weixin-msg" v-html="openInWeixin" v-show="false === isInWeixin"></span>
+                            <span class="zhifubao-btn" v-bind:class="{'zhifubao-btn-select': 1 === payType, 'zhifubao-btn-left': false === isInWeixin}" v-on:click="selectPayType(1)" ></span>
+                            <!--span class="open-in-weixin-msg" v-html="openInWeixin" v-show="false === isInWeixin"></span-->
                         </div>
                     </div>
                 </div>

@@ -35,6 +35,12 @@ var app = new Vue({
             address: '',
             detail_address: '',
             remarks: ''
+            // username: '测试',
+            // phone: '15369136898',
+            // address: '北京 北京市 东城区',
+            // detail_address: '测试',
+            // remarks: '测试'
+
         }
     },
     methods: {
@@ -51,10 +57,10 @@ var app = new Vue({
                 event.stopPropagation();
             }
 
-            if (!util.ua.isWeiXin) {
-                this.showMessagePopup(this.$data.openInWeixin);
-                return;
-            }
+            // if (!util.ua.isWeiXin) {
+            //     this.showMessagePopup(this.$data.openInWeixin);
+            //     return;
+            // }
 
             this.$data.errMsg = null;
             var curOrderInfo = this.$data.orderInfo;
@@ -120,13 +126,58 @@ var app = new Vue({
                     }
                     myurl += '?' + util.objToString(params);
 
-                    var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + data.WXid + '&redirect_uri=' 
+                    var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + data.WXid + '&redirect_uri='
                         + encodeURIComponent(myurl) + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect';
                     window.location.href = url;
-                } 
+                }
                 // 支付宝支付
                 else if (1 == self.$data.payType) {
-                    
+                    var myurl = window.location.href.split('?')[0].replace('receiving', 'completeOrder');
+                    myurl += '?userId=' + data.userId;
+
+                    var params = {
+                        orderCde: data.orderNo,
+                        userId: data.userId,
+                        payType: self.$data.payType,
+                        order_price: workOptions.num * workOptions.price
+                    }
+                    params.function = config.aliPayFn;
+                    params.return_url = encodeURIComponent(myurl);
+                    params.show_url = encodeURIComponent(window.location.href);
+                    util.jsonp(config.getProduceUrl, params, function (error, data) {
+                        if ('error' === error || !data) {
+                            return;
+                        }
+
+                        var url = 'https://mapi.alipay.com/gateway.do?_input_charset=utf-8';
+                        // data.return_url = data.notify_url = myurl;
+                        // data.show_url =window.location.href;
+
+
+                        var payForm = document.createElement('form');
+                        document.body.appendChild(payForm);
+
+                        for (var p in data) {
+                            var tmpInput = document.createElement("input");
+                            tmpInput.type = 'hidden';
+                            tmpInput.name = p;
+                            tmpInput.value = data[p];
+                            payForm.appendChild(tmpInput);
+                        }
+
+                        payForm.method = 'get';
+                        payForm.action = url;
+                        payForm.submit();
+
+
+                        // util.post(url, data, function (error, data) {
+                        //     if ('error' === error || !data) {
+                        //         return;
+                        //     }
+
+                        //     console.log(data);
+                        // });
+                    });
                 }
             });
 

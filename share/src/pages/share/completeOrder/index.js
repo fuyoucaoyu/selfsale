@@ -56,7 +56,7 @@ function router(e) {
     }
 
     var params = getUrlParams(window.location.href.split('?')[1]);
-    if ('ok' === params.returnCode) {
+    if ('ok' === params.returnCode || 'T' === params.is_success) {
     	app.$data.payResultMsg = '您的订单已完成';
     } else if ('cancel' === params.returnCode) {
     	app.$data.payResultMsg = '您的订单未支付';
