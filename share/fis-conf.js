@@ -1,5 +1,4 @@
-// var APP_NAME = '/SSH/selfsaleshare';
-var APP_NAME = '/';
+var APP_NAME = '/SSH/selfsaleshare';
 fis.match('*', {
   charset: 'utf8'
 })
@@ -15,10 +14,10 @@ fis.match('static/images/clothes/**/*.{png,jpg}', {
 });
 fis.match('static/images/materialsize/*.{png,jpg}', {
   useHash: false
-});
+}); 
 fis.match('static/images/materialsize/**/*.{png,jpg}', {
   useHash: false
-});
+}); 
 
 // fis-optimizer-uglify-js 插件进行压缩，已内置
 fis.match('*.js', {
@@ -89,11 +88,6 @@ fis.match('::package', {
 fis.match("(pages/**)", {
     isMod: true,
     release: APP_NAME + '/$1'
-});
-
-fis.match("pages/activity/recommend/(*)", {
-    isMod: true,
-    release: APP_NAME + '$1'
 });
 
 fis.match("(components/**)", {
