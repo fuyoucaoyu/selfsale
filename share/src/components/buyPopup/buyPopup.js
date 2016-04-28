@@ -27,7 +27,7 @@ module.exports = {
             selectSex: this.defaultOptions.sex,
             selectType: this.defaultOptions.type,
             selectColor: this.defaultOptions.ccolor,
-            selectSize: this.defaultOptions.size,
+            selectSize: this.defaultOptions.size || 'M',
             price: this.getPrice(),
             selectNum: 1
         }
@@ -111,7 +111,7 @@ module.exports = {
         updateWorkDisplay: function () {
             var curData = this.$data;
             this.options = util.clothesData[this.$data.selectModel + '_' + this.$data.selectSex];
-            
+
             this.validateSelectedOption(this.options.type, 'selectType');
 
             // T恤体验款颜色只有黑色白色灰色
