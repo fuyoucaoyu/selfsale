@@ -24,7 +24,15 @@
             </div>
 
             <div id="workItemsContainer" class="work-items">
-                <img class="banner" src="../../../static/images/recommend/bannerbg.jpg">
+                <!--img class="banner" src="../../../static/images/recommend/bannerbg.jpg"-->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div v-for="item in bannerList" class="swiper-slide" v-on:touchStart="onTouchItem()">
+                            <a v-bind:href="item.targetUrl" target="_self"></a>
+                            <img class="banner" v-bind:src="item.url">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="work-item-wrap">
                     <div class="work-item" v-for="item in userWorkItems" v-bind:class="$index % 2 == 0 ? 'item-left' : 'item-right'">

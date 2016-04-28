@@ -59,11 +59,38 @@ body {
 	overflow-y: auto;
 }
 
-.banner{
+.swiper-container {
+    z-index: 10;
 	position: relative;
 	width: 640px;
 	height: 233px;
 	margin-bottom: 20px;
+}
+
+.swiper-wrapper {
+	height: 233px;
+}
+
+.swiper-slide {
+	position: relative;
+	width: 640px;
+	height: 233px;
+
+}
+
+.swiper-slide a {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index: 100;
+}
+
+.banner{
+	position: relative;
+	width: 640px;
+	height: 233px;
 }
 
 .work-item-wrap {

@@ -18,7 +18,12 @@ var app = new Vue({
     el: '#app',
     data: {
         userWorkItems: [],
-        isLoading: false
+        isLoading: false,
+        bannerList: [
+            {url: baseUrl + '/static/images/recommend/bannerbg.jpg', targetUrl: 'http://www.zizuozishou.com/'},
+            {url: baseUrl + '/static/images/recommend/bannerbg_1.jpg', targetUrl: undefined},
+            {url: baseUrl + '/static/images/recommend/bannerbg_2.jpg', targetUrl: undefined}
+        ]
     },
     methods: {
         showQueryPage: function (argument) {
@@ -31,6 +36,20 @@ var app = new Vue({
     ready: function (argument) {
         // 添加微信二次分享设置
         util.supportAppShare(window.location.href, 'http://' + window.location.host + __uri('../../../static/images/share_logo.png'));
+
+        var intervalId = setInterval(function (event) {
+            if (document.querySelectorAll('.swiper-slide').length > 0) {
+                clearInterval(intervalId);
+                var mySwiper = new Swiper('.swiper-container', {
+                    preventLinks: false,
+                    paginationClickable: true,
+                    slidesPerView: 1,
+                    loop: true,
+                    autoplay: 3500
+                })
+            }
+        }, 500);
+
 
         var itemContainer = document.getElementById('workItemsContainer');
         function isScrollBottom(dom) {
