@@ -9,6 +9,11 @@ Vue.use(window.tap);
 
 var UserWorkDisplay = require('../../../components/userWorkDisplay/userWorkDisplay.js');
 
+// 测试用
+// var baseUrl = '.';
+// 上线时用，为了支持微信支付；同时SSH下也要同步更新，切config文件要改
+var baseUrl = 'http://fx.zizuozishou.com/SSH/selfsaleshare';
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -17,7 +22,7 @@ var app = new Vue({
     },
     methods: {
         showQueryPage: function (argument) {
-            util.gotoPage('./pages/activity/query/index.html');
+            util.gotoPage(baseUrl + '/pages/activity/query/index.html');
         }
     },
     components: {
@@ -91,7 +96,7 @@ function requestPagination() {
     util.jsonp(config.getProduceUrl, params, function (error, data) {
         if ('error' === error || !data || !data.data || 0 != data.success) {
             // alert('show error page');
-            util.gotoPage('./pages/share/app/index.html');
+            util.gotoPage(baseUrl + '/pages/share/app/index.html');
             return;
         }
 
@@ -133,7 +138,7 @@ function requestPagination() {
             }
 
             // workUrl = '../../share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
-            workUrl = './pages/share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
+            workUrl = baseUrl + '/pages/share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
             userWorkItem = {workItem: workItem, userItem: userItem, workUrl: workUrl};
             userWorkItems.push(userWorkItem);
         }
