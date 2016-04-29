@@ -233,6 +233,92 @@ var util = {
         }
         return windowHeight;
     },
+    // 参数解析
+    getUrlParams: function (data) {
+        if (!data) {
+            return;
+        }
+        var paramsArray = data.split('&');
+        var params = {};
+        paramsArray.forEach(function (p) {
+            var pa = p.split('=');
+            params[pa[0]] = (pa[1] === undefined ? '' : pa[1]);
+        });
+        return params;
+    },
+    // 路由:classic male female
+    router: function (e, app) {
+        if (e) {
+            e.preventDefault();
+        }
+
+        var params = this.getUrlParams(window.location.href.split('?')[1]);
+        params.function = config.getProduceFn;
+
+        if (params && params.agent) {
+            app.$data.agent = params.agent;
+        }
+
+        var self = this;
+        this.jsonp(config.getProduceUrl, params, function (error, data) {
+            if ('error' === error || !data || !data.data || 0 != data.success) {
+                // alert('show error page');
+                self.gotoPage('../app/index.html');
+                return;
+            }
+
+            var result = data.data;
+            app.$data.nick = result.nick;
+            self.supportPersonalShare(app.$data.nick , window.location.href, 'http://' + window.location.host + __uri('../../../static/images/share_logo.png'));
+
+            if (result.title && '' !== result.title.replace(/ /g, '')) {
+                app.$data.title = result.title;
+            } else {
+                app.$data.title = self.defaultTitle;
+            }
+            if (result.content && '' !== result.content.replace(/ /g, '')) {
+                app.$data.detail = result.content;
+            } else {
+                app.$data.detail = self.defaultDetail;
+            }
+            if (result.headurl && '' !== result.headurl.replace(/ /g, '')) {
+                // app.$data.avatarUrl = config.getImgUrl + result.headurl;
+                app.$data.avatarUrl = self.getImageUrl(result.headurl, 70);
+            }
+
+            var displayImgs = app.$data.workDisplayImgs;
+            var popupDisplayImgs = app.$data.popupDisplayImgs;
+            if (result.pictureUrl && '' !== result.pictureUrl.replace(/ /g, '')) {
+                // displayImgs.frontUrl = popupDisplayImgs.frontUrl = config.getImgUrl + result.pictureUrl;
+                displayImgs.frontUrl = popupDisplayImgs.frontUrl = self.getImageUrl(result.pictureUrl);
+                popupDisplayImgs.pictureUrl = result.pictureUrl;
+            }
+            if (result.pictureUrlBack && '' !== result.pictureUrlBack.replace(/ /g, '')) {
+                // displayImgs.backUrl = popupDisplayImgs.backUrl = config.getImgUrl + result.pictureUrlBack;
+                displayImgs.backUrl = popupDisplayImgs.backUrl = self.getImageUrl(result.pictureUrlBack);
+                popupDisplayImgs.pictureUrlBack = result.pictureUrlBack;
+            }
+            displayImgs.frontbgUrl = popupDisplayImgs.frontbgUrl = self.getClothes(result.moldId, result.color, result.gender, 'front');
+            displayImgs.backbgUrl = popupDisplayImgs.backbgUrl = self.getClothes(result.moldId, result.color, result.gender, 'back');
+            popupDisplayImgs.produceId = params.produceId;
+
+            var infoId = result.moldId + '_' + result.gender;
+            app.$data.goodsOptions = self.clothesData[infoId];
+
+            var defaultOptions = {};
+            defaultOptions.moldId = result.moldId;
+            defaultOptions.sex = result.gender;
+            defaultOptions.type = 1;
+            defaultOptions.ccolor = result.color;
+            defaultOptions.size = result.size;
+            defaultOptions.price = result.price;
+            defaultOptions.matsPrice = result.matsPrice;
+            defaultOptions.pictureUrl = result.pictureUrl;
+            defaultOptions.pictureUrlBack = result.pictureUrlBack;
+            defaultOptions.percent = result.percent;
+            app.$data.defultSelectedOptions = defaultOptions;
+        });
+    },
     clothesData: {
       '3_1':{ //T恤男
           model: [{key: 3, name: 't恤'},

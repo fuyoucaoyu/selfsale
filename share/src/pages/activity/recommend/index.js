@@ -10,15 +10,16 @@ Vue.use(window.tap);
 var UserWorkDisplay = require('../../../components/userWorkDisplay/userWorkDisplay.js');
 
 // 测试用
-// var baseUrl = '.';
+var baseUrl = '../../..';
 // 上线时用，为了支持微信支付；同时SSH下也要同步更新，切config文件要改
-var baseUrl = 'http://fx.zizuozishou.com/SSH/selfsaleshare';
+// var baseUrl = 'http://fx.zizuozishou.com/SSH/selfsaleshare';
 
 var app = new Vue({
     el: '#app',
     data: {
         userWorkItems: [],
         isLoading: false,
+        agent: '',
         bannerList: [
             {url: baseUrl + '/static/images/recommend/bannerbg.jpg', targetUrl: 'http://www.zizuozishou.com/'},
             {url: baseUrl + '/static/images/recommend/bannerbg_1.jpg', targetUrl: undefined},
@@ -159,7 +160,8 @@ function requestPagination() {
             }
 
             // workUrl = '../../share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
-            workUrl = baseUrl + '/pages/share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id;
+            workUrl = baseUrl + '/pages/share/classic/index.html?userId=' + userItem.userId + '&produceId=' + item.id +
+                '&agent=' + app.$data.agent;
             userWorkItem = {workItem: workItem, userItem: userItem, workUrl: workUrl};
             userWorkItems.push(userWorkItem);
         }
@@ -169,5 +171,20 @@ function requestPagination() {
     });
 }
 
+
+// 路由控制
+function router(e) {
+    if (e) {
+        e.preventDefault();
+    }
+
+    var params = util.getUrlParams(window.location.href.split('?')[1]);
+    if (params && params.agent) {
+        app.$data.agent = params.agent;
+    }
+}
+
+router();
+window.addEventListener('hashchange', router);
 
 requestPagination();

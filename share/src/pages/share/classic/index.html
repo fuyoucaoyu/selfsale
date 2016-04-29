@@ -56,7 +56,7 @@
                 <a class="app-download-a" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usef.zizuozishou"></a>
             </div>
 
-            <buy-popup :options="goodsOptions" :default-options="defultSelectedOptions" :display-imgs="popupDisplayImgs" :touch-close-callback="closeBuyPopup" v-if="buying"></buy-popup>
+            <buy-popup :options="goodsOptions" :default-options="defultSelectedOptions" :display-imgs="popupDisplayImgs" :touch-close-callback="closeBuyPopup" :agent="agent" v-if="buying"></buy-popup>
             <img class="buy-btn" src="../../../static/images/classic/buy.png" v-else
                 transition="buy-btn-visible"
                 v-on:click="onTouchBuyHandler">

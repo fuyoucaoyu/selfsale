@@ -19,7 +19,7 @@ var pricedic = {
 
 module.exports = {
     template: __inline('./buyPopup.html'),
-    props: ['options', 'defaultOptions', 'displayImgs', 'touchCloseCallback'],
+    props: ['options', 'defaultOptions', 'displayImgs', 'touchCloseCallback', 'agent'],
     data: function () {
         return {
             showingColor: {},
@@ -40,6 +40,7 @@ module.exports = {
     methods: {
         onTouchBuyHandler: function (event) {
             var params = {
+                agent: this.agent,
                 moldId: this.$data.selectModel,
                 gender: this.$data.selectSex,
                 corftype: this.$data.selectType,

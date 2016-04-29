@@ -22,6 +22,7 @@ function hasParent(e, p) {
 var app = new Vue({
     el: '#app',
     data: {
+        agent: '',
         isInWeixin: util.ua.isWeiXin,
         openInWeixin: '请在微信中打开并支付！',
         multiSelectId: 'addrMultiSelect',
@@ -92,6 +93,7 @@ var app = new Vue({
             var orderInfo = this.$data.orderInfo;
             var params = {
                 // function: config.addOrderFn,
+                agent: this.$data.agent,
                 payType: curOrderInfo.payType,
                 name: orderInfo.username,
                 phone: orderInfo.phone,
@@ -249,6 +251,11 @@ function router(e) {
     }
 
     app.$data.workOptions = getUrlParams(window.location.href.split('?')[1]);
+
+    if (app.$data.workOptions && app.$data.workOptions.agent) {
+        app.$data.agent = app.$data.workOptions.agent;
+        app.$data.workOptions.agent = undefined;
+    }
 }
 
 router();
