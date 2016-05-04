@@ -129,7 +129,8 @@ module.exports = {
         },
         getPrice: function () {
             var otherprice = 0;
-            if (this.defaultOptions.pictureUrlBack && '' !== this.defaultOptions.pictureUrlBack.replace(/ /g, '')){
+            if (this.defaultOptions.pictureUrlBack && '' !== this.defaultOptions.pictureUrlBack.replace(/ /g, '') &&
+                this.defaultOptions.pictrueurl && '' !== this.defaultOptions.pictrueurl.replace(/ /g, '')){
                 otherprice = 20;
             }
 

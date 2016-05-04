@@ -222,7 +222,8 @@ function router(e) {
 
                 var baseprice = pricedic[tempOrder.corftype][tempOrder.moldId];
                 var otherprice = 0;
-                if (tempOrder.pictrueurlback && '' !== tempOrder.pictrueurlback.replace(/ /g, '')){
+                if (tempOrder.pictrueurlback && '' !== tempOrder.pictrueurlback.replace(/ /g, '') &&
+                    tempOrder.pictrueurl && '' !== tempOrder.pictrueurl.replace(/ /g, '')){
                     otherprice = 20;
                 }
                 var percent = (undefined === tempOrder.percent || '' === tempOrder.percent) ? 0 : tempOrder.percent;
